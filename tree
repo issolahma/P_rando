@@ -1,0 +1,29 @@
+.
+├── classes
+├── config.ini.php
+├── controller
+├── database
+├── index.php
+├── resources
+│   ├── bootstrap
+│   ├── css
+│   ├── font-awesome
+│   ├── images
+│   ├── Ionicons
+│   ├── jquery
+│   └── js
+└── view
+    ├── footer.html
+    ├── header.php
+    ├── head.html
+    └── pages
+        ├── addData
+        │   ├── addAccompanist.php
+        │   ├── addAnimation.php
+        │   ├── addClient.php
+        │   ├── addSeason.php
+        │   ├── addTheme.php
+        │   ├── formMedicament.php
+        │   ├── formSickness.php
+        ├── home.php
+        └── login.php

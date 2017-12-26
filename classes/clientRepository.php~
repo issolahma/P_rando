@@ -1,0 +1,50 @@
+<?php
+/**
+ * ETML
+ * Date: 01.06.2017
+ * Shop
+ */
+
+include_once 'database/DataBaseQuery.php';
+
+
+class ClientRepository {
+
+    /**
+     * Find all entries
+     *
+     * @return array|resource
+     */
+		public function findAll($post) {
+			$searchValue = htmlentities($post["search"]["value"]);
+			$orderCol = htmlentities($post['order']['0']['column']);
+			$start = htmlentities($post['start']);
+			$length = htmlentities($post['length']);
+
+         $query = 'SELECT * FROM t_client';
+
+			
+			if(isset($_POST["search"]["value"])){
+				$query .= 'WHERE first_name LIKE "%'.$searchValue.'%" ';
+				$query .= 'OR last_name LIKE "%'.$searchValue.'%" ';
+				
+				array_push($dataArray, );
+			}
+			
+			if(isset($_POST["order"])){
+				$query .= 'ORDER BY '.$orderCol.' '.$_POST['order']['0']['dir'].' ';
+			}
+			else{
+				$query .= 'ORDER BY id DESC ';
+			}
+			
+			if($_POST["length"] != -1){
+				$query .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
+			
+
+        $request =  new DataBaseQuery();
+
+        return $request->rawQuery($query);
+
+    }
+}
