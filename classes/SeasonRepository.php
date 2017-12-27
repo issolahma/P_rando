@@ -7,7 +7,7 @@
  */
 include_once 'database/DataBaseQuery.php';
 
-class ThemeRepository {
+class SeasonRepository {
 
     /**
      * Find all entries for the list
@@ -17,11 +17,11 @@ class ThemeRepository {
     public function findAll($post) {
         $searchValue = htmlentities($post["search"]["value"]);
 
-        $query = 'SELECT * FROM t_theme ';
+        $query = 'SELECT * FROM t_season ';
 
 
         if(!empty($post["search"]["value"])){
-            $query .= 'WHERE theName LIKE "%'.$searchValue.'%" ';
+            $query .= 'WHERE seaName LIKE "%'.$searchValue.'%" ';
         }
 
         if(!empty($post['order'])){
@@ -29,10 +29,10 @@ class ThemeRepository {
 
             switch($orderCol) {
                 case 0:
-                    $orderCol = 'theName';
+                    $orderCol = 'seaName';
                     break;
                 default:
-                    $orderCol = 'theName';
+                    $orderCol = 'seaName';
 
             }
 
@@ -41,7 +41,7 @@ class ThemeRepository {
             $query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';
         }
         else{
-            $query .= 'ORDER BY theName ASC ';
+            $query .= 'ORDER BY seaName ASC ';
         }
 
         if($post["length"] != -1){
@@ -58,14 +58,14 @@ class ThemeRepository {
     }
 
     /**
-     * Find one theme by name
+     * Find one season by name
      *
      * @param $firstname
      * @param $lastname
      * @return array
      */
-    public function findTheme($name){
-        $query = 'SELECT * FROM t_theme WHERE theName=:name';
+    public function findSeason($name){
+        $query = 'SELECT * FROM t_season WHERE seaName=:name';
 
         $dataArray = array(
             'name' => $name
@@ -77,13 +77,13 @@ class ThemeRepository {
 
 
     /**
-     *  Find one theme by id
+     *  Find one season by id
      *
      * @param $id
      * @return array
      */
     public function findOne($id){
-        $query = 'SELECT * FROM t_theme WHERE idTheme=:id LIMIT 1';
+        $query = 'SELECT * FROM t_season WHERE idSeason=:id LIMIT 1';
 
         $dataArray = array(
             'id' => $id
@@ -94,39 +94,47 @@ class ThemeRepository {
     }
 
 //TODO	
-	public function updateTheme($values) {
+	public function updateSeason($values) {
 		$request = new DataBaseQuery();
 
         //Values from $_Post
         $name = htmlentities($values['name']);
 
-        $query = 'UPDATE t_theme SET theName=:name WHERE ';
+        $query = 'UPDATE t_season SET (seaName) VALUES (:name)';
 
         $dataArray = array(
-            'name' => $name,
+            'name' => $name
         );
         
         return $request->update($query, $dataArray);
 		}
 
-    public function addTheme($values){
+    public function addSeason($values){
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $name = htmlentities($values['name']);
-		
-        $query = 'INSERT INTO t_theme (theName, theCreateBy) VALUES (:name, :createBy)';
-
+        $firstname = htmlentities($values['firstname']);
+        $lastname = htmlentities($values['lastname']);
+        $right = htmlentities($values['right']);
+			$login = htmlentities($values['login']);
+			$pwd = htmlentities($values['password']);
+			
+        $query = 'INSERT INTO t_season (accPwd, accFirstName, accLastName, accLogin, accRight, accCreateBy) VALUES (:accPwd, :firstname, :lastname, :accLogin, :accRight, :acccreateBy)';
+error_log('LOL: '.$firstname.' '.$lastname.' '.$right.' '.$login);
         $dataArray = array(
-            'name' => $name,
-            'createBy' => $_SESSION['user']['id']
+        		'accPwd' => md5($pwd),
+            'firstname' => $firstname,
+            'lastname' => $lastname,
+            'accLogin' => $login,
+            'accRight' => $right,
+            'acccreateBy' => $_SESSION['user']['id']
         );
         
         return $request->rawQuery($query, $dataArray);
     }
 
     public function hideOne($id){
-        $query = 'UPDATE t_theme SET accActive=0 WHERE idTheme=:id';
+        $query = 'UPDATE t_season SET accActive=0 WHERE idClient=:id';
 
         $dataArray = array(
             'id' => $id

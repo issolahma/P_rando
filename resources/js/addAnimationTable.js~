@@ -21,7 +21,7 @@ $(document).ready(function(){
                 "searchable": false
             },
             {
-                "targets":[4, 5],
+                "targets":[3, 4],
                 "orderable":false,
             },
         ],

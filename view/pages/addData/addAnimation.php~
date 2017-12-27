@@ -20,6 +20,7 @@
         <table id="user_data" class="table table-bordered table-striped">
             <thead>
             <tr>
+                <th width="35%">Id</th>
                 <th width="35%">Nom</th>
                 <th width="35%">Thème</th>
                 <th width="35%">Saison</th>
@@ -33,7 +34,7 @@
 
 <!--DEBUG-->
 <?php
-error_log('PHP_FILE');
+
 ?>
 
 <div id="userModal" class="modal fade">

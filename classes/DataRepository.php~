@@ -29,7 +29,7 @@ class DataRepository {
 	*
 	*/
 	public function themeAnim($idAnim) {
-		$query = 'SELECT idTheme FROM t_themeanimation WHERE idAnimation=:id';
+		$query = 'SELECT idTheme FROM t_themeanimation WHERE idAnimation=:id AND theActive=1';
 		
 		$dataArray = array(
             'id' => $idAnim

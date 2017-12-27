@@ -83,7 +83,7 @@ class ThemeRepository {
      * @return array
      */
     public function findOne($id){
-        $query = 'SELECT * FROM t_theme WHERE idTheme=:id LIMIT 1';
+        $query = 'SELECT * FROM t_theme WHERE idTheme=:id AND theActive=1 LIMIT 1';
 
         $dataArray = array(
             'id' => $id
