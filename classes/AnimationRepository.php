@@ -15,33 +15,36 @@ class AnimationRepository {
      * @return array|resource
      */
     public function findAll($post) {
+        //From the search input
         $searchValue = htmlentities($post["search"]["value"]);
 
         $query = 'SELECT * FROM t_animation ';
 
-
+        //Make the search on name
         if(!empty($post["search"]["value"])){
             $query .= 'WHERE aniName LIKE "%'.$searchValue.'%" ';
         }
 
+        //Order by the choosen column
         if(!empty($post['order'])){
-            $orderCol = htmlentities($post['order']['0']['column']); // 0/1/2
+            $orderCol = htmlentities($post['order']['0']['column']); //Column number
 
+            //Convert column number to column name for the sql query
             switch($orderCol) {
                 case 0:
                     $orderCol = 'aniName';
                     break;
                 default:
                     $orderCol = 'aniName';
-
             }
 
+            //Order dirrection Asc or Desc
             $orderDir = htmlentities($post['order']['0']['dir']);
 
             $query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';
         }
         else{
-            $query .= 'ORDER BY aniName ASC ';
+            $query .= 'ORDER BY aniName ASC '; //By default order by name asc
         }
 
         if($post["length"] != -1){
@@ -77,7 +80,7 @@ class AnimationRepository {
 
 
     /**
-     *  Find one animation by id
+     * Find one animation by id
      *
      * @param $id
      * @return array
@@ -93,54 +96,70 @@ class AnimationRepository {
         return $request->rawQuery($query, $dataArray);
     }
 
-//TODO	
-	public function updateAnimation($values) {
-		$request = new DataBaseQuery();
+    /**
+    * Update animation
+    *
+    * @param $values
+    * @return  
+    */
+    public function updateAnimation($values) {
+        $request = new DataBaseQuery();
 
         //Values from $_Post
-        $firstname = htmlentities($values['firstname']);
-        $lastname = htmlentities($values['lastname']);
-        $right = htmlentities($values['right']);
-        $login = htmlentities($values['login']);
+        $name = htmlentities($values['name']);
+        $duration = htmlentities($values['duration']);
+        $list = htmlentities($values['list']);
+        $owner = htmlentities($values['owner']);
 
-        $query = 'UPDATE t_animation SET (accFirstName, accLastName, accRight, accCreateBy) VALUES (:firstname, :lastname, :accRight, :accCreateBy)';
+        $query = 'UPDATE t_animation SET (aniName, aniDuration, aniMatList, aniCreateBy, aniOwner) VALUES (:name, :duration, :matList, :createBy, :owner)';
 
         $dataArray = array(
-            'firstname' => $firstname,
-            'lastname' => $lastname,
-            'accRight' => $right,
-            'accCreateBy' => $_SESSION['user']['id']
+            'name' => $name,
+            'duration' => $duration,
+            'matList' => $list,
+            'owner' => $owner,
+            'createBy' => $_SESSION['user']['id']
         );
-        
-        return $request->update($query, $dataArray);
-		}
 
+        return $request->update($query, $dataArray);
+    }
+
+    /**
+    * Add new animation
+    *
+	* @param $values
+	* @return
+    */
     public function addAnimation($values){
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $firstname = htmlentities($values['firstname']);
-        $lastname = htmlentities($values['lastname']);
-        $right = htmlentities($values['right']);
-			$login = htmlentities($values['login']);
-			$pwd = htmlentities($values['password']);
-			
-        $query = 'INSERT INTO t_animation (accPwd, accFirstName, accLastName, accLogin, accRight, accCreateBy) VALUES (:accPwd, :firstname, :lastname, :accLogin, :accRight, :acccreateBy)';
-error_log('LOL: '.$firstname.' '.$lastname.' '.$right.' '.$login);
+        $name = htmlentities($values['name']);
+        $duration = htmlentities($values['duration']);
+        $list = htmlentities($values['list']);
+        $owner = htmlentities($values['owner']);
+
+        $query = 'INSERT INTO t_animation (aniName, aniDuration, aniMatList, aniCreateBy, aniOwner) VALUES (:name, :duration, :matList, :createBy, :owner)';
+
         $dataArray = array(
-        		'accPwd' => md5($pwd),
-            'firstname' => $firstname,
-            'lastname' => $lastname,
-            'accLogin' => $login,
-            'accRight' => $right,
-            'acccreateBy' => $_SESSION['user']['id']
+            'name' => $name,
+            'duration' => $duration,
+            'matList' => $list,
+            'owner' => $owner,
+            'createBy' => $_SESSION['user']['id']
         );
-        
+
         return $request->rawQuery($query, $dataArray);
     }
 
+    /*
+    * Hide animation instead of deleting it
+    *
+	* @param $id of the animation
+	* @return
+    */
     public function hideOne($id){
-        $query = 'UPDATE t_animation SET accActive=0 WHERE idClient=:id';
+        $query = 'UPDATE t_animation SET accActive=0 WHERE idAnimation=:id';
 
         $dataArray = array(
             'id' => $id

@@ -6,7 +6,8 @@
  */
 
 include_once 'database/DataBaseQuery.php';
-
+include_once 'classes/MedicRepository.php';
+include_once 'classes/SickRepository.php';
 
 class ClientsRepository {
 
@@ -15,56 +16,60 @@ class ClientsRepository {
      *
      * @return array|resource
      */
-		public function findAll($post) {
-		    $searchValue = htmlentities($post["search"]["value"]);
+    public function findAll($post) {
+        //From the search input
+        $searchValue = htmlentities($post["search"]["value"]);
 
-            $query = 'SELECT * FROM t_client ';
+        $query = 'SELECT * FROM t_client ';
 
-			
-			if(!empty($post["search"]["value"])){
-				$query .= 'WHERE cliFirstName LIKE "%'.$searchValue.'%" ';
-				$query .= 'OR cliLastName LIKE "%'.$searchValue.'%" ';
-			}
+        //Make the search on firstname, lastname, or city
+        if(!empty($post["search"]["value"])){
+            $query .= 'WHERE cliFirstName LIKE "%'.$searchValue.'%" ';
+            $query .= 'OR cliLastName LIKE "%'.$searchValue.'%" ';
+            $query .= 'OR cliCity LIKE "%'.$searchValue.'%" ';
+        }
 
-			if(!empty($post['order'])){
-			    $orderCol = htmlentities($post['order']['0']['column']); // 0/1/2
-			    
-			    switch($orderCol) {
-			    	case 0:
-			    		$orderCol = 'cliLastName';
-			    		break;
-			    	case 1:
-			    		$orderCol = 'cliFirstName';
-			    		break;
-			    	case 2:
-			    		$orderCol = 'cliCity';
-			    		break;
-			    	default:
-			    		$orderCol = 'cliLastName';
-			    		
-			    	}
-			    	
-             $orderDir = htmlentities($post['order']['0']['dir']);
+        //Order by the chosen column
+        if(!empty($post['order'])){
+            $orderCol = htmlentities($post['order']['0']['column']); //Column number
 
-				$query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';
-			}
-			else{
-				$query .= 'ORDER BY cliLastName ASC ';
-			}
-			
-			if($post["length"] != -1){
-                $start = htmlentities($post['start']);
-                $length = htmlentities($post['length']);
+            //Convert column number to column name for the sql query
+            switch($orderCol) {
+                case 0:
+                    $orderCol = 'cliLastName';
+                    break;
+                case 1:
+                    $orderCol = 'cliFirstName';
+                    break;
+                case 2:
+                    $orderCol = 'cliCity';
+                    break;
+                default:
+                    $orderCol = 'cliLastName';
 
-				$query .= 'LIMIT ' . $start . ', ' . $length;
-			}
+            }
+
+            //Order dirrection Asc or Desc
+            $orderDir = htmlentities($post['order']['0']['dir']);
+
+            $query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';
+        }
+        else{
+            $query .= 'ORDER BY cliLastName ASC '; //By default order by lastname asc
+        }
+
+        if($post["length"] != -1){
+            $start = htmlentities($post['start']);
+            $length = htmlentities($post['length']);
+
+            $query .= 'LIMIT ' . $start . ', ' . $length;
+        }
 
         $request =  new DataBaseQuery();
 
-        return $request->rawQuery($query, null);
-
+        return $request->rawQuery($query, null); //Null for no dataArray
     }
-    
+
     /**
      * Find one client by name
      *
@@ -101,24 +106,34 @@ class ClientsRepository {
         $request = new DataBaseQuery();
         return $request->rawQuery($query, $dataArray);
     }     
-    
+
+    /*
+	* Hidde client instead of deleting it
+	*
+	* @param $id of the cllient
+	* @return
+	*/
     public function hideOne($id){
-    	$query = 'UPDATE t_client SET cliActive=0 WHERE idClient=:id';
-    	
-    	  $dataArray = array(
+        $query = 'UPDATE t_client SET cliActive=0 WHERE idClient=:id';
+
+        $dataArray = array(
             'id' => $id
         );
-        
+
         $request = new DataBaseQuery();
         return $request->update($query, $dataArray);
     }
-    
-    
-    /**
-     * @param $values
-     */
+
+
+    /*
+	* add new client
+	*
+	* @param $values
+	* @return
+	*/ 
     public function addClient($values){
-        //echo print_r($values);
+        $medicRepo = new MedicRepository();
+        $sickRepo = new SickRepository();
 
         $request = new DataBaseQuery();
 
@@ -156,7 +171,7 @@ class ClientsRepository {
             foreach ($values['sickness'] as $item){
                 $sick = htmlentities($item);
 
-                $sickId = $this->findSickness($sick)[0]['idSickness'];
+                $sickId = $sickRepo->findSickness($sick)[0]['idSickness'];
 
                 $this->addIsSick($lastClientId, $sickId);
             }
@@ -167,10 +182,10 @@ class ClientsRepository {
             // New sick name
             $sick = htmlentities($values['otherSick']);
 
-            $sickId = $this->findSickness($sick)[0]['idSickness'];
-            if ($this->findSickness($sick) == null) {
+            $sickId = $sickRepo->findSickness($sick)[0]['idSickness'];
+            if ($sickRepo->findSickness($sick) == null) {
                 // Last id
-                $sickId = $this->addSickness($sick);
+                $sickId = $sickRepo->addSickness($sick);
             }
 
             // Add link client <-> sick
@@ -183,7 +198,7 @@ class ClientsRepository {
             foreach ($values['medicament'] as $item){
                 $medic = htmlentities($item);
 
-                $medicId = $this->findMedic($medic)[0]['idMedicament'];
+                $medicId = $medicRepo->findMedic($medic)[0]['idMedicament'];
 
                 $this->addTakeMedic($lastClientId, $medicId);
             }
@@ -194,47 +209,16 @@ class ClientsRepository {
             // New medic name
             $medic = htmlentities($values['otherMed']);
 
-            $medicId = $this->findMedic($medic)[0]['idMedicament'];
+            $medicId = $medicRepo->findMedic($medic)[0]['idMedicament'];
 
-            if ($this->findMedic($medic) == null) {
+            if ($medicRepo->findMedic($medic) == null) {
                 // Last id
-                $medicId = $this->addMedicament($medic);
+                $medicId = $medicRepo->addMedicament($medic);
             }
 
             // Add link client <-> sick
             $this->addTakeMedic($lastClientId, $medicId);
         }
-    }
-
-    private function findSickness($sick){
-        $request = new DataBaseQuery();
-
-        $query = 'SELECT * FROM t_sickness WHERE sicName=:name';
-
-        $dataArray = array(
-            'name' => $sick
-        );
-
-        return $request->rawQuery($query, $dataArray);
-    }
-
-        /**
-     * Insert new sickness, and return last id
-     *
-     * @param $sick
-     * @return string
-     */
-    private function addSickness($sick){
-        $request = new DataBaseQuery();
-
-        $query = 'INSERT INTO t_sickness (sicName, sicCreateBy) VALUES (:sick, :createBy)';
-
-        $dataArray = array(
-            'sick' => $sick,
-            'createBy' => $_SESSION['user']['id']
-        );
-
-        return $request->insert($query, $dataArray);
     }
 
     /**
@@ -256,6 +240,11 @@ class ClientsRepository {
         $request->insert($query, $dataArray);
     }
 
+    /**
+    * Remove link client <-> sickness
+    *
+    * @param $idClient
+    */
     private function removeIsSick($idClient){
         $request = new DataBaseQuery();
 
@@ -268,6 +257,11 @@ class ClientsRepository {
         $request->delete($query, $dataArray);
     }
 
+    /**
+    * Remove link client <-> medicament
+    *
+    * @param $idClient
+    */
     private function removeTakeMeds($idClient){
         $request = new DataBaseQuery();
 
@@ -280,35 +274,12 @@ class ClientsRepository {
         $request->delete($query, $dataArray);
     }
 
-    private function findMedic($medic){
-        $request = new DataBaseQuery();
-
-        $query = 'SELECT * FROM t_medicament WHERE medName=:name';
-
-        $dataArray = array(
-            'name' => $medic
-        );
-
-        return $request->rawQuery($query, $dataArray);
-    }
-
     /**
-     * @param $medic
-     * @return string
-     */
-    private function addMedicament($medic){
-        $request = new DataBaseQuery();
-
-        $query = 'INSERT INTO t_medicament (medName, medCreateBy) VALUES (:medic, :createBy)';
-
-        $dataArray = array(
-            'medic' => $medic,
-            'createBy' => $_SESSION['user']['id']
-        );
-
-        return $request->insert($query, $dataArray);
-    }
-
+    * Add link client <-> medicament
+    *
+    * @param $idClient
+    * @param $idMedic
+    */
     private function addTakeMedic($idClient, $idMedic){
         $request = new DataBaseQuery();
 
@@ -323,33 +294,14 @@ class ClientsRepository {
     }
 
     /**
-     * Find all sickness in the table
-     *
-     * @return array
-     */
-    public function listSickness(){
-        $query = 'SELECT * FROM t_sickness';
-
-        $request = new DataBaseQuery();
-
-        return $request->rawQuery($query, null);
-    }
-
-    /**
-     * Find all medicaments in the table
-     *
-     * @return array
-     */
-    public function listMedicament(){
-        $query = 'SELECT * FROM t_medicament';
-
-        $request = new DataBaseQuery();
-
-        return $request->rawQuery($query, null);
-    }
-
+    * Update client
+    *
+    * @param $values
+    */
     public function updateClient($values){
         $request = new DataBaseQuery();
+        $medicRepo = new MedicRepository();
+        $sickRepo = new SickRepository();
 
         //Values from $_Post
         $firstname = htmlentities($values['firstname']);
@@ -362,9 +314,7 @@ class ClientsRepository {
         $urgencyPh = htmlentities($values['urgencyPhone']);
         $email = htmlentities($values['email']);
 
-        error_log('lol'.$firstname. " ". $lastname);
         $idClient = $this->findClient($firstname, $lastname)[0]['idClient'];
-        error_log('IDCLIENT'.$idClient);
 
         $query = 'UPDATE t_client SET cliFirstName=:firstname, cliLastName=:lastname, cliMobilePhone=:mobile, cliUrgencyPhone=:urgency, cliEmail=:email, cliStreet=:street, cliStreetNum=:streetnum, cliNPA=:npa, cliCity=:city WHERE idClient=:id';
 
@@ -393,16 +343,7 @@ class ClientsRepository {
             foreach ($values['sickness'] as $item){
                 $sick = htmlentities($item);
 
-                $sickId = $this->findSickness($sick)[0]['idSickness'];
-
-                //$myfile = fopen("testfile.txt", "w");
-                //$txt = implode(",", $sickId[0]);
-                //fwrite($myfile, $sickId);
-
-                //Check if already in db
-                //if ($sickId == null) {
-                //    $sickId = $this->addSickness($sick);
-                //}
+                $sickId = $sickRepo->findSickness($sick)[0]['idSickness'];
 
                 $this->addIsSick($idClient, $sickId);
             }
@@ -413,10 +354,10 @@ class ClientsRepository {
             // New sick name
             $sick = htmlentities($values['otherSick']);
 
-            $sickId = $this->findSickness($sick)[0]['idSickness'];
-            if ($this->findSickness($sick) == null) {
+            $sickId = $sickRepo->findSickness($sick)[0]['idSickness'];
+            if ($sickRepo->findSickness($sick) == null) {
                 // Last id
-                $sickId = $this->addSickness($sick);
+                $sickId = $sickRepo->addSickness($sick);
             }
 
             // Add link client <-> sick
@@ -429,7 +370,7 @@ class ClientsRepository {
             foreach ($values['medicament'] as $item){
                 $medic = htmlentities($item);
 
-                $medicId = $this->findMedic($medic)[0]['idMedicament'];
+                $medicId = $medicRepo->findMedic($medic)[0]['idMedicament'];
                 $this->addTakeMedic($idClient, $medicId);
             }
         }
@@ -439,11 +380,11 @@ class ClientsRepository {
             // New medic name
             $medic = htmlentities($values['otherMed']);
 
-            $medicId = $this->findMedic($medic)[0]['idMedicament'];
+            $medicId = $medicRepo->findMedic($medic)[0]['idMedicament'];
 
-            if ($this->findMedic($medic) == null) {
+            if ($medicRepo->findMedic($medic) == null) {
                 // Last id
-                $medicId = $this->addMedicament($medic);
+                $medicId = $medicRepo->addMedicament($medic);
             }
 
             // Add link client <-> sick
@@ -451,6 +392,12 @@ class ClientsRepository {
         }
     }
 
+    /**
+    * Find client sickness
+    *
+    * @param $idClient
+    *
+    */
     public function findClientSickness($idClient){
         $request = new DataBaseQuery();
 
@@ -463,6 +410,11 @@ class ClientsRepository {
         return $request->rawQuery($query, $dataArray);
     }
 
+    /**
+    * Find client medicament
+    *
+    * @param $idClient
+    */
     public function findClientMedic($idClient){
         $request = new DataBaseQuery();
 

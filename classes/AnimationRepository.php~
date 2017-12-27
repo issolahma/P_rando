@@ -15,6 +15,7 @@ class AnimationRepository {
      * @return array|resource
      */
     public function findAll($post) {
+    	  //From the search input
         $searchValue = htmlentities($post["search"]["value"]);
 
         $query = 'SELECT * FROM t_animation ';

@@ -135,7 +135,7 @@ class AccompanistRepository {
         $query = 'INSERT INTO t_accompanist (accPwd, accFirstName, accLastName, accLogin, accRight, accCreateBy) VALUES (:accPwd, :firstname, :lastname, :accLogin, :accRight, :acccreateBy)';
 error_log('LOL: '.$firstname.' '.$lastname.' '.$right.' '.$login);
         $dataArray = array(
-        		'accPwd' => $pwd,
+        		'accPwd' => md5($pwd),
             'firstname' => $firstname,
             'lastname' => $lastname,
             'accLogin' => $login,
