@@ -15,18 +15,22 @@ class ThemeRepository {
      * @return array|resource
      */
     public function findAll($post) {
+        //From the search input
         $searchValue = htmlentities($post["search"]["value"]);
 
         $query = 'SELECT * FROM t_theme ';
 
 
         if(!empty($post["search"]["value"])){
+            //Make the search on name
             $query .= 'WHERE theName LIKE "%'.$searchValue.'%" ';
         }
 
+        //Order by the chosen column
         if(!empty($post['order'])){
             $orderCol = htmlentities($post['order']['0']['column']); // 0/1/2
 
+            //Convert column number to column name for the sql query
             switch($orderCol) {
                 case 0:
                     $orderCol = 'theName';
@@ -36,12 +40,13 @@ class ThemeRepository {
 
             }
 
+            //Order direction Asc or Desc
             $orderDir = htmlentities($post['order']['0']['dir']);
 
             $query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';
         }
         else{
-            $query .= 'ORDER BY theName ASC ';
+            $query .= 'ORDER BY theName ASC '; //By default order by name asc
         }
 
         if($post["length"] != -1){
@@ -53,7 +58,7 @@ class ThemeRepository {
 
         $request =  new DataBaseQuery();
 
-        return $request->rawQuery($query, null);
+        return $request->rawQuery($query, null); //Null for no dataArray
 
     }
 
@@ -93,35 +98,40 @@ class ThemeRepository {
         return $request->rawQuery($query, $dataArray);
     }
 
-//TODO	
-	public function updateTheme($values) {
-		$request = new DataBaseQuery();
+    /**
+    * Update theme datas
+    *
+    * @param $values
+    * @return
+    */
+    public function updateTheme($values) {
+        $request = new DataBaseQuery();
 
         //Values from $_Post
         $name = htmlentities($values['name']);
 
-        $query = 'UPDATE t_theme SET theName=:name WHERE ';
+        $query = 'UPDATE t_theme SET theName=:name WHERE idTheme:id';
 
         $dataArray = array(
             'name' => $name,
         );
-        
+
         return $request->update($query, $dataArray);
-		}
+    }
 
     public function addTheme($values){
         $request = new DataBaseQuery();
 
         //Values from $_Post
         $name = htmlentities($values['name']);
-		
+
         $query = 'INSERT INTO t_theme (theName, theCreateBy) VALUES (:name, :createBy)';
 
         $dataArray = array(
             'name' => $name,
             'createBy' => $_SESSION['user']['id']
         );
-        
+
         return $request->rawQuery($query, $dataArray);
     }
 

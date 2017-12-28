@@ -84,6 +84,7 @@ class AccompanistController extends Controller
             //Print only active client
             if($row['accActive'] == 1){
                 $sub_array = array();
+                $sub_array[] = $row['idAccompanist'];
                 $sub_array[] = $row["accLastName"];
                 $sub_array[] = $row["accFirstName"];
                 $sub_array[] = $row["accLogin"];
@@ -113,6 +114,7 @@ class AccompanistController extends Controller
             $output["lastname"] = $row["accLastName"];
             $output["accRight"] = $row["accRight"];
             $output["login"] = $row["accLogin"];
+            $output['id'] = $row['idAccompanist'];
         }
 
         echo json_encode($output);

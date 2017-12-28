@@ -12,6 +12,7 @@
         <table id="user_data" class="table table-bordered table-striped">
             <thead>
             <tr>
+                <th width="0%">Id</th>
                 <th width="35%">Nom</th>
                 <th width="35%">Prénom</th>
                 <th width="35%">Ville</th>

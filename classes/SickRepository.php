@@ -124,7 +124,7 @@ class SickRepository {
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $name = htmlentities($values['name']);  
+        $name = htmlentities($values);  
 
         $query = 'INSERT INTO t_sickness (sicName, sicCreateBy) VALUES (:name, :createBy)';
 
@@ -133,6 +133,19 @@ class SickRepository {
             'createBy' => $_SESSION['user']['id']
         );
         
-        return $request->rawQuery($query, $dataArray);
+        return $request->insert($query, $dataArray);
+    }
+    
+    /**
+    * List all sickness
+    *
+    * @return
+    */
+    public function listSickness(){
+        $request = new DataBaseQuery();
+        
+        $query = 'SELECT * FROM t_sickness';
+        
+        return $request->rawQuery($query, null);
     }
 }

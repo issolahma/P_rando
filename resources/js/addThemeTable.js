@@ -16,6 +16,11 @@ $(document).ready(function(){
         },
         "columnDefs":[
             {
+                "targets": [ 0 ],
+                "visible": false,
+                "searchable": false
+            },
+            {
                 "targets":[1, 2],
                 "orderable":false,
             },

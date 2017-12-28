@@ -40,7 +40,7 @@ class MedicRepository {
 
             }
 
-            //Order dirrection Asc or Desc
+            //Order direction Asc or Desc
             $orderDir = htmlentities($post['order']['0']['dir']);
 
             $query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';
@@ -124,7 +124,7 @@ class MedicRepository {
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $name = htmlentities($values['name']);  
+        $name = htmlentities($values);  
 
         $query = 'INSERT INTO t_medicament (medName, medCreateBy) VALUES (:name, :createBy)';
 
@@ -134,5 +134,18 @@ class MedicRepository {
         );
         
         return $request->insert($query, $dataArray);
+    }
+    
+    /**
+    * List all medicaments
+    *
+    * @return
+    */
+    public function listMedicament(){
+        $request = new DataBaseQuery();
+        
+        $query = 'SELECT * FROM t_medicament';
+        
+        return $request->rawQuery($query, null);
     }
 }

@@ -20,6 +20,7 @@
         <table id="user_data" class="table table-bordered table-striped">
             <thead>
             <tr>
+                <th width="0%">Id</th>
                 <th width="35%">Nom</th>
                 <th width="35%">Prénom</th>
                 <th width="35%">Login</th>
@@ -75,6 +76,7 @@
                                 <label>Droit (user=0/admin=1)</label>
                                 <input type="text" id="right" name="right" placeholder="Droit" class="form-control">
                             </div>
+                            <input type="hidden" id='id' name="id">
                         </div>
                     </div>
                 </div>

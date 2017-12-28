@@ -71,10 +71,10 @@ class AnimationController extends Controller
         echo json_encode($output);
     }
 
-	 private function getSeasonId(){
-	 	
-	 }
-	
+    private function getSeasonId(){
+
+    }
+
     /**
      * Get all animations from repo.
      * Also get their theme and season
@@ -83,11 +83,11 @@ class AnimationController extends Controller
     private function listAjaxAction(){
         $animRepo = new AnimationRepository();
         $themeRepo = new ThemeRepository();
-		  $seasonRepo = new SeasonRepository();
-		  $datarepo = new Datarepository();        
-        
+        $seasonRepo = new SeasonRepository();
+        $datarepo = new Datarepository();        
+
         $listAnimations = $animRepo->findAll($_POST);
-			
+
         $filtered_rows = count($listAnimations); //->rowCount();
         //TODO $allRecords = $listAnimations->rowCount();
 
@@ -98,8 +98,8 @@ class AnimationController extends Controller
                 $sub_array = array();
                 $sub_array[] = $row["idAnimation"];
                 $sub_array[] = $row["aniName"];
-					 $sub_array[] = implode(',',$this->getAllTheme($row['idAnimation'])); //theme
-					 $sub_array[] = implode(',',$this->getAllSeason($row['idAnimation'])); //season
+                $sub_array[] = implode(',',$this->getAllTheme($row['idAnimation'])); //theme
+                $sub_array[] = implode(',',$this->getAllSeason($row['idAnimation'])); //season
                 $sub_array[] = '<button type="button" name="update" id="' . $row["idAnimation"] . '" class="btn btn-warning btn-xs update">Modifier</button>';
                 $sub_array[] = '<button type="button" name="delete" id="' . $row["idAnimation"] . '" class="btn btn-danger btn-xs delete">Supprimer</button>';
                 $data[] = $sub_array;
@@ -115,35 +115,35 @@ class AnimationController extends Controller
         echo json_encode($output);
     }
 
-	private function getAllTheme($idAnim) {
+    private function getAllTheme($idAnim) {
         $themeRepo = new ThemeRepository();
-		  $datarepo = new Datarepository(); 		
-				
-		$themesIds = $datarepo->themeAnim($idAnim);
-		
-		$themeList = array();
-		foreach($themesIds as $ids){
-			$themeList[] = $themeRepo->findOne($ids['idTheme'])[0]['theName'].' ';
-			error_log('THEME-LIST: '.$themeList);
-		}
-		
-		return $themeList;
-	}
+        $datarepo = new Datarepository(); 		
 
-	private function getAllSeason($idAnim) {
+        $themesIds = $datarepo->themeAnim($idAnim);
+
+        $themeList = array();
+        foreach($themesIds as $ids){
+            $themeList[] = $themeRepo->findOne($ids['idTheme'])[0]['theName'].' ';
+            error_log('THEME-LIST: '.$themeList);
+        }
+
+        return $themeList;
+    }
+
+    private function getAllSeason($idAnim) {
         $seasonRepo = new SeasonRepository();
-		  $datarepo = new Datarepository(); 		
-				
-		$seasonIds = $datarepo->seasonanim($idAnim);
-		
-		$seasonList = array();
-		foreach($seasonIds as $ids){
-			$seasonList[] = $seasonRepo->findOne($ids['idSeason'])[0]['seaName'].' ';
-			error_log('THEME-LIST: '.$seasonList);
-		}
-		
-		return $seasonList;
-	}
+        $datarepo = new Datarepository(); 		
+
+        $seasonIds = $datarepo->seasonanim($idAnim);
+
+        $seasonList = array();
+        foreach($seasonIds as $ids){
+            $seasonList[] = $seasonRepo->findOne($ids['idSeason'])[0]['seaName'].' ';
+            error_log('THEME-LIST: '.$seasonList);
+        }
+
+        return $seasonList;
+    }
 
     private function updateAjaxAction(){
 

@@ -117,13 +117,16 @@ class AccompanistRepository {
         $lastname = htmlentities($values['lastname']);
         $right = htmlentities($values['right']);
         $login = htmlentities($values['login']);
+        $id = htmlentities($values['id']);
 
-        $query = 'UPDATE t_accompanist SET (accFirstName, accLastName, accRight, accCreateBy) VALUES (:firstname, :lastname, :accRight, :accCreateBy)';
+        $query = 'UPDATE t_accompanist SET accFirstName=:firstname, accLastName=:lastname, accLogin=:login, accRight=:accRight, accCreateBy=:accCreateBy WHERE idAccompanist=:id';
 
         $dataArray = array(
             'firstname' => $firstname,
             'lastname' => $lastname,
             'accRight' => $right,
+            'login' => $login,
+            'id' => $id,
             'accCreateBy' => $_SESSION['user']['id']
         );
 

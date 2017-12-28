@@ -15,7 +15,7 @@ $(document).ready(function(){
             type:"POST"
         },
         "columnDefs":[
-        		{
+            {
                 "targets": [ 0 ],
                 "visible": false,
                 "searchable": false
@@ -33,8 +33,8 @@ $(document).ready(function(){
         var firstName = $('#firstname').val();
         var lastName = $('#lastname').val();
         var accRight = $('#right').val();
-		  var login = $('#login').val();
-		  var pwd = $('#password').val();
+        var login = $('#login').val();
+        var pwd = $('#password').val();
 
         if(firstName != '' && lastName != '' && accRight != '' && login != '')
         {

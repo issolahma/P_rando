@@ -20,6 +20,7 @@
         <table id="user_data" class="table table-bordered table-striped">
             <thead>
             <tr>
+                <th width="0%">Id</th>
                 <th width="35%">Saisons</th>
                 <th width="10%">Editer</th>
                 <th width="10%">Supprimer</th>

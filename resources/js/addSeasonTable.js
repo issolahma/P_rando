@@ -16,6 +16,11 @@ $(document).ready(function(){
         },
         "columnDefs":[
             {
+                "targets": [ 0 ],
+                "visible": false,
+                "searchable": false
+            },
+            {
                 "targets":[3, 4],
                 "orderable":false,
             },
@@ -28,8 +33,8 @@ $(document).ready(function(){
         var firstName = $('#firstname').val();
         var lastName = $('#lastname').val();
         var accRight = $('#right').val();
-		  var login = $('#login').val();
-		  var pwd = $('#password').val();
+        var login = $('#login').val();
+        var pwd = $('#password').val();
 
         if(firstName != '' && lastName != '' && accRight != '' && login != '')
         {

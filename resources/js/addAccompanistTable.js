@@ -16,6 +16,11 @@ $(document).ready(function(){
         },
         "columnDefs":[
             {
+                "targets": [ 0 ],
+                "visible": false,
+                "searchable": false
+            },
+            {
                 "targets":[3, 4],
                 "orderable":false,
             },
@@ -28,8 +33,8 @@ $(document).ready(function(){
         var firstName = $('#firstname').val();
         var lastName = $('#lastname').val();
         var accRight = $('#right').val();
-		  var login = $('#login').val();
-		  var pwd = $('#password').val();
+        var login = $('#login').val();
+        var pwd = $('#password').val();
 
         if(firstName != '' && lastName != '' && accRight != '' && login != '')
         {
@@ -41,6 +46,7 @@ $(document).ready(function(){
                 processData:false,
                 success:function(data)
                 {
+                    $('#accPwd').show();
                     alert(data);
                     $('#user_form')[0].reset();
                     $('#userModal').modal('hide');
@@ -68,6 +74,7 @@ $(document).ready(function(){
                 $('#lastname').val(data.lastname);
                 $('#right').val(data.accRight);
                 $('#login').val(data.login);
+                $('#id').val(data.id);
                 $('#accPwd').hide();
 
                 $('.modal-title').text("Modifier cet accompagnateur");

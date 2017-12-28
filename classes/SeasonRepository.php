@@ -15,18 +15,22 @@ class SeasonRepository {
      * @return array|resource
      */
     public function findAll($post) {
+        //From the search input
         $searchValue = htmlentities($post["search"]["value"]);
 
         $query = 'SELECT * FROM t_season ';
 
 
         if(!empty($post["search"]["value"])){
+            //Make the search on name
             $query .= 'WHERE seaName LIKE "%'.$searchValue.'%" ';
         }
 
+        //Order by the chosen column
         if(!empty($post['order'])){
-            $orderCol = htmlentities($post['order']['0']['column']); // 0/1/2
+            $orderCol = htmlentities($post['order']['0']['column']); //Column number
 
+            //Convert column number to column name for the sql query
             switch($orderCol) {
                 case 0:
                     $orderCol = 'seaName';
@@ -36,12 +40,13 @@ class SeasonRepository {
 
             }
 
+            //Order dirrection Asc or Desc
             $orderDir = htmlentities($post['order']['0']['dir']);
 
             $query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';
         }
         else{
-            $query .= 'ORDER BY seaName ASC ';
+            $query .= 'ORDER BY seaName ASC '; //By default order by name asc
         }
 
         if($post["length"] != -1){
@@ -53,7 +58,7 @@ class SeasonRepository {
 
         $request =  new DataBaseQuery();
 
-        return $request->rawQuery($query, null);
+        return $request->rawQuery($query, null); //Null for no dataArray
 
     }
 
@@ -93,9 +98,14 @@ class SeasonRepository {
         return $request->rawQuery($query, $dataArray);
     }
 
-//TODO	
-	public function updateSeason($values) {
-		$request = new DataBaseQuery();
+    /**
+    * update season datas
+    *
+    * @param $values
+    * @return
+    */
+    public function updateSeason($values) {
+        $request = new DataBaseQuery();
 
         //Values from $_Post
         $name = htmlentities($values['name']);
@@ -105,36 +115,40 @@ class SeasonRepository {
         $dataArray = array(
             'name' => $name
         );
-        
-        return $request->update($query, $dataArray);
-		}
 
+        return $request->update($query, $dataArray);
+    }
+
+    /**
+    * Add a new season
+    *
+    * @param $values
+    * @return
+    */
     public function addSeason($values){
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $firstname = htmlentities($values['firstname']);
-        $lastname = htmlentities($values['lastname']);
-        $right = htmlentities($values['right']);
-			$login = htmlentities($values['login']);
-			$pwd = htmlentities($values['password']);
-			
-        $query = 'INSERT INTO t_season (accPwd, accFirstName, accLastName, accLogin, accRight, accCreateBy) VALUES (:accPwd, :firstname, :lastname, :accLogin, :accRight, :acccreateBy)';
-error_log('LOL: '.$firstname.' '.$lastname.' '.$right.' '.$login);
-        $dataArray = array(
-        		'accPwd' => md5($pwd),
-            'firstname' => $firstname,
-            'lastname' => $lastname,
-            'accLogin' => $login,
-            'accRight' => $right,
-            'acccreateBy' => $_SESSION['user']['id']
-        );
+        $name = htmlentities($values['name']);
         
+        $query = 'INSERT INTO t_season (seaName, seaCreateBy) VALUES (:name, :createBy)';
+        error_log('LOL: '.$firstname.' '.$lastname.' '.$right.' '.$login);
+        $dataArray = array(
+            'name' => $name,
+            'createBy' => $_SESSION['user']['id']
+        );
+
         return $request->rawQuery($query, $dataArray);
     }
 
+    /**
+    * Hide season instead of deleting it
+    *
+    * @param $id
+    * @return
+    */
     public function hideOne($id){
-        $query = 'UPDATE t_season SET accActive=0 WHERE idClient=:id';
+        $query = 'UPDATE t_season SET accActive=0 WHERE idSeason=:id';
 
         $dataArray = array(
             'id' => $id

@@ -5,6 +5,8 @@
  * Shop
  */
 include_once 'classes/ClientsRepository.php';
+include_once 'classes/MedicRepository.php';
+include_once 'classes/SickRepository.php';
 
 class ClientsController extends Controller
 {
@@ -30,8 +32,11 @@ class ClientsController extends Controller
     private function showAction()
     {
         $clientRepo = new ClientsRepository();
-        $medicList = $clientRepo->listMedicament();
-        $sickList = $clientRepo->listSickness();
+        $medicRepo = new MedicRepository();
+        $sickRepo = new SickRepository();
+        
+        $medicList = $medicRepo->listMedicament();
+        $sickList = $sickRepo->listSickness();
 
         $view = file_get_contents('view/pages/addData/addClient.php');
 
@@ -78,19 +83,20 @@ class ClientsController extends Controller
         $listClients = $clientRepo->findAll($_POST);
 
         $filtered_rows = count($listClients); //->rowCount();
-			//TODO $allRecords = $listClients->rowCount();			
+        //TODO $allRecords = $listClients->rowCount();			
 
         $data = array();
         foreach ($listClients as $row) {
-        	//Print only active client
-        	if($row['cliActive'] == 1){
-            $sub_array = array();
-            $sub_array[] = $row["cliLastName"];
-            $sub_array[] = $row["cliFirstName"];
-            $sub_array[] = $row["cliCity"];                    
-            $sub_array[] = '<button type="button" name="update" id="' . $row["idClient"] . '" class="btn btn-warning btn-xs update">Modifier</button>';
-            $sub_array[] = '<button type="button" name="delete" id="' . $row["idClient"] . '" class="btn btn-danger btn-xs delete">Supprimer</button>';
-            $data[] = $sub_array;
+            //Print only active client
+            if($row['cliActive'] == 1){
+                $sub_array = array();
+                $sub_array[] = $row["idClient"];
+                $sub_array[] = $row["cliLastName"];
+                $sub_array[] = $row["cliFirstName"];
+                $sub_array[] = $row["cliCity"];                    
+                $sub_array[] = '<button type="button" name="update" id="' . $row["idClient"] . '" class="btn btn-warning btn-xs update">Modifier</button>';
+                $sub_array[] = '<button type="button" name="delete" id="' . $row["idClient"] . '" class="btn btn-danger btn-xs delete">Supprimer</button>';
+                $data[] = $sub_array;
             }
         }
         $output = array(
@@ -103,33 +109,33 @@ class ClientsController extends Controller
         echo json_encode($output);
     }
 
-	private function updateAjaxAction(){
+    private function updateAjaxAction(){
 
-		$clientRepo = new ClientsRepository();
-		$client = $clientRepo->findOne($_POST['user_id']);
-		$sickness = $clientRepo->findClientSickness($_POST['user_id']);
+        $clientRepo = new ClientsRepository();
+        $client = $clientRepo->findOne($_POST['user_id']);
+        $sickness = $clientRepo->findClientSickness($_POST['user_id']);
         $medicament = $clientRepo->findClientMedic($_POST['user_id']);
 
         $output["sickness"] = $sickness;
         $output["medicament"] = $medicament;
 
-		foreach ($client as $row){
-			$output["firstname"] = $row["cliFirstName"];
-			$output["lastname"] = $row["cliLastName"];
-			$output["city"] = $row["cliCity"];
-			$output["email"] = $row["cliEmail"];
-			$output["cliPhone"] = $row["cliMobilePhone"];
-			$output["npa"] = $row["cliNPA"];	
-			$output["street"] = $row["cliStreet"];
-			$output["streetNb"] = $row["cliStreetNum"];
-			$output["urgencyPhone"] = $row["cliUrgencyPhone"];	
-		}
-		
-		echo json_encode($output);
-	}
-	
-	private function deleteAjaxAction(){
-		$clientRepo = new ClientsRepository();
-		$client = $clientRepo->hideOne($_POST['user_id']);
-	}
+        foreach ($client as $row){
+            $output["firstname"] = $row["cliFirstName"];
+            $output["lastname"] = $row["cliLastName"];
+            $output["city"] = $row["cliCity"];
+            $output["email"] = $row["cliEmail"];
+            $output["cliPhone"] = $row["cliMobilePhone"];
+            $output["npa"] = $row["cliNPA"];	
+            $output["street"] = $row["cliStreet"];
+            $output["streetNb"] = $row["cliStreetNum"];
+            $output["urgencyPhone"] = $row["cliUrgencyPhone"];	
+        }
+
+        echo json_encode($output);
+    }
+
+    private function deleteAjaxAction(){
+        $clientRepo = new ClientsRepository();
+        $client = $clientRepo->hideOne($_POST['user_id']);
+    }
 }
