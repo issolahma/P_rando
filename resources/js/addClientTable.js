@@ -1,3 +1,8 @@
+// Author: Maude Issolah
+// Place: ETML Lausanne
+// Last update: 08.01.2018
+// Subject: Ajax code to manage client table
+
 $(document).ready(function(){
     $('#add_button').click(function(){
         $('#user_form')[0].reset();
@@ -6,6 +11,7 @@ $(document).ready(function(){
         $('#operation').val("Add");
     });
 
+    // Create table
     var dataTable = $('#user_data').DataTable({
         "processing":true,
         "serverSide":true,
@@ -17,7 +23,7 @@ $(document).ready(function(){
         "columnDefs":[
             {
                 "targets": [ 0 ],
-                "visible": false,
+                "visible": false, // Hide col 0
                 "searchable": false
             },
             {
@@ -28,6 +34,7 @@ $(document).ready(function(){
 
     });
 
+    // Submit button
     $(document).on('submit', '#user_form', function(event){
         event.preventDefault();
         var firstName = $('#firstname').val();
@@ -63,12 +70,13 @@ $(document).ready(function(){
         }
     });
 
+    // Update button
     $(document).on('click', '.update', function(){
-        var user_id = $(this).attr("id");
+        var client_id = $(this).attr("id");
         $.ajax({
             url:"index.php?controller=client&action=updateAjax&boolAjax=true",
             method:"POST",
-            data:{user_id:user_id},
+            data:{client_id:client_id},
             dataType:"json",
             success:function(data)
             {
@@ -83,6 +91,7 @@ $(document).ready(function(){
                 $('#streetNb').val(data.streetNb);
                 $('#urgencyPhone').val(data.urgencyPhone);
 
+                // Sickness checkboxes
                 var idSickChecked = "#sickness";
                 var resultSick = "";
 
@@ -91,6 +100,7 @@ $(document).ready(function(){
                     $(resultSick).val(data.sickness[i]['sicName']).prop('checked', true);
                 }
 
+                // Medicament checkboxes
                 var idMedChecked = "#medicament";
                 var resultMed = "";
 
@@ -101,21 +111,22 @@ $(document).ready(function(){
                 }
 
                 $('.modal-title').text("Modifier ce client");
-                $('#user_id').val(user_id);
+                $('#client_id').val(client_id);
                 $('#action').val("Editer");
                 $('#operation').val("Edit");
             }
         })
     });
 
+    // Delete button
     $(document).on('click', '.delete', function(){
-        var user_id = $(this).attr("id");
+        var client_id = $(this).attr("id");
         if(confirm("Are you sure you want to delete this?"))
         {
             $.ajax({
                 url:"index.php?controller=client&action=deleteAjax&boolAjax=true",
                 method:"POST",
-                data:{user_id:user_id},
+                data:{client_id:client_id},
                 success:function(data)
                 {
                     alert(data);

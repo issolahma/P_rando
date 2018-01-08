@@ -1,8 +1,8 @@
 <?php
 /**
- * ETML
- * Date: 01.06.2017
- * Shop
+ * Author: Maude Issolah
+ * Place: ETML
+ * Last update: 08.01.2018
  */
 
 include_once 'database/DataBaseQuery.php';
@@ -12,7 +12,7 @@ include_once 'classes/SickRepository.php';
 class ClientsRepository {
 
     /**
-     * Find all entries for the list
+     * Query to find all clients datas
      *
      * @return array|resource
      */
@@ -49,7 +49,7 @@ class ClientsRepository {
 
             }
 
-            //Order dirrection Asc or Desc
+            //Order direction Asc or Desc
             $orderDir = htmlentities($post['order']['0']['dir']);
 
             $query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';
@@ -110,7 +110,7 @@ class ClientsRepository {
     /*
 	* Hidde client instead of deleting it
 	*
-	* @param $id of the cllient
+	* @param $id of the client
 	* @return
 	*/
     public function hideOne($id){
@@ -126,7 +126,7 @@ class ClientsRepository {
 
 
     /*
-	* add new client
+	* Add new client, and his sickness and medicament
 	*
 	* @param $values
 	* @return
@@ -294,7 +294,7 @@ class ClientsRepository {
     }
 
     /**
-    * Update client
+    * Update one client
     *
     * @param $values
     */
@@ -313,8 +313,7 @@ class ClientsRepository {
         $phone = htmlentities($values['cliPhone']);
         $urgencyPh = htmlentities($values['urgencyPhone']);
         $email = htmlentities($values['email']);
-
-        $idClient = $this->findClient($firstname, $lastname)[0]['idClient'];
+        $idClient = htmlentities($values['client_id']);
 
         $query = 'UPDATE t_client SET cliFirstName=:firstname, cliLastName=:lastname, cliMobilePhone=:mobile, cliUrgencyPhone=:urgency, cliEmail=:email, cliStreet=:street, cliStreetNum=:streetnum, cliNPA=:npa, cliCity=:city WHERE idClient=:id';
 

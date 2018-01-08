@@ -1,9 +1,10 @@
 <?php
 /**
- * ETML
- * Date: 01.06.2017
- * Shop
+ * Author: Maude Issolah
+ * Place: ETML
+ * Last update: 08.01.2018
  */
+
 include_once 'classes/ClientsRepository.php';
 include_once 'classes/MedicRepository.php';
 include_once 'classes/SickRepository.php';
@@ -25,7 +26,7 @@ class ClientsController extends Controller
     }
 
     /**
-     * Display Index Action
+     * Display client page
      *
      * @return string
      */
@@ -34,7 +35,8 @@ class ClientsController extends Controller
         $clientRepo = new ClientsRepository();
         $medicRepo = new MedicRepository();
         $sickRepo = new SickRepository();
-        
+
+        //List of medicament and sickness from db
         $medicList = $medicRepo->listMedicament();
         $sickList = $sickRepo->listSickness();
 
@@ -55,6 +57,7 @@ class ClientsController extends Controller
         $clientRepo = new ClientsRepository();
         $output = null; //TODO
 
+        // Add a new client
         if ($_POST['operation'] == 'Add') {
             //Check if client exist
             if ($clientRepo->findClient(htmlentities($_POST['firstname']), htmlentities($_POST['lastname'])) == null) {
@@ -63,6 +66,7 @@ class ClientsController extends Controller
             } else {
                 $output['error_msg'] = 'Un client avec les mêmes nom et prénom est déjà présent dans la base de donnée'; //TODO utf8
             }
+        // update a new client
         }elseif ($_POST['operation'] == 'Edit'){
             $clientRepo->updateClient($_POST);
         }
@@ -75,8 +79,8 @@ class ClientsController extends Controller
     }
 
     /**
-     *
-     *
+     * Get the clients data to create the table
+     * ajax -> json
      */
     private function listAjaxAction(){
         $clientRepo = new ClientsRepository();
@@ -109,17 +113,28 @@ class ClientsController extends Controller
         echo json_encode($output);
     }
 
+    /**
+     * Get the client data, and link them to the input update modal form
+     */
     private function updateAjaxAction(){
 
         $clientRepo = new ClientsRepository();
-        $client = $clientRepo->findOne($_POST['user_id']);
-        $sickness = $clientRepo->findClientSickness($_POST['user_id']);
-        $medicament = $clientRepo->findClientMedic($_POST['user_id']);
 
+        // Find the client
+        $client = $clientRepo->findOne($_POST['client_id']);
+
+        // Find his sickness
+        $sickness = $clientRepo->findClientSickness($_POST['client_id']);
+
+        //Find his medicament
+        $medicament = $clientRepo->findClientMedic($_POST['client_id']);
+
+        // Array with client data
         $output["sickness"] = $sickness;
         $output["medicament"] = $medicament;
 
         foreach ($client as $row){
+            $output["client_id"] = $row["idClient"];
             $output["firstname"] = $row["cliFirstName"];
             $output["lastname"] = $row["cliLastName"];
             $output["city"] = $row["cliCity"];
@@ -134,8 +149,11 @@ class ClientsController extends Controller
         echo json_encode($output);
     }
 
+    /**
+     * Delete client (in fact, set inactive)
+     */
     private function deleteAjaxAction(){
         $clientRepo = new ClientsRepository();
-        $client = $clientRepo->hideOne($_POST['user_id']);
+        $client = $clientRepo->hideOne($_POST['client_id']);
     }
 }

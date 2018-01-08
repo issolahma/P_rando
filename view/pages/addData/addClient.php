@@ -1,3 +1,9 @@
+<!-- Author: Maude Issolah
+<!-- Place: ETML Lausanne
+<!-- Last update: 08.01.2018
+<!-- Subject: View to add client
+-->
+
 <div class="container box">
     <div class="table-responsive">
         <div class="box-header">
@@ -9,10 +15,11 @@
             </button>
         </div>
         <br/>
+        <!-- Client table -->
         <table id="user_data" class="table table-bordered table-striped">
             <thead>
             <tr>
-                <th width="0%">Id</th>
+                <th width="0%">Id</th> <!-- Hidden col -->
                 <th width="35%">Nom</th>
                 <th width="35%">Prénom</th>
                 <th width="35%">Ville</th>
@@ -28,7 +35,9 @@
 <?php
 
 ?>
+<!--/DEBUG-->
 
+<!-- Client pop-up (update and add) -->
 <div id="userModal" class="modal fade">
     <div class="modal-dialog">
         <form action="index.php?controller=client&action=formAjax" method="post" id="user_form"
@@ -60,6 +69,8 @@
                                 <label>Rue</label>
                                 <input type="text" id="street" name="street" placeholder="Rue" class="form-control">
                             </div>
+                            <!-- hidden id -->
+                            <input type="hidden" name="client_id" id="client_id">
                             <div class="col-sm-6 form-group">
                                 <label>N°</label>
                                 <input type="text" id="streetNb" name="streetNb" placeholder="N°" class="form-control">

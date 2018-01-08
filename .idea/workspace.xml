@@ -4,7 +4,14 @@
     <bookmark url="file://$PROJECT_DIR$/resources/js/addClientTable.js" line="81" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf3f8230-bdee-473e-9c6a-dc8e822117a6" name="Default" comment="" />
+    <list default="true" id="cf3f8230-bdee-473e-9c6a-dc8e822117a6" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pages/addData/Nouveau fichier" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/ClientsRepository.php" afterPath="$PROJECT_DIR$/classes/ClientsRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/ClientsController.php" afterPath="$PROJECT_DIR$/controller/ClientsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/js/addClientTable.js" afterPath="$PROJECT_DIR$/resources/js/addClientTable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/pages/addData/addClient.php" afterPath="$PROJECT_DIR$/view/pages/addData/addClient.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,109 +25,45 @@
       <file leaf-file-name="addClientTable.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/addClientTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccompanistRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/AccompanistRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="639">
-              <caret line="116" column="32" lean-forward="false" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
+            <state relative-caret-position="597">
+              <caret line="109" column="9" lean-forward="false" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
               <folding>
-                <marker date="1512573574641" expanded="true" signature="376:403" ph="SELECT * FRO... t_accompanist" />
-                <marker date="1512573574641" expanded="true" signature="1857:1940" ph="SELECT * FRO... t_accompanist" />
-                <marker date="1512573574641" expanded="true" signature="2311:2370" ph="SELECT * FRO... t_accompanist" />
-                <marker date="1512573574641" expanded="true" signature="2835:2967" ph="INSERT INTO t_accompanist... " />
-                <marker date="1512573574641" expanded="true" signature="3232:3287" ph="UPDATE t_acc... " />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientsRepository.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ClientsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/ClientsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="3" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientsRepository.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classes/ClientsRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="142" column="29" lean-forward="true" selection-start-line="142" selection-start-column="29" selection-end-line="142" selection-end-column="29" />
+            <state relative-caret-position="-1528">
+              <caret line="296" column="17" lean-forward="false" selection-start-line="296" selection-start-column="17" selection-end-line="296" selection-end-column="17" />
               <folding>
-                <marker date="1512570097500" expanded="true" signature="332:354" ph="SELECT * FRO... t_client" />
-                <marker date="1512570097500" expanded="true" signature="1642:1720" ph="SELECT * FRO... t_client" />
-                <marker date="1512570097500" expanded="true" signature="2086:2135" ph="SELECT * FRO... t_client" />
-                <marker date="1512570097500" expanded="true" signature="2363:2413" ph="UPDATE t_cli... " />
-                <marker date="1512570097500" expanded="true" signature="3274:3525" ph="INSERT INTO t_client... " />
-                <marker date="1512570097500" expanded="true" signature="5811:5855" ph="SELECT * FRO... t_sickness" />
-                <marker date="1512570097500" expanded="true" signature="6205:6276" ph="INSERT INTO t_sickness... " />
-                <marker date="1512570097500" expanded="true" signature="6675:6742" ph="INSERT INTO t_issick... " />
-                <marker date="1512570097500" expanded="true" signature="7010:7049" ph="DELETE FROM " />
-                <marker date="1512570097500" expanded="true" signature="7283:7324" ph="DELETE FROM " />
-                <marker date="1512570097500" expanded="true" signature="7550:7596" ph="SELECT * FRO... t_sickness" />
-                <marker date="1512570097500" expanded="true" signature="7893:7967" ph="INSERT INTO t_medicament... " />
-                <marker date="1512570097500" expanded="true" signature="8267:8339" ph="INSERT INTO t_takemeds... " />
-                <marker date="1512570097500" expanded="true" signature="8640:8664" ph="SELECT * FRO... t_sickness" />
-                <marker date="1512570097500" expanded="true" signature="8906:8932" ph="SELECT * FRO... t_medicament" />
-                <marker date="1512570097500" expanded="true" signature="9808:10032" ph="UPDATE t_cli... " />
-                <marker date="1512570097500" expanded="true" signature="9814:10013" ph="INSERT INTO t_client... " />
-                <marker date="1512570097500" expanded="true" signature="12706:12802" ph="SELECT sicNa... t_sickness" />
-                <marker date="1512570097500" expanded="true" signature="13045:13145" ph="SELECT medNa... t_medicament" />
+                <element signature="e#6#80#0#PHP" expanded="true" />
+                <marker date="1515400205453" expanded="true" signature="483:505" ph="SELECT * FRO... t_client" />
+                <marker date="1515400205453" expanded="true" signature="2286:2364" ph="SELECT * FRO... t_client" />
+                <marker date="1515400205453" expanded="true" signature="2730:2779" ph="SELECT * FRO... t_client" />
+                <marker date="1515400205453" expanded="true" signature="3098:3148" ph="UPDATE t_cli... " />
+                <marker date="1515400205453" expanded="true" signature="4099:4350" ph="INSERT INTO t_client... " />
+                <marker date="1515400205453" expanded="true" signature="6787:6854" ph="INSERT INTO t_issick... " />
+                <marker date="1515400205453" expanded="true" signature="7204:7243" ph="DELETE FROM " />
+                <marker date="1515400205453" expanded="true" signature="7561:7602" ph="DELETE FROM " />
+                <marker date="1515400205453" expanded="true" signature="7947:8019" ph="INSERT INTO t_takemeds... " />
+                <marker date="1515400205453" expanded="true" signature="8995:9219" ph="UPDATE t_cli... " />
+                <marker date="1515400205453" expanded="true" signature="11692:11788" ph="SELECT * FRO... t_sickness" />
+                <marker date="1515400205453" expanded="true" signature="12104:12204" ph="SELECT * FRO... t_medicament" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccompanistController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/AccompanistController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="55" column="40" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="40" />
-              <folding>
-                <element signature="e#6#91#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addAccompanist.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/pages/addData/addAccompanist.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="66" column="89" lean-forward="false" selection-start-line="66" selection-start-column="89" selection-end-line="66" selection-end-column="89" />
-              <folding>
-                <element signature="e#6#91#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="77" column="129" lean-forward="false" selection-start-line="77" selection-start-column="129" selection-end-line="77" selection-end-column="129" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataBaseQuery.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/DataBaseQuery.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="67" column="34" lean-forward="false" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addAccompanistTable.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/js/addAccompanistTable.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="64" column="52" lean-forward="true" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -150,11 +93,20 @@
       <find>$client</find>
       <find>addAccompanist</find>
       <find>client</find>
+      <find>user_id</find>
+      <find>//</find>
+      <find>findClient</find>
+      <find>updateClient</find>
     </findStrings>
     <replaceStrings>
       <replace>$accompanist</replace>
       <replace>accompanist</replace>
+      <replace>&lt;!--</replace>
+      <replace>client_id</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -162,19 +114,19 @@
         <option value="$PROJECT_DIR$/controller/AddDataController.php" />
         <option value="$PROJECT_DIR$/resources/css/global.css" />
         <option value="$PROJECT_DIR$/view/head.html" />
-        <option value="$PROJECT_DIR$/view/pages/addData/addClient.php" />
         <option value="$PROJECT_DIR$/view/pages/addData/formSickness.php" />
-        <option value="$PROJECT_DIR$/resources/js/addClientTable.js" />
         <option value="$PROJECT_DIR$/view/pages/addData/formMedicament.php" />
         <option value="$PROJECT_DIR$/database/DataBaseQuery.php" />
-        <option value="$PROJECT_DIR$/classes/ClientsRepository.php" />
-        <option value="$PROJECT_DIR$/controller/ClientsController.php" />
         <option value="$PROJECT_DIR$/controller/AccompanistController.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/view/header.php" />
         <option value="$PROJECT_DIR$/view/pages/addData/addAccompanist.php" />
         <option value="$PROJECT_DIR$/classes/AccompanistRepository.php" />
         <option value="$PROJECT_DIR$/resources/js/addAccompanistTable.js" />
+        <option value="$PROJECT_DIR$/view/pages/addData/addClient.php" />
+        <option value="$PROJECT_DIR$/controller/ClientsController.php" />
+        <option value="$PROJECT_DIR$/resources/js/addClientTable.js" />
+        <option value="$PROJECT_DIR$/classes/ClientsRepository.php" />
       </list>
     </option>
   </component>
@@ -213,7 +165,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="P_rando_final_homeBIS">
+            <PATH_ELEMENT USER_OBJECT="P_rando">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -223,7 +175,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="P_rando_final_homeBIS">
+            <PATH_ELEMENT USER_OBJECT="P_rando">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -237,7 +189,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="P_rando_final_homeBIS">
+            <PATH_ELEMENT USER_OBJECT="P_rando">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -255,7 +207,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="P_rando_final_homeBIS">
+            <PATH_ELEMENT USER_OBJECT="P_rando">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -268,66 +220,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="addData">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="P_rando_final_homeBIS">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="P_rando_final_homeBIS">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="P_rando_final_homeBIS">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="controller">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="P_rando_final_homeBIS">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="classes">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -551,21 +443,22 @@
       <workItem from="1511353306756" duration="9739000" />
       <workItem from="1511957676962" duration="11634000" />
       <workItem from="1512563685385" duration="9021000" />
+      <workItem from="1515395626507" duration="5436000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39820000" />
+    <option name="totallyTimeSpent" value="45256000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12041565" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15770172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -575,7 +468,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -590,21 +482,47 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/classes/ClientsRepository.php</url>
-          <line>365</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/database/DataBaseQuery.php</url>
           <line>95</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/controller/ClientsController.php</url>
+          <line>70</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/classes/ClientsRepository.php</url>
+          <line>315</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/controller/ClientsController.php</url>
+          <line>136</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/database/DataBaseQuery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="67" column="34" lean-forward="false" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/addAccompanistTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="64" column="16" lean-forward="true" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/view/pages/addData/addClient.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -625,7 +543,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -674,25 +591,19 @@
         <state relative-caret-position="7310">
           <caret line="434" column="71" lean-forward="false" selection-start-line="434" selection-start-column="71" selection-end-line="434" selection-end-column="71" />
           <folding>
-            <marker date="1512570097500" expanded="true" signature="332:354" ph="SELECT * FRO... t_client" />
-            <marker date="1512570097500" expanded="true" signature="1642:1720" ph="SELECT * FRO... t_client" />
-            <marker date="1512570097500" expanded="true" signature="2086:2135" ph="SELECT * FRO... t_client" />
-            <marker date="1512570097500" expanded="true" signature="2363:2413" ph="UPDATE t_cli... " />
-            <marker date="1512570097500" expanded="true" signature="3274:3525" ph="INSERT INTO t_client... " />
-            <marker date="1512570097500" expanded="true" signature="5811:5855" ph="SELECT * FRO... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="6205:6276" ph="INSERT INTO t_sickness... " />
-            <marker date="1512570097500" expanded="true" signature="6675:6742" ph="INSERT INTO t_issick... " />
-            <marker date="1512570097500" expanded="true" signature="7010:7049" ph="DELETE FROM " />
-            <marker date="1512570097500" expanded="true" signature="7283:7324" ph="DELETE FROM " />
-            <marker date="1512570097500" expanded="true" signature="7550:7596" ph="SELECT * FRO... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="7893:7967" ph="INSERT INTO t_medicament... " />
-            <marker date="1512570097500" expanded="true" signature="8267:8339" ph="INSERT INTO t_takemeds... " />
-            <marker date="1512570097500" expanded="true" signature="8640:8664" ph="SELECT * FRO... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="8906:8932" ph="SELECT * FRO... t_medicament" />
-            <marker date="1512570097500" expanded="true" signature="9808:10032" ph="UPDATE t_cli... " />
-            <marker date="1512570097500" expanded="true" signature="9814:10013" ph="INSERT INTO t_client... " />
-            <marker date="1512570097500" expanded="true" signature="12706:12802" ph="SELECT sicNa... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="13045:13145" ph="SELECT medNa... t_medicament" />
+            <element signature="e#6#80#0#PHP" expanded="true" />
+            <marker date="1515400205453" expanded="true" signature="483:505" ph="SELECT * FRO... t_client" />
+            <marker date="1515400205453" expanded="true" signature="2286:2364" ph="SELECT * FRO... t_client" />
+            <marker date="1515400205453" expanded="true" signature="2730:2779" ph="SELECT * FRO... t_client" />
+            <marker date="1515400205453" expanded="true" signature="3098:3148" ph="UPDATE t_cli... " />
+            <marker date="1515400205453" expanded="true" signature="4099:4350" ph="INSERT INTO t_client... " />
+            <marker date="1515400205453" expanded="true" signature="6787:6854" ph="INSERT INTO t_issick... " />
+            <marker date="1515400205453" expanded="true" signature="7204:7243" ph="DELETE FROM " />
+            <marker date="1515400205453" expanded="true" signature="7561:7602" ph="DELETE FROM " />
+            <marker date="1515400205453" expanded="true" signature="7947:8019" ph="INSERT INTO t_takemeds... " />
+            <marker date="1515400205453" expanded="true" signature="8995:9219" ph="UPDATE t_cli... " />
+            <marker date="1515400205453" expanded="true" signature="11692:11788" ph="SELECT * FRO... t_sickness" />
+            <marker date="1515400205453" expanded="true" signature="12104:12204" ph="SELECT * FRO... t_medicament" />
           </folding>
         </state>
       </provider>
@@ -717,7 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -742,25 +652,19 @@
         <state relative-caret-position="6783">
           <caret line="403" column="24" lean-forward="false" selection-start-line="403" selection-start-column="0" selection-end-line="405" selection-end-column="43" />
           <folding>
-            <marker date="1512570097500" expanded="true" signature="332:354" ph="SELECT * FRO... t_client" />
-            <marker date="1512570097500" expanded="true" signature="1642:1720" ph="SELECT * FRO... t_client" />
-            <marker date="1512570097500" expanded="true" signature="2086:2135" ph="SELECT * FRO... t_client" />
-            <marker date="1512570097500" expanded="true" signature="2363:2413" ph="UPDATE t_cli... " />
-            <marker date="1512570097500" expanded="true" signature="3274:3525" ph="INSERT INTO t_client... " />
-            <marker date="1512570097500" expanded="true" signature="5811:5855" ph="SELECT * FRO... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="6205:6276" ph="INSERT INTO t_sickness... " />
-            <marker date="1512570097500" expanded="true" signature="6675:6742" ph="INSERT INTO t_issick... " />
-            <marker date="1512570097500" expanded="true" signature="7010:7049" ph="DELETE FROM " />
-            <marker date="1512570097500" expanded="true" signature="7283:7324" ph="DELETE FROM " />
-            <marker date="1512570097500" expanded="true" signature="7550:7596" ph="SELECT * FRO... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="7893:7967" ph="INSERT INTO t_medicament... " />
-            <marker date="1512570097500" expanded="true" signature="8267:8339" ph="INSERT INTO t_takemeds... " />
-            <marker date="1512570097500" expanded="true" signature="8640:8664" ph="SELECT * FRO... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="8906:8932" ph="SELECT * FRO... t_medicament" />
-            <marker date="1512570097500" expanded="true" signature="9808:10032" ph="UPDATE t_cli... " />
-            <marker date="1512570097500" expanded="true" signature="9814:10013" ph="INSERT INTO t_client... " />
-            <marker date="1512570097500" expanded="true" signature="12706:12802" ph="SELECT sicNa... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="13045:13145" ph="SELECT medNa... t_medicament" />
+            <element signature="e#6#80#0#PHP" expanded="true" />
+            <marker date="1515400205453" expanded="true" signature="483:505" ph="SELECT * FRO... t_client" />
+            <marker date="1515400205453" expanded="true" signature="2286:2364" ph="SELECT * FRO... t_client" />
+            <marker date="1515400205453" expanded="true" signature="2730:2779" ph="SELECT * FRO... t_client" />
+            <marker date="1515400205453" expanded="true" signature="3098:3148" ph="UPDATE t_cli... " />
+            <marker date="1515400205453" expanded="true" signature="4099:4350" ph="INSERT INTO t_client... " />
+            <marker date="1515400205453" expanded="true" signature="6787:6854" ph="INSERT INTO t_issick... " />
+            <marker date="1515400205453" expanded="true" signature="7204:7243" ph="DELETE FROM " />
+            <marker date="1515400205453" expanded="true" signature="7561:7602" ph="DELETE FROM " />
+            <marker date="1515400205453" expanded="true" signature="7947:8019" ph="INSERT INTO t_takemeds... " />
+            <marker date="1515400205453" expanded="true" signature="8995:9219" ph="UPDATE t_cli... " />
+            <marker date="1515400205453" expanded="true" signature="11692:11788" ph="SELECT * FRO... t_sickness" />
+            <marker date="1515400205453" expanded="true" signature="12104:12204" ph="SELECT * FRO... t_medicament" />
           </folding>
         </state>
       </provider>
@@ -810,25 +714,19 @@
         <state relative-caret-position="2074">
           <caret line="126" column="46" lean-forward="true" selection-start-line="118" selection-start-column="8" selection-end-line="126" selection-end-column="46" />
           <folding>
-            <marker date="1512570097500" expanded="true" signature="332:354" ph="SELECT * FRO... t_client" />
-            <marker date="1512570097500" expanded="true" signature="1642:1720" ph="SELECT * FRO... t_client" />
-            <marker date="1512570097500" expanded="true" signature="2086:2135" ph="SELECT * FRO... t_client" />
-            <marker date="1512570097500" expanded="true" signature="2363:2413" ph="UPDATE t_cli... " />
-            <marker date="1512570097500" expanded="true" signature="3274:3525" ph="INSERT INTO t_client... " />
-            <marker date="1512570097500" expanded="true" signature="5811:5855" ph="SELECT * FRO... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="6205:6276" ph="INSERT INTO t_sickness... " />
-            <marker date="1512570097500" expanded="true" signature="6675:6742" ph="INSERT INTO t_issick... " />
-            <marker date="1512570097500" expanded="true" signature="7010:7049" ph="DELETE FROM " />
-            <marker date="1512570097500" expanded="true" signature="7283:7324" ph="DELETE FROM " />
-            <marker date="1512570097500" expanded="true" signature="7550:7596" ph="SELECT * FRO... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="7893:7967" ph="INSERT INTO t_medicament... " />
-            <marker date="1512570097500" expanded="true" signature="8267:8339" ph="INSERT INTO t_takemeds... " />
-            <marker date="1512570097500" expanded="true" signature="8640:8664" ph="SELECT * FRO... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="8906:8932" ph="SELECT * FRO... t_medicament" />
-            <marker date="1512570097500" expanded="true" signature="9808:10032" ph="UPDATE t_cli... " />
-            <marker date="1512570097500" expanded="true" signature="9814:10013" ph="INSERT INTO t_client... " />
-            <marker date="1512570097500" expanded="true" signature="12706:12802" ph="SELECT sicNa... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="13045:13145" ph="SELECT medNa... t_medicament" />
+            <element signature="e#6#80#0#PHP" expanded="true" />
+            <marker date="1515400205453" expanded="true" signature="483:505" ph="SELECT * FRO... t_client" />
+            <marker date="1515400205453" expanded="true" signature="2286:2364" ph="SELECT * FRO... t_client" />
+            <marker date="1515400205453" expanded="true" signature="2730:2779" ph="SELECT * FRO... t_client" />
+            <marker date="1515400205453" expanded="true" signature="3098:3148" ph="UPDATE t_cli... " />
+            <marker date="1515400205453" expanded="true" signature="4099:4350" ph="INSERT INTO t_client... " />
+            <marker date="1515400205453" expanded="true" signature="6787:6854" ph="INSERT INTO t_issick... " />
+            <marker date="1515400205453" expanded="true" signature="7204:7243" ph="DELETE FROM " />
+            <marker date="1515400205453" expanded="true" signature="7561:7602" ph="DELETE FROM " />
+            <marker date="1515400205453" expanded="true" signature="7947:8019" ph="INSERT INTO t_takemeds... " />
+            <marker date="1515400205453" expanded="true" signature="8995:9219" ph="UPDATE t_cli... " />
+            <marker date="1515400205453" expanded="true" signature="11692:11788" ph="SELECT * FRO... t_sickness" />
+            <marker date="1515400205453" expanded="true" signature="12104:12204" ph="SELECT * FRO... t_medicament" />
           </folding>
         </state>
       </provider>
@@ -845,7 +743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -878,25 +775,19 @@
         <state relative-caret-position="612">
           <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
           <folding>
-            <marker date="1512570097500" expanded="true" signature="332:354" ph="SELECT * FRO... t_client" />
-            <marker date="1512570097500" expanded="true" signature="1642:1720" ph="SELECT * FRO... t_client" />
-            <marker date="1512570097500" expanded="true" signature="2086:2135" ph="SELECT * FRO... t_client" />
-            <marker date="1512570097500" expanded="true" signature="2363:2413" ph="UPDATE t_cli... " />
-            <marker date="1512570097500" expanded="true" signature="3274:3525" ph="INSERT INTO t_client... " />
-            <marker date="1512570097500" expanded="true" signature="5811:5855" ph="SELECT * FRO... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="6205:6276" ph="INSERT INTO t_sickness... " />
-            <marker date="1512570097500" expanded="true" signature="6675:6742" ph="INSERT INTO t_issick... " />
-            <marker date="1512570097500" expanded="true" signature="7010:7049" ph="DELETE FROM " />
-            <marker date="1512570097500" expanded="true" signature="7283:7324" ph="DELETE FROM " />
-            <marker date="1512570097500" expanded="true" signature="7550:7596" ph="SELECT * FRO... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="7893:7967" ph="INSERT INTO t_medicament... " />
-            <marker date="1512570097500" expanded="true" signature="8267:8339" ph="INSERT INTO t_takemeds... " />
-            <marker date="1512570097500" expanded="true" signature="8640:8664" ph="SELECT * FRO... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="8906:8932" ph="SELECT * FRO... t_medicament" />
-            <marker date="1512570097500" expanded="true" signature="9808:10032" ph="UPDATE t_cli... " />
-            <marker date="1512570097500" expanded="true" signature="9814:10013" ph="INSERT INTO t_client... " />
-            <marker date="1512570097500" expanded="true" signature="12706:12802" ph="SELECT sicNa... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="13045:13145" ph="SELECT medNa... t_medicament" />
+            <element signature="e#6#80#0#PHP" expanded="true" />
+            <marker date="1515400205453" expanded="true" signature="483:505" ph="SELECT * FRO... t_client" />
+            <marker date="1515400205453" expanded="true" signature="2286:2364" ph="SELECT * FRO... t_client" />
+            <marker date="1515400205453" expanded="true" signature="2730:2779" ph="SELECT * FRO... t_client" />
+            <marker date="1515400205453" expanded="true" signature="3098:3148" ph="UPDATE t_cli... " />
+            <marker date="1515400205453" expanded="true" signature="4099:4350" ph="INSERT INTO t_client... " />
+            <marker date="1515400205453" expanded="true" signature="6787:6854" ph="INSERT INTO t_issick... " />
+            <marker date="1515400205453" expanded="true" signature="7204:7243" ph="DELETE FROM " />
+            <marker date="1515400205453" expanded="true" signature="7561:7602" ph="DELETE FROM " />
+            <marker date="1515400205453" expanded="true" signature="7947:8019" ph="INSERT INTO t_takemeds... " />
+            <marker date="1515400205453" expanded="true" signature="8995:9219" ph="UPDATE t_cli... " />
+            <marker date="1515400205453" expanded="true" signature="11692:11788" ph="SELECT * FRO... t_sickness" />
+            <marker date="1515400205453" expanded="true" signature="12104:12204" ph="SELECT * FRO... t_medicament" />
           </folding>
         </state>
       </provider>
@@ -924,14 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/pages/addData/formMedicament.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/pages/home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -952,7 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -960,22 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="15" column="72" lean-forward="false" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/pages/addData/addClient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="16" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="113" selection-end-column="99" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/ClientsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-154">
-          <caret line="83" column="40" lean-forward="true" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -990,7 +856,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/DataBaseQuery.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="1071">
           <caret line="67" column="34" lean-forward="false" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
           <folding />
         </state>
@@ -998,87 +864,123 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
+        <state relative-caret-position="1309">
           <caret line="77" column="129" lean-forward="false" selection-start-line="77" selection-start-column="129" selection-end-line="77" selection-end-column="129" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/pages/addData/addAccompanist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="66" column="89" lean-forward="false" selection-start-line="66" selection-start-column="89" selection-end-line="66" selection-end-column="89" />
-          <folding>
-            <element signature="e#6#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/AccompanistRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
+        <state relative-caret-position="1972">
           <caret line="116" column="32" lean-forward="false" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
-          <folding>
-            <marker date="1512573574641" expanded="true" signature="376:403" ph="SELECT * FRO... t_accompanist" />
-            <marker date="1512573574641" expanded="true" signature="1857:1940" ph="SELECT * FRO... t_accompanist" />
-            <marker date="1512573574641" expanded="true" signature="2311:2370" ph="SELECT * FRO... t_accompanist" />
-            <marker date="1512573574641" expanded="true" signature="2835:2967" ph="INSERT INTO t_accompanist... " />
-            <marker date="1512573574641" expanded="true" signature="3232:3287" ph="UPDATE t_acc... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/ClientsRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="142" column="29" lean-forward="true" selection-start-line="142" selection-start-column="29" selection-end-line="142" selection-end-column="29" />
-          <folding>
-            <marker date="1512570097500" expanded="true" signature="332:354" ph="SELECT * FRO... t_client" />
-            <marker date="1512570097500" expanded="true" signature="1642:1720" ph="SELECT * FRO... t_client" />
-            <marker date="1512570097500" expanded="true" signature="2086:2135" ph="SELECT * FRO... t_client" />
-            <marker date="1512570097500" expanded="true" signature="2363:2413" ph="UPDATE t_cli... " />
-            <marker date="1512570097500" expanded="true" signature="3274:3525" ph="INSERT INTO t_client... " />
-            <marker date="1512570097500" expanded="true" signature="5811:5855" ph="SELECT * FRO... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="6205:6276" ph="INSERT INTO t_sickness... " />
-            <marker date="1512570097500" expanded="true" signature="6675:6742" ph="INSERT INTO t_issick... " />
-            <marker date="1512570097500" expanded="true" signature="7010:7049" ph="DELETE FROM " />
-            <marker date="1512570097500" expanded="true" signature="7283:7324" ph="DELETE FROM " />
-            <marker date="1512570097500" expanded="true" signature="7550:7596" ph="SELECT * FRO... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="7893:7967" ph="INSERT INTO t_medicament... " />
-            <marker date="1512570097500" expanded="true" signature="8267:8339" ph="INSERT INTO t_takemeds... " />
-            <marker date="1512570097500" expanded="true" signature="8640:8664" ph="SELECT * FRO... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="8906:8932" ph="SELECT * FRO... t_medicament" />
-            <marker date="1512570097500" expanded="true" signature="9808:10032" ph="UPDATE t_cli... " />
-            <marker date="1512570097500" expanded="true" signature="9814:10013" ph="INSERT INTO t_client... " />
-            <marker date="1512570097500" expanded="true" signature="12706:12802" ph="SELECT sicNa... t_sickness" />
-            <marker date="1512570097500" expanded="true" signature="13045:13145" ph="SELECT medNa... t_medicament" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/AccompanistController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
+        <state relative-caret-position="850">
           <caret line="55" column="40" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="40" />
           <folding>
-            <element signature="e#6#91#0#PHP" expanded="true" />
+            <element signature="e#6#91#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/addClientTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/addAccompanistTable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="64" column="52" lean-forward="true" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
+          <caret line="64" column="16" lean-forward="false" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pages/addData/addAccompanist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pages/addData/addSeason.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pages/addData/addTheme.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pages/addData/formMedicament.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pages/addData/addAnimation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pages/addData/addClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="72" column="81" lean-forward="false" selection-start-line="72" selection-start-column="81" selection-end-line="72" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/addClientTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="109" column="9" lean-forward="false" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/ClientsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="3" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/ClientsRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1528">
+          <caret line="296" column="17" lean-forward="false" selection-start-line="296" selection-start-column="17" selection-end-line="296" selection-end-column="17" />
+          <folding>
+            <element signature="e#6#80#0#PHP" expanded="true" />
+            <marker date="1515400205453" expanded="true" signature="483:505" ph="SELECT * FRO... t_client" />
+            <marker date="1515400205453" expanded="true" signature="2286:2364" ph="SELECT * FRO... t_client" />
+            <marker date="1515400205453" expanded="true" signature="2730:2779" ph="SELECT * FRO... t_client" />
+            <marker date="1515400205453" expanded="true" signature="3098:3148" ph="UPDATE t_cli... " />
+            <marker date="1515400205453" expanded="true" signature="4099:4350" ph="INSERT INTO t_client... " />
+            <marker date="1515400205453" expanded="true" signature="6787:6854" ph="INSERT INTO t_issick... " />
+            <marker date="1515400205453" expanded="true" signature="7204:7243" ph="DELETE FROM " />
+            <marker date="1515400205453" expanded="true" signature="7561:7602" ph="DELETE FROM " />
+            <marker date="1515400205453" expanded="true" signature="7947:8019" ph="INSERT INTO t_takemeds... " />
+            <marker date="1515400205453" expanded="true" signature="8995:9219" ph="UPDATE t_cli... " />
+            <marker date="1515400205453" expanded="true" signature="11692:11788" ph="SELECT * FRO... t_sickness" />
+            <marker date="1515400205453" expanded="true" signature="12104:12204" ph="SELECT * FRO... t_medicament" />
+          </folding>
         </state>
       </provider>
     </entry>
