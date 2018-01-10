@@ -116,4 +116,12 @@ class DifficultyController extends Controller {
 
         echo json_encode($output);
     }
+
+    /**
+     * Delete difficulty (in fact, set inactive)
+     */
+    private function deleteAjaxAction(){
+        $diffRepo = new DifficultyRepository();
+        $difficulty = $diffRepo->hideOne($_POST['dif_id']);
+    }
 }

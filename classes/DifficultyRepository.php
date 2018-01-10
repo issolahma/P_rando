@@ -133,4 +133,21 @@ class DifficultyRepository {
 
         return $request->update($query, $dataArray);
     }
+
+    /*
+* Hide difficulty instead of deleting it
+*
+* @param $id of the difficulty
+* @return
+*/
+    public function hideOne($id){
+        $query = 'UPDATE t_difficulty SET difActive=0 WHERE idDifficulty=:id';
+
+        $dataArray = array(
+            'id' => $id
+        );
+
+        $request = new DataBaseQuery();
+        return $request->update($query, $dataArray);
+    }
 }

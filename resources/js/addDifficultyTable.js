@@ -73,36 +73,13 @@ $(document).ready(function(){
             {
                 $('#userModal').modal('show');
                 $('#name').val(data.name);
-                $('#dif_id').val(data.id);
+                $('#id').val(data.id);
 
                 $('.modal-title').text("Modifier cette difficulté");
                 $('#action').val("Editer");
                 $('#operation').val("Edit");
             }
         })
-    });
-
-// Reset password button
-    $(document).on('click', '.reset', function(){
-        var dif_id = $(this).attr("id");
-        $.ajax({
-            url:"index.php?controller=diff&action=updateAjax&boolAjax=true",
-            method:"POST",
-            data:{dif_id:dif_id},
-            dataType:"json",
-            success:function(data)
-            {
-                $('#userModal').modal('show');
-                $('.pwdHide').hide();
-                $('#accPwd').show();
-                $('#id').val(data.id);
-
-                $('.modal-title').text("Nouveau mot de passe");
-                $('#dif_id').val(dif_id);
-                $('#action').val("Editer");
-                $('#operation').val("NewPwd");
-            }
-        });
     });
 
     // Delete button
