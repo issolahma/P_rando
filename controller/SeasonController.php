@@ -105,10 +105,11 @@ class SeasonController extends Controller
     private function updateAjaxAction(){
 
         $seasonRepo = new SeasonRepository();
-        $season = $seasonRepo->findOne($_POST['user_id']);
+        $season = $seasonRepo->findOne($_POST['sea_id']);
 
         foreach ($season as $row){
             $output["name"] = $row["seaName"];
+            $output['id'] = $row['idSeason'];
         }
 
         echo json_encode($output);
@@ -116,6 +117,6 @@ class SeasonController extends Controller
 
     private function deleteAjaxAction(){
         $seasonRepo = new SeasonRepository();
-        $season = $seasonRepo->hideOne($_POST['user_id']);
+        $season = $seasonRepo->hideOne($_POST['sea_id']);
     }
 }

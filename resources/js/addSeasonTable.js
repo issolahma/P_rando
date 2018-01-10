@@ -75,9 +75,9 @@ $(document).ready(function(){
             {
                 $('#userModal').modal('show');
                 $('#name').val(data.name);
+                $('#id').val(data.id);
 
                 $('.modal-title').text("Modifier cette saison");
-                $('#id').val(sea_id);
                 $('#action').val("Editer");
                 $('#operation').val("Edit");
             }
@@ -104,6 +104,4 @@ $(document).ready(function(){
             return false;
         }
     });
-
-
 });

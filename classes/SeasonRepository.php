@@ -113,7 +113,7 @@ class SeasonRepository {
         $query = 'UPDATE t_season SET seaName=:sName WHERE idSeason=:id';
 
         $dataArray = array(
-            'name' => $name,
+            'sName' => $name,
             'id' => $id
         );
 
@@ -149,7 +149,7 @@ class SeasonRepository {
      * @return bool
      */
     public function hideOne($id){
-        $query = 'UPDATE t_season SET accActive=0 WHERE idSeason=:id';
+        $query = 'UPDATE t_season SET seaActive=0 WHERE idSeason=:id';
 
         $dataArray = array(
             'id' => $id

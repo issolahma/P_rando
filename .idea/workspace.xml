@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf3f8230-bdee-473e-9c6a-dc8e822117a6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/AccompanistRepository.php" afterPath="$PROJECT_DIR$/classes/AccompanistRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SeasonRepository.php" afterPath="$PROJECT_DIR$/classes/SeasonRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/ThemeRepository.php" afterPath="$PROJECT_DIR$/classes/ThemeRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/SeasonController.php" afterPath="$PROJECT_DIR$/controller/SeasonController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/ThemeController.php" afterPath="$PROJECT_DIR$/controller/ThemeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/js/addSeasonTable.js" afterPath="$PROJECT_DIR$/resources/js/addSeasonTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/js/addThemeTable.js" afterPath="$PROJECT_DIR$/resources/js/addThemeTable.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/pages/addData/addSeason.php" afterPath="$PROJECT_DIR$/view/pages/addData/addSeason.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,12 +22,12 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5469091">
       <split-first>
-        <leaf>
-          <file leaf-file-name="addSeasonTable.js" pinned="false" current-in-tab="true">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="addSeasonTable.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/js/addSeasonTable.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="359">
-                  <caret line="79" column="20" lean-forward="false" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+                <state relative-caret-position="1785">
+                  <caret line="105" column="7" lean-forward="false" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -41,8 +38,8 @@
           <file leaf-file-name="SeasonController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/controller/SeasonController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1445">
-                  <caret line="85" column="24" lean-forward="false" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="24" />
+                <state relative-caret-position="1887">
+                  <caret line="111" column="45" lean-forward="false" selection-start-line="111" selection-start-column="45" selection-end-line="111" selection-end-column="45" />
                   <folding>
                     <element signature="e#6#80#0#PHP" expanded="true" />
                   </folding>
@@ -53,26 +50,26 @@
           <file leaf-file-name="SeasonRepository.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/SeasonRepository.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1302">
-                  <caret line="145" column="41" lean-forward="false" selection-start-line="145" selection-start-column="41" selection-end-line="145" selection-end-column="41" />
+                <state relative-caret-position="2567">
+                  <caret line="151" column="41" lean-forward="false" selection-start-line="151" selection-start-column="41" selection-end-line="151" selection-end-column="41" />
                   <folding>
                     <element signature="e#6#80#0#PHP" expanded="true" />
-                    <marker date="1515579395499" expanded="true" signature="393:415" ph="SELECT * FRO... t_season" />
-                    <marker date="1515579395499" expanded="true" signature="1789:1831" ph="SELECT * FRO... t_season" />
-                    <marker date="1515579395499" expanded="true" signature="2149:2198" ph="SELECT * FRO... t_season" />
-                    <marker date="1515579395499" expanded="true" signature="2682:2735" ph="UPDATE t_sea... " />
-                    <marker date="1515579395499" expanded="true" signature="3166:3236" ph="INSERT INTO t_season... " />
-                    <marker date="1515579395499" expanded="true" signature="3575:3625" ph="UPDATE t_sea... " />
+                    <marker date="1515593893839" expanded="true" signature="393:415" ph="SELECT * FRO... t_season" />
+                    <marker date="1515593893839" expanded="true" signature="1789:1831" ph="SELECT * FRO... t_season" />
+                    <marker date="1515593893839" expanded="true" signature="2149:2198" ph="SELECT * FRO... t_season" />
+                    <marker date="1515593893839" expanded="true" signature="2682:2735" ph="UPDATE t_sea... " />
+                    <marker date="1515593893839" expanded="true" signature="3167:3237" ph="INSERT INTO t_season... " />
+                    <marker date="1515593893839" expanded="true" signature="3576:3626" ph="UPDATE t_sea... " />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="addSeason.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="addSeason.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/view/pages/addData/addSeason.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="472">
-                  <caret line="55" column="71" lean-forward="false" selection-start-line="55" selection-start-column="71" selection-end-line="55" selection-end-column="71" />
+                <state relative-caret-position="51">
+                  <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -81,11 +78,11 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="AccompanistRepository.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/AccompanistRepository.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1445">
+                <state relative-caret-position="34">
                   <caret line="2" column="1" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
                   <folding>
                     <marker date="1515577244388" expanded="true" signature="422:449" ph="SELECT * FRO... t_accompanist" />
@@ -104,8 +101,8 @@
           <file leaf-file-name="AccompanistController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/controller/AccompanistController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-274">
-                  <caret line="35" column="19" lean-forward="true" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+                <state relative-caret-position="527">
+                  <caret line="35" column="19" lean-forward="false" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
                   <folding>
                     <element signature="e#6#80#0#PHP" expanded="true" />
                   </folding>
@@ -113,20 +110,20 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="addAccompanist.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="addAccompanist.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/view/pages/addData/addAccompanist.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-119">
-                  <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="addAccompanistTable.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="addAccompanistTable.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/js/addAccompanistTable.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-867">
+                <state relative-caret-position="0">
                   <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
@@ -211,9 +208,9 @@
         <option value="$PROJECT_DIR$/classes/ThemeRepository.php" />
         <option value="$PROJECT_DIR$/controller/ThemeController.php" />
         <option value="$PROJECT_DIR$/controller/SeasonController.php" />
+        <option value="$PROJECT_DIR$/resources/js/addSeasonTable.js" />
         <option value="$PROJECT_DIR$/classes/SeasonRepository.php" />
         <option value="$PROJECT_DIR$/view/pages/addData/addSeason.php" />
-        <option value="$PROJECT_DIR$/resources/js/addSeasonTable.js" />
       </list>
     </option>
   </component>
@@ -245,6 +242,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -359,7 +357,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -594,12 +591,13 @@
       <workItem from="1511957676962" duration="11634000" />
       <workItem from="1512563685385" duration="9021000" />
       <workItem from="1515395626507" duration="10751000" />
-      <workItem from="1515567944330" duration="10852000" />
+      <workItem from="1515567944330" duration="11443000" />
+      <workItem from="1515593066375" duration="884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61423000" />
+    <option name="totallyTimeSpent" value="62898000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -614,7 +612,7 @@
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15953545" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16136919" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -751,9 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
           <caret line="80" column="56" lean-forward="false" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -817,9 +812,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1377">
           <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="31" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -882,9 +874,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -954,14 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="15" column="72" lean-forward="false" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="61" column="51" lean-forward="false" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1048,9 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="86" column="6" lean-forward="false" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="6" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1068,7 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="37" lean-forward="false" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,7 +1062,7 @@
         <state relative-caret-position="527">
           <caret line="145" column="18" lean-forward="false" selection-start-line="145" selection-start-column="18" selection-end-line="145" selection-end-column="18" />
           <folding>
-            <element signature="e#6#80#0#PHP" expanded="true" />
+            <element signature="e#6#80#0#PHP" expanded="false" />
             <marker date="1515577375003" expanded="true" signature="395:416" ph="SELECT * FRO... t_theme" />
             <marker date="1515577375003" expanded="true" signature="1789:1830" ph="SELECT * FRO... t_theme" />
             <marker date="1515577375003" expanded="true" signature="2148:2211" ph="SELECT * FRO... t_theme" />
@@ -1102,15 +1079,15 @@
         <state relative-caret-position="676">
           <caret line="117" column="24" lean-forward="false" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
           <folding>
-            <element signature="e#6#80#0#PHP" expanded="true" />
+            <element signature="e#6#80#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/AccompanistController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-274">
-          <caret line="35" column="19" lean-forward="true" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+        <state relative-caret-position="527">
+          <caret line="35" column="19" lean-forward="false" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
           <folding>
             <element signature="e#6#80#0#PHP" expanded="true" />
           </folding>
@@ -1119,7 +1096,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/AccompanistRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1445">
+        <state relative-caret-position="34">
           <caret line="2" column="1" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
           <folding>
             <marker date="1515577244388" expanded="true" signature="422:449" ph="SELECT * FRO... t_accompanist" />
@@ -1134,51 +1111,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/SeasonRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1302">
-          <caret line="145" column="41" lean-forward="false" selection-start-line="145" selection-start-column="41" selection-end-line="145" selection-end-column="41" />
-          <folding>
-            <element signature="e#6#80#0#PHP" expanded="true" />
-            <marker date="1515579395499" expanded="true" signature="393:415" ph="SELECT * FRO... t_season" />
-            <marker date="1515579395499" expanded="true" signature="1789:1831" ph="SELECT * FRO... t_season" />
-            <marker date="1515579395499" expanded="true" signature="2149:2198" ph="SELECT * FRO... t_season" />
-            <marker date="1515579395499" expanded="true" signature="2682:2735" ph="UPDATE t_sea... " />
-            <marker date="1515579395499" expanded="true" signature="3166:3236" ph="INSERT INTO t_season... " />
-            <marker date="1515579395499" expanded="true" signature="3575:3625" ph="UPDATE t_sea... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/pages/addData/addSeason.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="55" column="71" lean-forward="false" selection-start-line="55" selection-start-column="71" selection-end-line="55" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/SeasonController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="85" column="24" lean-forward="false" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="24" />
-          <folding>
-            <element signature="e#6#80#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/pages/addData/addAccompanist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/addAccompanistTable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-867">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -1186,13 +1121,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1160">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/SeasonRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2567">
+          <caret line="151" column="41" lean-forward="false" selection-start-line="151" selection-start-column="41" selection-end-line="151" selection-end-column="41" />
+          <folding>
+            <element signature="e#6#80#0#PHP" expanded="true" />
+            <marker date="1515593893839" expanded="true" signature="393:415" ph="SELECT * FRO... t_season" />
+            <marker date="1515593893839" expanded="true" signature="1789:1831" ph="SELECT * FRO... t_season" />
+            <marker date="1515593893839" expanded="true" signature="2149:2198" ph="SELECT * FRO... t_season" />
+            <marker date="1515593893839" expanded="true" signature="2682:2735" ph="UPDATE t_sea... " />
+            <marker date="1515593893839" expanded="true" signature="3167:3237" ph="INSERT INTO t_season... " />
+            <marker date="1515593893839" expanded="true" signature="3576:3626" ph="UPDATE t_sea... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/SeasonController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1887">
+          <caret line="111" column="45" lean-forward="false" selection-start-line="111" selection-start-column="45" selection-end-line="111" selection-end-column="45" />
+          <folding>
+            <element signature="e#6#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/addSeasonTable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="79" column="20" lean-forward="false" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+        <state relative-caret-position="1785">
+          <caret line="105" column="7" lean-forward="false" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pages/addData/addAccompanist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pages/addData/addSeason.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

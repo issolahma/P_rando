@@ -1,11 +1,8 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: issolahma
- * Date: 06.12.2017
- * Time: 15:37
- */
-?>
+<!-- Author: Maude Issolah
+<!-- Place: ETML Lausanne
+<!-- Last update: 10.01.2018
+<!-- Subject: View to add season
+-->
 <div class="container box">
     <div class="table-responsive">
         <div class="box-header">
