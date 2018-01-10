@@ -59,6 +59,8 @@ class AccompanistController extends Controller
             }
         }elseif ($_POST['operation'] == 'Edit'){
             $accRepo->updateAccompanist($_POST);
+        }elseif ($_POST['operation'] == 'NewPwd') {
+            $accRepo->updatePwd($_POST);
         }
 
         /*
@@ -69,8 +71,8 @@ class AccompanistController extends Controller
     }
 
     /**
-     *
-     *
+     * Get the accompanists data to create the table
+     * ajax -> json
      */
     private function listAjaxAction(){
         $accRepo = new AccompanistRepository();
@@ -91,6 +93,7 @@ class AccompanistController extends Controller
                 $sub_array[] = $row["accRight"];
                 $sub_array[] = '<button type="button" name="update" id="' . $row["idAccompanist"] . '" class="btn btn-warning btn-xs update">Modifier</button>';
                 $sub_array[] = '<button type="button" name="delete" id="' . $row["idAccompanist"] . '" class="btn btn-danger btn-xs delete">Supprimer</button>';
+                $sub_array[] = '<button type="button" name="reset" id="' . $row["idAccompanist"] . '" class="btn btn-danger btn-xs reset">Reset password</button>';
                 $data[] = $sub_array;
             }
         }
@@ -104,10 +107,13 @@ class AccompanistController extends Controller
         echo json_encode($output);
     }
 
+    /**
+     * Get the accompanist data, and link them to the input update modal form, except the password
+     */
     private function updateAjaxAction(){
 
         $accRepo = new AccompanistRepository();
-        $accompanist = $accRepo->findOne($_POST['user_id']);
+        $accompanist = $accRepo->findOne($_POST['acc_id']);
 
         foreach ($accompanist as $row){
             $output["firstname"] = $row["accFirstName"];
@@ -120,8 +126,21 @@ class AccompanistController extends Controller
         echo json_encode($output);
     }
 
+    /**
+     * Return the accompanist id to reset the right password
+     */
+    private function resetAjaxAction(){
+
+        $output['id'] = $_POST['acc_id'];
+
+        echo json_encode($output);
+    }
+
+    /**
+     * Delete accompanist (in fact, set inactive)
+     */
     private function deleteAjaxAction(){
         $accRepo = new AccompanistRepository();
-        $accompanist = $accRepo->hideOne($_POST['user_id']);
+        $accompanist = $accRepo->hideOne($_POST['acc_id']);
     }
 }

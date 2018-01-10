@@ -1,16 +1,16 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: issolahma
- * Date: 06.12.2017
- * Time: 15:43
+ * Author: Maude Issolah
+ * Place: ETML
+ * Last update: 08.01.2018
  */
+
 include_once 'database/DataBaseQuery.php';
 
 class AccompanistRepository {
 
     /**
-     * Find all entries for the accompanist list
+     * Query to find all data for the accompanist list
      *
      * @return array of accompanist
      */
@@ -104,10 +104,10 @@ class AccompanistRepository {
     }
 
     /**
-     *  Update accompanist datas except the password
+     * Update accompanist datas
      *
      * @param $values
-     * @return 
+     * @return bool
      */
     public function updateAccompanist($values) {
         $request = new DataBaseQuery();
@@ -118,10 +118,12 @@ class AccompanistRepository {
         $right = htmlentities($values['right']);
         $login = htmlentities($values['login']);
         $id = htmlentities($values['id']);
+        $pwd = htmlentities($values['password']);
 
-        $query = 'UPDATE t_accompanist SET accFirstName=:firstname, accLastName=:lastname, accLogin=:login, accRight=:accRight, accCreateBy=:accCreateBy WHERE idAccompanist=:id';
+        $query = 'UPDATE t_accompanist SET accPwd=:pwd, accFirstName=:firstname, accLastName=:lastname, accLogin=:login, accRight=:accRight, accCreateBy=:accCreateBy WHERE idAccompanist=:id';
 
         $dataArray = array(
+            'pwd' => $pwd,
             'firstname' => $firstname,
             'lastname' => $lastname,
             'accRight' => $right,
@@ -160,11 +162,28 @@ class AccompanistRepository {
             'acccreateBy' => $_SESSION['user']['id']
         );
 
-        return $request->rawQuery($query, $dataArray);
+        return $request->insert($query, $dataArray);
+    }
+
+    public function updatePwd($values){
+        $request = new DataBaseQuery();
+
+        //Values from $_Post
+        $pwd = htmlentities($values['password']);
+        $id = htmlentities($values['id']);
+
+        $query = 'UPDATE t_accompanist SET accPwd=:pwd WHERE idAccompanist=:id';
+
+        $dataArray = array(
+            'id' => $id,
+            'pwd' => md5($pwd)
+        );
+
+        return $request->update($query, $dataArray);
     }
 
     /*
-	* Hidde accompanist instead of deleting it
+	* Hide accompanist instead of deleting it
 	*
 	* @param $id of the accompanist
 	* @return

@@ -13,3 +13,5 @@ addAccompanist.php
 
 Hide column table (for id)
 https://datatables.net/examples/basic_init/hidden_columns.html
+
+autocomplete="new-password"

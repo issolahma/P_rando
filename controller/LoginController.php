@@ -54,7 +54,7 @@ class LoginController extends Controller {
             $view = file_get_contents('view/pages/login.php');
         }
         else{
-        		$_SESSION['user']['right'] = $result;
+            $_SESSION['user']['right'] = $result;
             $_SESSION['user']['login'] = $login;
             $view = file_get_contents('view/pages/home.php');
         }

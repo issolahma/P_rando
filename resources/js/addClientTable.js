@@ -6,7 +6,7 @@
 $(document).ready(function(){
     $('#add_button').click(function(){
         $('#user_form')[0].reset();
-        $('.modal-title').text("Ajout");
+        $('.modal-title').text("Nouveau client");
         $('#action').val("Ajout");
         $('#operation').val("Add");
     });

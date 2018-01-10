@@ -12,7 +12,7 @@ include_once 'classes/SickRepository.php';
 class ClientsRepository {
 
     /**
-     * Query to find all clients datas
+     * Query to find all data for the client list
      *
      * @return array|resource
      */
@@ -108,7 +108,7 @@ class ClientsRepository {
     }     
 
     /*
-	* Hidde client instead of deleting it
+	* Hide client instead of deleting it
 	*
 	* @param $id of the client
 	* @return

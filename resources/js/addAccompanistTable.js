@@ -1,11 +1,19 @@
+// Author: Maude Issolah
+// Place: ETML Lausanne
+// Last update: 08.01.2018
+// Subject: Ajax code to manage accompaniste table
+
 $(document).ready(function(){
     $('#add_button').click(function(){
         $('#user_form')[0].reset();
-        $('.modal-title').text("Ajout");
+        $('.modal-title').text("Nouvel accompagnateur");
         $('#action').val("Ajout");
         $('#operation').val("Add");
+        $('#accPwd').show();
+        $('.pwdHide').show();
     });
 
+    // Create table
     var dataTable = $('#user_data').DataTable({
         "processing":true,
         "serverSide":true,
@@ -21,13 +29,14 @@ $(document).ready(function(){
                 "searchable": false
             },
             {
-                "targets":[3, 4],
+                "targets":[5, 6, 7],
                 "orderable":false,
             },
         ],
 
     });
 
+    // Submit button
     $(document).on('submit', '#user_form', function(event){
         event.preventDefault();
         var firstName = $('#firstname').val();
@@ -36,8 +45,8 @@ $(document).ready(function(){
         var login = $('#login').val();
         var pwd = $('#password').val();
 
-        if(firstName != '' && lastName != '' && accRight != '' && login != '')
-        {
+        // if(firstName != '' && lastName != '' && accRight != '' && login != '')
+        // {
             $.ajax({
                 url:"index.php?controller=accompanist&action=formAjax&boolAjax=true",
                 method:'POST',
@@ -46,26 +55,26 @@ $(document).ready(function(){
                 processData:false,
                 success:function(data)
                 {
-                    $('#accPwd').show();
                     alert(data);
                     $('#user_form')[0].reset();
                     $('#userModal').modal('hide');
                     dataTable.ajax.reload();
                 }
             });
-        }
-        else
-        {
-            alert("All Fields are Required");
-        }
+        // }
+        // else
+        // {
+        //     alert("All Fields are Required");
+        // }
     });
 
+    // Update button
     $(document).on('click', '.update', function(){
-        var user_id = $(this).attr("id");
+        var acc_id = $(this).attr("id");
         $.ajax({
             url:"index.php?controller=accompanist&action=updateAjax&boolAjax=true",
             method:"POST",
-            data:{user_id:user_id},
+            data:{acc_id:acc_id},
             dataType:"json",
             success:function(data)
             {
@@ -74,25 +83,49 @@ $(document).ready(function(){
                 $('#lastname').val(data.lastname);
                 $('#right').val(data.accRight);
                 $('#login').val(data.login);
-                $('#id').val(data.id);
-                $('#accPwd').hide();
+                $('#acc_id').val(acc_id);
 
+                $('.pwdHide').show();
+                $('#accPwd').hide();
                 $('.modal-title').text("Modifier cet accompagnateur");
-                $('#user_id').val(user_id);
                 $('#action').val("Editer");
                 $('#operation').val("Edit");
             }
         })
     });
 
+// Reset password button
+    $(document).on('click', '.reset', function(){
+        var acc_id = $(this).attr("id");
+        $.ajax({
+            url:"index.php?controller=accompanist&action=updateAjax&boolAjax=true",
+            method:"POST",
+            data:{acc_id:acc_id},
+            dataType:"json",
+            success:function(data)
+            {
+                $('#userModal').modal('show');
+                $('.pwdHide').hide();
+                $('#accPwd').show();
+                $('#id').val(data.id);
+
+                $('.modal-title').text("Nouveau mot de passe");
+                $('#acc_id').val(acc_id);
+                $('#action').val("Editer");
+                $('#operation').val("NewPwd");
+            }
+        });
+    });
+
+    // Delete button
     $(document).on('click', '.delete', function(){
-        var user_id = $(this).attr("id");
+        var acc_id = $(this).attr("id");
         if(confirm("Are you sure you want to delete this?"))
         {
             $.ajax({
                 url:"index.php?controller=accompanist&action=deleteAjax&boolAjax=true",
                 method:"POST",
-                data:{user_id:user_id},
+                data:{acc_id:acc_id},
                 success:function(data)
                 {
                     alert(data);
@@ -105,6 +138,4 @@ $(document).ready(function(){
             return false;
         }
     });
-
-
 });

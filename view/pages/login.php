@@ -17,8 +17,6 @@ https://bootsnipp.com/snippets/M3MPP
 <!-- DEBUG -->
 <?php 
 print_r($_SESSION);
-echo $login." ";
-echo $password." ".$result;
 ?>
 <!-- DEBUG -->
 
