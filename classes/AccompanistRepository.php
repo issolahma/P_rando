@@ -2,7 +2,7 @@
 /**
  * Author: Maude Issolah
  * Place: ETML
- * Last update: 08.01.2018
+ * Last update: 10.01.2018
  */
 
 include_once 'database/DataBaseQuery.php';

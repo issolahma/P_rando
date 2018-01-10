@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: issolahma
- * Date: 06.12.2017
- * Time: 15:42
+ * Author: Maude Issolah
+ * Place: ETML
+ * Last update: 10.01.2018
  */
 
 include_once 'classes/AccompanistRepository.php';

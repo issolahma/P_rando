@@ -1,11 +1,8 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: issolahma
- * Date: 06.12.2017
- * Time: 15:37
- */
-?>
+<!-- Author: Maude Issolah
+<!-- Place: ETML Lausanne
+<!-- Last update: 10.01.2018
+<!-- Subject: View to add theme
+-->
 <div class="container box">
     <div class="table-responsive">
         <div class="box-header">
@@ -20,7 +17,7 @@
         <table id="user_data" class="table table-bordered table-striped">
             <thead>
             <tr>
-                <th width="0%">Id</th>
+                <th width="0%">Id</th> <!-- Hidden col -->
                 <th width="35%">Thème</th>
                 <th width="10%">Editer</th>
                 <th width="10%">Supprimer</th>
@@ -52,7 +49,9 @@
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-6 form-group">
-                                
+                                <!-- hidden id -->
+                                <input type="hidden" name="theme_id" id="theme_id">
+                                <label>Nom du thème</label>
                                 <input type="text" id="name" name="name" placeholder="Nom" class="form-control">
                             </div>
                         </div>

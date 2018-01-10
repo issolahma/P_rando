@@ -1,6 +1,6 @@
 <!-- Author: Maude Issolah
 <!-- Place: ETML Lausanne
-<!-- Last update: 08.01.2018
+<!-- Last update: 10.01.2018
 <!-- Subject: View to add accompanist
 -->
 

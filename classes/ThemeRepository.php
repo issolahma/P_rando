@@ -109,11 +109,13 @@ class ThemeRepository {
 
         //Values from $_Post
         $name = htmlentities($values['name']);
+        $id = htmlentities($values['theme_id']);
 
-        $query = 'UPDATE t_theme SET theName=:name WHERE idTheme:id';
+        $query = 'UPDATE t_theme SET theName=:tName WHERE idTheme=:id';
 
         $dataArray = array(
-            'name' => $name,
+            'tName' => $name,
+            'id' => $id
         );
 
         return $request->update($query, $dataArray);
@@ -125,18 +127,18 @@ class ThemeRepository {
         //Values from $_Post
         $name = htmlentities($values['name']);
 
-        $query = 'INSERT INTO t_theme (theName, theCreateBy) VALUES (:name, :createBy)';
+        $query = 'INSERT INTO t_theme (theName, theCreateBy) VALUES (:tName, :createBy)';
 
         $dataArray = array(
-            'name' => $name,
+            'tName' => $name,
             'createBy' => $_SESSION['user']['id']
         );
 
-        return $request->rawQuery($query, $dataArray);
+        return $request->insert($query, $dataArray);
     }
 
     public function hideOne($id){
-        $query = 'UPDATE t_theme SET accActive=0 WHERE idTheme=:id';
+        $query = 'UPDATE t_theme SET theActive=0 WHERE idTheme=:id';
 
         $dataArray = array(
             'id' => $id

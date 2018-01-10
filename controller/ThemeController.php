@@ -52,7 +52,7 @@ class ThemeController extends Controller
         if ($_POST['operation'] == 'Add') {
             //Check if theme exist
             if ($themeRepo->findTheme(htmlentities($_POST['name'])) == null) {
-                //Add client
+                //Add theme
                 $themeRepo->addTheme($_POST);
             } else {
                 $output['error_msg'] = 'Une theme avec le même nom est déjà présente dans la base de donnée'; //TODO utf8
@@ -84,6 +84,7 @@ class ThemeController extends Controller
             //Print only active client
             if($row['theActive'] == 1){
                 $sub_array = array();
+                $sub_array[] = $row["idTheme"];
                 $sub_array[] = $row["theName"];
                 $sub_array[] = '<button type="button" name="update" id="' . $row["idTheme"] . '" class="btn btn-warning btn-xs update">Modifier</button>';
                 $sub_array[] = '<button type="button" name="delete" id="' . $row["idTheme"] . '" class="btn btn-danger btn-xs delete">Supprimer</button>';
@@ -103,7 +104,7 @@ class ThemeController extends Controller
     private function updateAjaxAction(){
 
         $themeRepo = new ThemeRepository();
-        $theme = $themeRepo->findOne($_POST['user_id']);
+        $theme = $themeRepo->findOne($_POST['theme_id']);
 
         foreach ($theme as $row){
             $output["name"] = $row["theName"];
@@ -114,6 +115,6 @@ class ThemeController extends Controller
 
     private function deleteAjaxAction(){
         $themeRepo = new ThemeRepository();
-        $theme = $themeRepo->hideOne($_POST['user_id']);
+        $theme = $themeRepo->hideOne($_POST['theme_id']);
     }
 }
