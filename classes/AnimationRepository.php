@@ -31,7 +31,7 @@ class AnimationRepository {
 
             //Convert column number to column name for the sql query
             switch($orderCol) {
-                case 0:
+                case 1:
                     $orderCol = 'aniName';
                     break;
                 default:

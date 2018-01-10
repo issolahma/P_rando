@@ -41,7 +41,7 @@ class AccompanistController extends Controller
     }
 
     /**
-     * On modal submit button. Add or update client
+     * On modal submit button. Add or update accompanist
      */
     private function formAjaxAction()
     {

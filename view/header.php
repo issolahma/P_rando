@@ -82,6 +82,7 @@
             <li><a href="index.php?controller=anim&action=show"><i class="fa fa-circle-o"></i> Animation</a></li>
             <li><a href="index.php?controller=theme&action=show"><i class="fa fa-circle-o"></i> Thème</a></li>
             <li><a href="index.php?controller=season&action=show"><i class="fa fa-circle-o"></i> Saisons</a></li>
+              <li><a href="index.php?controller=diff&action=show"><i class="fa fa-circle-o"></i> Difficultés</a></li>
           </ul>
         </li>
       </ul>

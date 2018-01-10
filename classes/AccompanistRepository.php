@@ -32,13 +32,13 @@ class AccompanistRepository {
 
             //Convert column number to column name for the sql query
             switch($orderCol) {
-                case 0:
+                case 1:
                     $orderCol = 'accLastName';
                     break;
-                case 1:
+                case 2:
                     $orderCol = 'accFirstName';
                     break;
-                case 2:
+                case 3:
                     $orderCol = 'accRight';
                     break;
                 default:

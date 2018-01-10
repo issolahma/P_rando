@@ -35,13 +35,13 @@ class ClientsRepository {
 
             //Convert column number to column name for the sql query
             switch($orderCol) {
-                case 0:
+                case 1:
                     $orderCol = 'cliLastName';
                     break;
-                case 1:
+                case 2:
                     $orderCol = 'cliFirstName';
                     break;
-                case 2:
+                case 3:
                     $orderCol = 'cliCity';
                     break;
                 default:
