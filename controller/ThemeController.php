@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: issolahma
- * Date: 06.12.2017
- * Time: 15:42
+ * Author: Maude Issolah
+ * Place: ETML
+ * Last update: 10.01.2018
  */
 
 include_once 'classes/ThemeRepository.php';
@@ -24,7 +23,7 @@ class ThemeController extends Controller
     }
 
     /**
-     * Display Index Action
+     * Display theme page
      *
      * @return string
      */
@@ -42,7 +41,7 @@ class ThemeController extends Controller
     }
 
     /**
-     * On modal submit button. Add or update client
+     * On modal submit button. Add or update theme
      */
     private function formAjaxAction()
     {
@@ -69,8 +68,7 @@ class ThemeController extends Controller
     }
 
     /**
-     *
-     *
+     *  Create the list of theme datas for the table
      */
     private function listAjaxAction(){
         $themeRepo = new ThemeRepository();
@@ -101,6 +99,9 @@ class ThemeController extends Controller
         echo json_encode($output);
     }
 
+    /**
+     * Get the theme name to print it in the modal form
+     */
     private function updateAjaxAction(){
 
         $themeRepo = new ThemeRepository();
@@ -113,6 +114,9 @@ class ThemeController extends Controller
         echo json_encode($output);
     }
 
+    /**
+     *  Delete the theme
+     */
     private function deleteAjaxAction(){
         $themeRepo = new ThemeRepository();
         $theme = $themeRepo->hideOne($_POST['theme_id']);

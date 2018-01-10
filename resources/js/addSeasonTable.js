@@ -1,3 +1,8 @@
+// Author: Maude Issolah
+// Place: ETML Lausanne
+// Last update: 10.01.2018
+// Subject: Ajax code to manage season table
+
 $(document).ready(function(){
     $('#add_button').click(function(){
         $('#user_form')[0].reset();
@@ -21,7 +26,7 @@ $(document).ready(function(){
                 "searchable": false
             },
             {
-                "targets":[3, 4],
+                "targets":[2, 3],
                 "orderable":false,
             },
         ],
@@ -60,23 +65,19 @@ $(document).ready(function(){
     });
 
     $(document).on('click', '.update', function(){
-        var user_id = $(this).attr("id");
+        var sea_id = $(this).attr("id");
         $.ajax({
             url:"index.php?controller=season&action=updateAjax&boolAjax=true",
             method:"POST",
-            data:{user_id:user_id},
+            data:{sea_id:sea_id},
             dataType:"json",
             success:function(data)
             {
                 $('#userModal').modal('show');
-                $('#firstname').val(data.firstname);
-                $('#lastname').val(data.lastname);
-                $('#right').val(data.accRight);
-                $('#login').val(data.login);
-                $('#accPwd').hide();
+                $('#name').val(data.name);
 
-                $('.modal-title').text("Modifier cet accompagnateur");
-                $('#user_id').val(user_id);
+                $('.modal-title').text("Modifier cette saison");
+                $('#id').val(sea_id);
                 $('#action').val("Editer");
                 $('#operation').val("Edit");
             }
@@ -84,13 +85,13 @@ $(document).ready(function(){
     });
 
     $(document).on('click', '.delete', function(){
-        var user_id = $(this).attr("id");
+        var sea_id = $(this).attr("id");
         if(confirm("Are you sure you want to delete this?"))
         {
             $.ajax({
                 url:"index.php?controller=season&action=deleteAjax&boolAjax=true",
                 method:"POST",
-                data:{user_id:user_id},
+                data:{sea_id:sea_id},
                 success:function(data)
                 {
                     alert(data);

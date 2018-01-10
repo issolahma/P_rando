@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: issolahma
- * Date: 06.12.2017
- * Time: 15:42
+ * Author: Maude Issolah
+ * Place: ETML
+ * Last update: 10.01.2018
  */
 
 include_once 'classes/SeasonRepository.php';
@@ -84,7 +83,7 @@ class SeasonController extends Controller
         $data = array();
         foreach ($listSeasons as $row) {
             //Print only active season
-            if($row['aniActive'] == 1){
+            if($row['seaActive'] == 1){
                 $sub_array = array();
                 $sub_array[] = $row["idSeason"];
                 $sub_array[] = $row["seaName"];

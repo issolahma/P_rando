@@ -1,16 +1,16 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: issolahma
- * Date: 06.12.2017
- * Time: 15:43
+ * Author: Maude Issolah
+ * Place: ETML
+ * Last update: 10.01.2018
  */
+
 include_once 'database/DataBaseQuery.php';
 
 class ThemeRepository {
 
     /**
-     * Find all entries for the list
+     * Find all data for the theme list
      *
      * @return array|resource
      */
@@ -28,7 +28,7 @@ class ThemeRepository {
 
         //Order by the chosen column
         if(!empty($post['order'])){
-            $orderCol = htmlentities($post['order']['0']['column']); // 0/1/2
+            $orderCol = htmlentities($post['order']['0']['column']); //Column number
 
             //Convert column number to column name for the sql query
             switch($orderCol) {
@@ -63,10 +63,9 @@ class ThemeRepository {
     }
 
     /**
-     * Find one theme by name
+     *  Find one theme by name
      *
-     * @param $firstname
-     * @param $lastname
+     * @param $name
      * @return array
      */
     public function findTheme($name){
@@ -99,11 +98,11 @@ class ThemeRepository {
     }
 
     /**
-    * Update theme datas
-    *
-    * @param $values
-    * @return
-    */
+     *  Update theme name
+     *
+     * @param $values
+     * @return bool
+     */
     public function updateTheme($values) {
         $request = new DataBaseQuery();
 
@@ -121,6 +120,12 @@ class ThemeRepository {
         return $request->update($query, $dataArray);
     }
 
+    /**
+     *  Add a new theme
+     *
+     * @param $values
+     * @return string
+     */
     public function addTheme($values){
         $request = new DataBaseQuery();
 
@@ -137,6 +142,12 @@ class ThemeRepository {
         return $request->insert($query, $dataArray);
     }
 
+    /**
+     *  Hide theme instead of deleting it
+     *
+     * @param $id
+     * @return bool
+     */
     public function hideOne($id){
         $query = 'UPDATE t_theme SET theActive=0 WHERE idTheme=:id';
 

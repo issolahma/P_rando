@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: issolahma
- * Date: 06.12.2017
- * Time: 15:43
+ * Author: Maude Issolah
+ * Place: ETML
+ * Last update: 10.01.2018
  */
+
 include_once 'database/DataBaseQuery.php';
 
 class SeasonRepository {
@@ -40,7 +40,7 @@ class SeasonRepository {
 
             }
 
-            //Order dirrection Asc or Desc
+            //Order direction Asc or Desc
             $orderDir = htmlentities($post['order']['0']['dir']);
 
             $query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';
@@ -65,8 +65,7 @@ class SeasonRepository {
     /**
      * Find one season by name
      *
-     * @param $firstname
-     * @param $lastname
+     * @param $name
      * @return array
      */
     public function findSeason($name){
@@ -82,7 +81,7 @@ class SeasonRepository {
 
 
     /**
-     *  Find one season by id
+     * Find one season by id
      *
      * @param $id
      * @return array
@@ -99,54 +98,56 @@ class SeasonRepository {
     }
 
     /**
-    * update season datas
-    *
-    * @param $values
-    * @return
-    */
+     * Update season name
+     *
+     * @param $values
+     * @return bool
+     */
     public function updateSeason($values) {
         $request = new DataBaseQuery();
 
         //Values from $_Post
         $name = htmlentities($values['name']);
+        $id = htmlentities($values['id']);
 
-        $query = 'UPDATE t_season SET (seaName) VALUES (:name)';
+        $query = 'UPDATE t_season SET seaName=:sName WHERE idSeason=:id';
 
         $dataArray = array(
-            'name' => $name
+            'name' => $name,
+            'id' => $id
         );
 
         return $request->update($query, $dataArray);
     }
 
     /**
-    * Add a new season
-    *
-    * @param $values
-    * @return
-    */
+     * Add a new season
+     *
+     * @param $values
+     * @return array
+     */
     public function addSeason($values){
         $request = new DataBaseQuery();
 
         //Values from $_Post
         $name = htmlentities($values['name']);
         
-        $query = 'INSERT INTO t_season (seaName, seaCreateBy) VALUES (:name, :createBy)';
-        error_log('LOL: '.$firstname.' '.$lastname.' '.$right.' '.$login);
+        $query = 'INSERT INTO t_season (seaName, seaCreateBy) VALUES (:sName, :createBy)';
+
         $dataArray = array(
-            'name' => $name,
+            'sName' => $name,
             'createBy' => $_SESSION['user']['id']
         );
 
-        return $request->rawQuery($query, $dataArray);
+        return $request->insert($query, $dataArray);
     }
 
     /**
-    * Hide season instead of deleting it
-    *
-    * @param $id
-    * @return
-    */
+     * Hide season instead of deleting it
+     *
+     * @param $id
+     * @return bool
+     */
     public function hideOne($id){
         $query = 'UPDATE t_season SET accActive=0 WHERE idSeason=:id';
 

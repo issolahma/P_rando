@@ -1,3 +1,8 @@
+// Author: Maude Issolah
+// Place: ETML Lausanne
+// Last update: 10.01.2018
+// Subject: Ajax code to manage theme table
+
 $(document).ready(function(){
     $('#add_button').click(function(){
         $('#user_form')[0].reset();

@@ -52,26 +52,10 @@
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-6 form-group">
-                                <label>Prénom</label>
-                                <input type="text" id="firstname" name="firstname" placeholder="Prénom" class="form-control">
-                            </div>
-                            <div class="col-sm-6 form-group">
-                                <label>Nom</label>
-                                <input type="text" id="lastname" name="lastname" placeholder="Nom" class="form-control">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6 form-group">
-                                <label>login</label>
-                                <input type="text" id="login" name="login" placeholder="Login" class="form-control">
-                            </div>
-                            <div class="col-sm-6 form-group" id="accPwd">
-                                <label>password</label>
-                                <input type="password" id="password" name="password" placeholder="password" class="form-control">
-                            </div>
-                            <div class="col-sm-6 form-group">
-                                <label>Droit</label>
-                                <input type="text" id="right" name="right" placeholder="Droit" class="form-control">
+                                <!-- hidden id -->
+                                <input type="hidden" name="id" id="id">
+                                <label>Nom de la saison</label>
+                                <input type="text" id="name" name="name" placeholder="nom" class="form-control">
                             </div>
                         </div>
                     </div>
