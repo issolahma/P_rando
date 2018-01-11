@@ -1,8 +1,8 @@
 <?php
 /**
- * ETML
- * Date: 01.06.2017
- * Shop
+ * Author: Maude Issolah
+ * Place: ETML
+ * Last update: 11.01.2018
  */
 
 include_once 'database/DataBaseQuery.php';
@@ -124,7 +124,7 @@ class SickRepository {
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $name = htmlentities($values);  
+        $name = htmlentities($values['name']);
 
         $query = 'INSERT INTO t_sickness (sicName, sicCreateBy) VALUES (:name, :createBy)';
 
@@ -135,17 +135,41 @@ class SickRepository {
         
         return $request->insert($query, $dataArray);
     }
-    
+
     /**
-    * List all sickness
-    *
-    * @return
-    */
+     * List all sickness
+     *
+     * @return array
+     */
     public function listSickness(){
         $request = new DataBaseQuery();
         
         $query = 'SELECT * FROM t_sickness';
         
         return $request->rawQuery($query, null);
+    }
+
+    /**
+     * Update a sickness
+     *
+     * @param $values
+     * @return bool
+     */
+    public function updateSickness($values){
+        $request = new DataBaseQuery();
+
+        //Values from $_Post
+        $name = htmlentities($values['name']);
+        $id = htmlentities($values['id']);
+
+        $query = 'UPDATE t_sickness SET sicName=:sName, sicCreateBy=:createBy WHERE idSickness=:id';
+
+        $dataArray = array(
+            'sName' => $name,
+            'id' => $id,
+            'createBy' => $_SESSION['user']['id']
+        );
+
+        return $request->update($query, $dataArray);
     }
 }

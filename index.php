@@ -6,7 +6,7 @@ session_start();
  * Date: 01.06.2017
  */
 
-$debug = false;
+$debug = true;
 
 if ($debug) {
     error_reporting(E_ALL);
@@ -14,16 +14,18 @@ if ($debug) {
 }
 
 include 'controller/Controller.php';
-include 'controller/LoginController.php';
-include 'controller/ClientsController.php';
+
 include 'controller/AccompanistController.php';
-include 'controller/ThemeController.php';
-include 'controller/SeasonController.php';
 include 'controller/AnimationController.php';
+include 'controller/ClientsController.php';
 include 'controller/DifficultyController.php';
 include 'controller/GoToPageController.php';
 include 'controller/LodgingController.php';
+include 'controller/LoginController.php';
 include 'controller/MedicController.php';
+include 'controller/SeasonController.php';
+include 'controller/SicknessController.php';
+include 'controller/ThemeController.php';
 
 date_default_timezone_set('Europe/Zurich');
 
@@ -55,38 +57,41 @@ class MainController {
     protected function menuSelected ($page) {
 
         switch($_GET['controller']){
-            case 'admin':
-                $link = new AdminController();
-                break;
-            case 'login':
-                $link = new LoginController();
-                break;
-            case 'client':
-                $link = new ClientsController();
-                break;
             case 'accompanist':
                 $link = new AccompanistController();
+                break;
+            case 'admin':
+                $link = new AdminController();
                 break;
             case 'anim':
                 $link = new AnimationController();
                 break;
-             case 'theme':
-                $link = new ThemeController();
-                break;
-             case 'season':
-                $link = new SeasonController();
+            case 'client':
+                $link = new ClientsController();
                 break;
             case 'diff':
                 $link = new DifficultyController();
                 break;
+            case 'goto':
+                $link = new GoToPageController();
+                break;
             case 'lodg':
                 $link = new LodgingController();
+                break;
+            case 'login':
+                $link = new LoginController();
                 break;
             case 'medic':
                 $link = new MedicController();
                 break;
-            case 'goto':
-                $link = new GoToPageController();
+            case 'season':
+                $link = new SeasonController();
+                break;
+            case 'sick':
+                $link = new SicknessController();
+                break;
+             case 'theme':
+                $link = new ThemeController();
                 break;
             default:
                 $link = new GoToPageController();

@@ -72,7 +72,6 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="index.php?controller=client&action=show"><i class="fa fa-circle-o"></i> Client</a></li>
               <?php
               if($_SESSION['user']['right'] == 1){
                   echo ' <li><a href="index.php?controller=accompanist&action=show"><i class="fa fa-circle-o"></i> Accompagnateur</a></li>';
@@ -80,8 +79,10 @@
 
               ?>
             <li><a href="index.php?controller=anim&action=show"><i class="fa fa-circle-o"></i> Animations</a></li>
+              <li><a href="index.php?controller=client&action=show"><i class="fa fa-circle-o"></i> Client</a></li>
               <li><a href="index.php?controller=diff&action=show"><i class="fa fa-circle-o"></i> Difficultés</a></li>
               <li><a href="index.php?controller=lodg&action=show"><i class="fa fa-circle-o"></i> Logements</a></li>
+              <li><a href="index.php?controller=sick&action=show"><i class="fa fa-circle-o"></i> Maladies</a></li>
               <li><a href="index.php?controller=medic&action=show"><i class="fa fa-circle-o"></i> Médicaments</a></li>
               <li><a href="index.php?controller=season&action=show"><i class="fa fa-circle-o"></i> Saisons</a></li>
             <li><a href="index.php?controller=theme&action=show"><i class="fa fa-circle-o"></i> Thèmes</a></li>
