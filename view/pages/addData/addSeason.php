@@ -34,7 +34,7 @@
 
 <div id="userModal" class="modal fade">
     <div class="modal-dialog">
-        <form action="index.php?controller=anim&action=formAjax" method="post" id="user_form"
+        <form action="index.php?controller=season&action=formAjax" method="post" id="user_form"
               enctype="multipart/form-data">
             <div class="modal-content">
                 <div class="modal-header">

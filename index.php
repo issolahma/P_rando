@@ -22,6 +22,7 @@ include 'controller/SeasonController.php';
 include 'controller/AnimationController.php';
 include 'controller/DifficultyController.php';
 include 'controller/GoToPageController.php';
+include 'controller/LodgingController.php';
 
 date_default_timezone_set('Europe/Zurich');
 
@@ -77,6 +78,9 @@ class MainController {
             case 'diff':
                 $link = new DifficultyController();
                 break;
+            case 'lodg':
+                $link = new LodgingController();
+                break;
             case 'goto':
                 $link = new GoToPageController();
                 break;
@@ -84,7 +88,6 @@ class MainController {
                 $link = new GoToPageController();
                 break;
         }
-
         return $link;
     }
 

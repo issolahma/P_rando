@@ -2,15 +2,15 @@
 /**
  * Author: Maude Issolah
  * Place: ETML
- * Last update: 10.01.2018
+ * Last update: 11.01.2018
  */
 
 include_once 'database/DataBaseQuery.php';
 
-class DifficultyRepository {
+class LodgingRepository {
 
     /**
-     * Query to find all data for the difficulty list
+     * Query to find all data for the lodging list
      *
      * @return array of accompanist
      */
@@ -18,11 +18,12 @@ class DifficultyRepository {
         //From the search input
         $searchValue = htmlentities($post["search"]["value"]);
 
-        $query = 'SELECT * FROM t_difficulty ';
+        $query = 'SELECT * FROM t_lodging ';
 
         //Make the search on name
         if(!empty($post["search"]["value"])){
-            $query .= 'WHERE difLevel LIKE "%'.$searchValue.'%" ';
+            $query .= 'WHERE lodName LIKE "%'.$searchValue.'%" ';
+            $query .= 'OR lodPlace LIKE "%'.$searchValue.'%" ';
         }
 
         //Order by the chosen column
@@ -32,10 +33,13 @@ class DifficultyRepository {
             //Convert column number to column name for the sql query
             switch($orderCol) {
                 case 1:
-                    $orderCol = 'difLevel';
+                    $orderCol = 'lodName';
+                    break;
+                case 2:
+                    $orderCol = 'lodPlace';
                     break;
                 default:
-                    $orderCol = 'difLevel';
+                    $orderCol = 'lodName';
             }
 
             //Order direction Asc or Desc
@@ -44,7 +48,7 @@ class DifficultyRepository {
             $query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';
         }
         else{
-            $query .= 'ORDER BY difLevel ASC '; //By default order by level asc
+            $query .= 'ORDER BY lodName ASC '; //By default order by name asc
         }
 
         if($post["length"] != -1){
@@ -60,16 +64,16 @@ class DifficultyRepository {
     }
 
     /**
-     * Find one difficulty by name
+     * Find one lodging by name
      *
      * @param $name
      * @return array
      */
-    public function findDifficulty($name){
-        $query = 'SELECT * FROM t_difficulty WHERE difLevel=:dName';
+    public function findLodging($name){
+        $query = 'SELECT * FROM t_lodging WHERE lodName=:lName';
 
         $dataArray = array(
-            'dName' => $name
+            'lName' => $name
         );
 
         $request = new DataBaseQuery();
@@ -77,13 +81,13 @@ class DifficultyRepository {
     }
 
     /**
-     *  Find one difficulty by id
+     *  Find one lodging by id
      *
      * @param $id
      * @return array
      */
     public function findOne($id){
-        $query = 'SELECT * FROM t_difficulty WHERE idDifficulty=:id LIMIT 1';
+        $query = 'SELECT * FROM t_lodging WHERE idLodging=:id LIMIT 1';
 
         $dataArray = array(
             'id' => $id
@@ -94,39 +98,42 @@ class DifficultyRepository {
     }
 
     /**
-     * Add a new difficulty
+     * Add a new lodging
      *
      * @param $values
      * @return string
      */
-    public function addDifficulty($values){
+    public function addLodging($values){
         $request = new DataBaseQuery();
 
         //Values from $_Post
         $name = htmlentities($values['name']);
+        $place = htmlentities($values['place']);
 
-
-        $query = 'INSERT INTO t_difficulty (difLevel, difCreateBy) VALUES (:dLevel, :createBy)';
+        $query = 'INSERT INTO t_lodging (lodName, lodPlace, lodCreateBy) VALUES (:dLevel, :place, :createBy)';
 
         $dataArray = array(
             'dLevel' => $name,
+            'place' => $place,
             'createBy' => $_SESSION['user']['id']
         );
 
         return $request->insert($query, $dataArray);
     }
 
-    public function updateDifficulty($values){
+    public function updateLodging($values){
         $request = new DataBaseQuery();
 
         //Values from $_Post
         $name = htmlentities($values['name']);
+        $place = htmlentities($values['place']);
         $id = htmlentities($values['id']);
 
-        $query = 'UPDATE t_difficulty SET difLevel=:dLevel, difCreateBy=:createBy WHERE idDifficulty=:id';
+        $query = 'UPDATE t_lodging SET lodName=:dLevel, lodPlace=:place, lodCreateBy=:createBy WHERE idLodging=:id';
 
         $dataArray = array(
             'dLevel' => $name,
+            'place' => $place,
             'id' => $id,
             'createBy' => $_SESSION['user']['id']
         );
@@ -135,13 +142,13 @@ class DifficultyRepository {
     }
 
     /*
-* Hide difficulty instead of deleting it
+* Hide lodging instead of deleting it
 *
-* @param $id of the difficulty
+* @param $id of the lodging
 * @return
 */
     public function hideOne($id){
-        $query = 'UPDATE t_difficulty SET difActive=0 WHERE idDifficulty=:id';
+        $query = 'UPDATE t_lodging SET lodActive=0 WHERE idLodging=:id';
 
         $dataArray = array(
             'id' => $id

@@ -1,13 +1,13 @@
 <!-- Author: Maude Issolah
 <!-- Place: ETML Lausanne
-<!-- Last update: 10.01.2018
-<!-- Subject: View to add difficulty
+<!-- Last update: 11.01.2018
+<!-- Subject: View to add lodging
 -->
 
 <div class="container box">
     <div class="table-responsive">
         <div class="box-header">
-            <h3 class="box-title">Liste des difficultés des courses</h3>
+            <h3 class="box-title">Liste des logements</h3>
         </div>
         <div align="right">
             <button type="button" id="add_button" data-toggle="modal" data-target="#userModal"
@@ -19,7 +19,8 @@
             <thead>
             <tr>
                 <th width="0%">Id</th> <!-- Hidden col -->
-                <th width="35%">Niveau de difficulté</th>
+                <th width="35%">Nom</th>
+                <th width="35%">Lieu</th>
                 <th width="10%">Editer</th>
                 <th width="10%">Supprimer</th>
             </tr>
@@ -36,7 +37,7 @@
 
 <div id="userModal" class="modal fade">
     <div class="modal-dialog">
-        <form action="index.php?controller=diff&action=formAjax" method="post" id="user_form"
+        <form action="index.php?controller=lodg&action=formAjax" method="post" id="user_form"
               enctype="multipart/form-data">
             <div class="modal-content">
                 <div class="modal-header">
@@ -53,8 +54,12 @@
                             <div class="col-sm-6 form-group">
                                 <!-- hidden id -->
                                 <input type="hidden" name="id" id="id">
-                                <label>Niveau de difficulté</label>
-                                <input type="text" id="name" name="name" placeholder="difficulté" class="form-control">
+                                <label>Nom du logement</label>
+                                <input type="text" id="name" name="name" placeholder="logement" class="form-control">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Lieu</label>
+                                <input type="text" id="place" name="place" placeholder="lieu" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -69,4 +74,4 @@
     </div>
 </div>
 
-<script type="text/javascript" language="javascript" src="resources/js/addDifficultyTable.js"></script>
+<script type="text/javascript" language="javascript" src="resources/js/addLodgingTable.js"></script>
