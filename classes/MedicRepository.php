@@ -1,8 +1,8 @@
 <?php
 /**
- * ETML
- * Date: 01.06.2017
- * Shop
+ * Author: Maude Issolah
+ * Place: ETML
+ * Last update: 11.01.2018
  */
 
 include_once 'database/DataBaseQuery.php';
@@ -104,7 +104,7 @@ class MedicRepository {
 	* @return
 	*/
     public function hideOne($id){
-        $query = 'UPDATE t_medicament SET medActive=0 WHERE idClient=:id';
+        $query = 'UPDATE t_medicament SET medActive=0 WHERE idMedicament=:id';
 
         $dataArray = array(
             'id' => $id
@@ -124,28 +124,52 @@ class MedicRepository {
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $name = htmlentities($values);  
+        $name = htmlentities($values['name']);
 
-        $query = 'INSERT INTO t_medicament (medName, medCreateBy) VALUES (:name, :createBy)';
+        $query = 'INSERT INTO t_medicament (medName, medCreateBy) VALUES (:mName, :createBy)';
 
         $dataArray = array(
-            'name' => $name,
+            'mName' => $name,
             'createBy' => $_SESSION['user']['id']
         );
         
         return $request->insert($query, $dataArray);
     }
-    
+
     /**
-    * List all medicaments
-    *
-    * @return
-    */
+     * List all medicaments
+     *
+     * @return array
+     */
     public function listMedicament(){
         $request = new DataBaseQuery();
         
         $query = 'SELECT * FROM t_medicament';
         
         return $request->rawQuery($query, null);
+    }
+
+    /**
+     * Update a medicament
+     *
+     * @param $values
+     * @return bool
+     */
+    public function updateMedicament($values){
+        $request = new DataBaseQuery();
+
+        //Values from $_Post
+        $name = htmlentities($values['name']);
+        $id = htmlentities($values['id']);
+
+        $query = 'UPDATE t_medicament SET medName=:mName, medCreateBy=:createBy WHERE idMedicament=:id';
+
+        $dataArray = array(
+            'mName' => $name,
+            'id' => $id,
+            'createBy' => $_SESSION['user']['id']
+        );
+
+        return $request->update($query, $dataArray);
     }
 }

@@ -23,6 +23,7 @@ include 'controller/AnimationController.php';
 include 'controller/DifficultyController.php';
 include 'controller/GoToPageController.php';
 include 'controller/LodgingController.php';
+include 'controller/MedicController.php';
 
 date_default_timezone_set('Europe/Zurich');
 
@@ -80,6 +81,9 @@ class MainController {
                 break;
             case 'lodg':
                 $link = new LodgingController();
+                break;
+            case 'medic':
+                $link = new MedicController();
                 break;
             case 'goto':
                 $link = new GoToPageController();

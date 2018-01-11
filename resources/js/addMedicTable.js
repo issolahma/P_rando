@@ -1,12 +1,12 @@
 // Author: Maude Issolah
 // Place: ETML Lausanne
 // Last update: 11.01.2018
-// Subject: Ajax code to manage lodging table
+// Subject: Ajax code to manage medicament table
 
 $(document).ready(function(){
     $('#add_button').click(function(){
         $('#user_form')[0].reset();
-        $('.modal-title').text("Nouveau logement");
+        $('.modal-title').text("Nouveau médicament");
         $('#action').val("Ajout");
         $('#operation').val("Add");
     });
@@ -17,7 +17,7 @@ $(document).ready(function(){
         "serverSide":true,
         "order":[],
         "ajax":{
-            url:"index.php?controller=lodg&action=listAjax&boolAjax=true",
+            url:"index.php?controller=medic&action=listAjax&boolAjax=true",
             type:"POST"
         },
         "columnDefs":[
@@ -27,7 +27,7 @@ $(document).ready(function(){
                 "searchable": false
             },
             {
-                "targets":[3, 4],
+                "targets":[2, 3],
                 "orderable":false,
             },
         ],
@@ -41,7 +41,7 @@ $(document).ready(function(){
         if(name != '')
         {
             $.ajax({
-                url:"index.php?controller=lodg&action=formAjax&boolAjax=true",
+                url:"index.php?controller=medic&action=formAjax&boolAjax=true",
                 method:'POST',
                 data:new FormData(this),
                 contentType:false,
@@ -63,11 +63,11 @@ $(document).ready(function(){
 
     // Update button
     $(document).on('click', '.update', function(){
-        var lodg_id = $(this).attr("id");
+        var medic_id = $(this).attr("id");
         $.ajax({
-            url:"index.php?controller=lodg&action=updateAjax&boolAjax=true",
+            url:"index.php?controller=medic&action=updateAjax&boolAjax=true",
             method:"POST",
-            data:{lodg_id:lodg_id},
+            data:{medic_id:medic_id},
             dataType:"json",
             success:function(data)
             {
@@ -76,7 +76,7 @@ $(document).ready(function(){
                 $('#place').val(data.place);
                 $('#id').val(data.id);
 
-                $('.modal-title').text("Modifier ce logement");
+                $('.modal-title').text("Modifier ce médicament");
                 $('#action').val("Editer");
                 $('#operation').val("Edit");
             }
@@ -85,13 +85,13 @@ $(document).ready(function(){
 
     // Delete button
     $(document).on('click', '.delete', function(){
-        var lodg_id = $(this).attr("id");
+        var medic_id = $(this).attr("id");
         if(confirm("Are you sure you want to delete this?"))
         {
             $.ajax({
-                url:"index.php?controller=lodg&action=deleteAjax&boolAjax=true",
+                url:"index.php?controller=medic&action=deleteAjax&boolAjax=true",
                 method:"POST",
-                data:{lodg_id:lodg_id},
+                data:{medic_id:medic_id},
                 success:function(data)
                 {
                     alert(data);

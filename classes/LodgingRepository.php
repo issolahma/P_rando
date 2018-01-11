@@ -121,6 +121,12 @@ class LodgingRepository {
         return $request->insert($query, $dataArray);
     }
 
+    /**
+     * Update a lodging
+     *
+     * @param $values
+     * @return bool
+     */
     public function updateLodging($values){
         $request = new DataBaseQuery();
 
