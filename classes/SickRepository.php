@@ -40,7 +40,7 @@ class SickRepository {
 
             }
 
-            //Order dirrection Asc or Desc
+            //Order direction Asc or Desc
             $orderDir = htmlentities($post['order']['0']['dir']);
 
             $query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';

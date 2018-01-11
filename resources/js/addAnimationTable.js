@@ -30,13 +30,12 @@ $(document).ready(function(){
 
     $(document).on('submit', '#user_form', function(event){
         event.preventDefault();
-        var firstName = $('#firstname').val();
-        var lastName = $('#lastname').val();
-        var accRight = $('#right').val();
-        var login = $('#login').val();
-        var pwd = $('#password').val();
+        var name = $('#name').val();
+        var owner = $('#owner').val();
+        var duration = $('#duration').val();
+        var matList = $('#matList').val();
 
-        if(firstName != '' && lastName != '' && accRight != '' && login != '')
+        if(name != '' && owner != '' && duration != '' && matList != '')
         {
             $.ajax({
                 url:"index.php?controller=anim&action=formAjax&boolAjax=true",
@@ -60,23 +59,22 @@ $(document).ready(function(){
     });
 
     $(document).on('click', '.update', function(){
-        var user_id = $(this).attr("id");
+        var anim_id = $(this).attr("id");
         $.ajax({
             url:"index.php?controller=anim&action=updateAjax&boolAjax=true",
             method:"POST",
-            data:{user_id:user_id},
+            data:{anim_id:anim_id},
             dataType:"json",
             success:function(data)
             {
                 $('#userModal').modal('show');
-                $('#firstname').val(data.firstname);
-                $('#lastname').val(data.lastname);
-                $('#right').val(data.accRight);
-                $('#login').val(data.login);
-                $('#accPwd').hide();
+                $('#name').val(data.name);
+                $('#owner').val(data.owner);
+                $('#duration').val(data.duration);
+                $('#matList').val(data.matList);
 
-                $('.modal-title').text("Modifier cet accompagnateur");
-                $('#user_id').val(user_id);
+                $('.modal-title').text("Modifier cet animation");
+                $('#anim_id').val(anim_id);
                 $('#action').val("Editer");
                 $('#operation').val("Edit");
             }
@@ -84,13 +82,13 @@ $(document).ready(function(){
     });
 
     $(document).on('click', '.delete', function(){
-        var user_id = $(this).attr("id");
+        var anim_id = $(this).attr("id");
         if(confirm("Are you sure you want to delete this?"))
         {
             $.ajax({
                 url:"index.php?controller=anim&action=deleteAjax&boolAjax=true",
                 method:"POST",
-                data:{user_id:user_id},
+                data:{anim_id:anim_id},
                 success:function(data)
                 {
                     alert(data);
@@ -103,6 +101,4 @@ $(document).ready(function(){
             return false;
         }
     });
-
-
 });
