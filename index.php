@@ -25,6 +25,7 @@ include 'controller/LoginController.php';
 include 'controller/MedicController.php';
 include 'controller/SeasonController.php';
 include 'controller/SicknessController.php';
+include 'controller/SportController.php';
 include 'controller/ThemeController.php';
 
 date_default_timezone_set('Europe/Zurich');
@@ -89,6 +90,9 @@ class MainController {
                 break;
             case 'sick':
                 $link = new SicknessController();
+                break;
+            case 'sport':
+                $link = new SportController();
                 break;
              case 'theme':
                 $link = new ThemeController();

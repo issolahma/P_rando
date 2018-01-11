@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf3f8230-bdee-473e-9c6a-dc8e822117a6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SickRepository.php" afterPath="$PROJECT_DIR$/classes/SickRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/header.php" afterPath="$PROJECT_DIR$/view/header.php" />
     </list>
@@ -18,24 +17,24 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.36230826">
+    <splitter split-orientation="horizontal" split-proportion="0.5558802">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="addLodging.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/view/pages/addData/addLodging.php">
+          <file leaf-file-name="addSport.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/view/pages/addData/addSport.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="365">
-                  <caret line="29" column="6" lean-forward="true" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+                <state relative-caret-position="809">
+                  <caret line="71" column="79" lean-forward="false" selection-start-line="71" selection-start-column="79" selection-end-line="71" selection-end-column="79" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="addLodgingTable.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/js/addLodgingTable.js">
+          <file leaf-file-name="addSportTable.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/js/addSportTable.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+                <state relative-caret-position="1309">
+                  <caret line="77" column="57" lean-forward="false" selection-start-line="77" selection-start-column="57" selection-end-line="77" selection-end-column="57" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -43,11 +42,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="LodgingController.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/controller/LodgingController.php">
+          <file leaf-file-name="SportController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/controller/SportController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="214">
-                  <caret line="97" column="16" lean-forward="true" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="16" />
+                <state relative-caret-position="472">
+                  <caret line="111" column="33" lean-forward="true" selection-start-line="111" selection-start-column="33" selection-end-line="111" selection-end-column="33" />
                   <folding>
                     <element signature="e#6#80#0#PHP" expanded="true" />
                   </folding>
@@ -55,18 +54,20 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="LodgingRepository.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/classes/LodgingRepository.php">
+          <file leaf-file-name="SportRepository.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/classes/SportRepository.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="2" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
+                <state relative-caret-position="146">
+                  <caret line="139" column="21" lean-forward="true" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
                   <folding>
-                    <marker date="1515662151702" expanded="true" signature="414:437" ph="SELECT * FRO... t_lodging" />
-                    <marker date="1515662151702" expanded="true" signature="1964:2008" ph="SELECT * FRO... t_lodging" />
-                    <marker date="1515662151702" expanded="true" signature="2328:2379" ph="SELECT * FRO... t_lodging" />
-                    <marker date="1515662151702" expanded="true" signature="2867:2957" ph="INSERT INTO t_lodging... " />
-                    <marker date="1515662151702" expanded="true" signature="3534:3630" ph="UPDATE t_lod... " />
-                    <marker date="1515662151702" expanded="true" signature="4011:4063" ph="UPDATE t_lod... " />
+                    <element signature="e#6#80#0#PHP" expanded="true" />
+                    <marker date="1515665416848" expanded="true" signature="393:414" ph="SELECT * FRO... t_sport" />
+                    <marker date="1515665416848" expanded="true" signature="1781:1822" ph="SELECT * FRO... t_sport" />
+                    <marker date="1515665416848" expanded="true" signature="2140:2187" ph="SELECT * FRO... t_sport" />
+                    <marker date="1515665416848" expanded="true" signature="2498:2546" ph="UPDATE t_spo... " />
+                    <marker date="1515665416848" expanded="true" signature="2949:3018" ph="INSERT INTO t_sport... " />
+                    <marker date="1515665416848" expanded="true" signature="3360:3381" ph="SELECT * FRO... t_sport" />
+                    <marker date="1515665416848" expanded="true" signature="3749:3823" ph="UPDATE t_spo... " />
                   </folding>
                 </state>
               </provider>
@@ -79,18 +80,8 @@
           <file leaf-file-name="addSickness.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/view/pages/addData/addSickness.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/view/header.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1547">
-                  <caret line="91" column="14" lean-forward="true" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
+                <state relative-caret-position="85">
+                  <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -99,8 +90,8 @@
           <file leaf-file-name="addSicknessTable.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/js/addSicknessTable.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1309">
-                  <caret line="77" column="62" lean-forward="false" selection-start-line="77" selection-start-column="62" selection-end-line="77" selection-end-column="62" />
+                <state relative-caret-position="425">
+                  <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -111,8 +102,8 @@
           <file leaf-file-name="SicknessController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/controller/SicknessController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1581">
-                  <caret line="93" column="37" lean-forward="false" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="37" />
+                <state relative-caret-position="85">
+                  <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
                   <folding>
                     <element signature="e#6#80#0#PHP" expanded="true" />
                   </folding>
@@ -120,11 +111,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SickRepository.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="SickRepository.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/classes/SickRepository.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="3" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+                <state relative-caret-position="119">
+                  <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
                   <folding>
                     <element signature="e#6#80#0#PHP" expanded="true" />
                     <marker date="1515664413903" expanded="true" signature="392:416" ph="SELECT * FRO... t_sickness" />
@@ -152,15 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>u</find>
-      <find>$client</find>
-      <find>addAccompanist</find>
-      <find>client</find>
-      <find>//</find>
-      <find>updateClient</find>
-      <find>findClient</find>
-      <find>pass</find>
-      <find>updat</find>
       <find>password</find>
       <find>a</find>
       <find>user_id</find>
@@ -181,17 +163,18 @@
       <find>LodgingRepository</find>
       <find>Lodging</find>
       <find>lodging</find>
+      <find>sick</find>
       <find>lodg_id</find>
+      <find>Sick</find>
+      <find>sick_id</find>
+      <find>t_sickness</find>
+      <find>sicName</find>
+      <find>sickness</find>
+      <find>idSickness</find>
+      <find>SickRepository</find>
+      <find>Sickness</find>
     </findStrings>
     <replaceStrings>
-      <replace>client_id</replace>
-      <replace>&lt;!--</replace>
-      <replace>acc_id</replace>
-      <replace>accPwd</replace>
-      <replace>theme_id</replace>
-      <replace>sea_id</replace>
-      <replace>diff</replace>
-      <replace>difLevel</replace>
       <replace>dif_id</replace>
       <replace>$lodgRepo</replace>
       <replace>LodgingRepository</replace>
@@ -214,6 +197,14 @@
       <replace>$sickRepo</replace>
       <replace>sickness</replace>
       <replace>sick_id</replace>
+      <replace>$sportRepo</replace>
+      <replace>sport_id</replace>
+      <replace>t_sport</replace>
+      <replace>spoName</replace>
+      <replace>sport</replace>
+      <replace>idSport</replace>
+      <replace>SportRepository</replace>
+      <replace>Sport</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -262,10 +253,14 @@
         <option value="$PROJECT_DIR$/classes/MedicRepository.php" />
         <option value="$PROJECT_DIR$/view/pages/addData/addSickness.php" />
         <option value="$PROJECT_DIR$/resources/js/addSicknessTable.js" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/controller/SicknessController.php" />
         <option value="$PROJECT_DIR$/classes/SickRepository.php" />
         <option value="$PROJECT_DIR$/view/header.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/view/pages/addData/addSport.php" />
+        <option value="$PROJECT_DIR$/resources/js/addSportTable.js" />
+        <option value="$PROJECT_DIR$/controller/SportController.php" />
+        <option value="$PROJECT_DIR$/classes/SportRepository.php" />
       </list>
     </option>
   </component>
@@ -648,12 +643,12 @@
       <workItem from="1515395626507" duration="10751000" />
       <workItem from="1515567944330" duration="11443000" />
       <workItem from="1515593066375" duration="5193000" />
-      <workItem from="1515654258897" duration="7792000" />
+      <workItem from="1515654258897" duration="8734000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74999000" />
+    <option name="totallyTimeSpent" value="75941000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -686,6 +681,25 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16320294" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -722,38 +736,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/css/global.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/pages/addData/addClient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/addClientTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/ClientsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="97" column="24" lean-forward="true" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
-          <folding>
-            <element signature="e#6#80#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/ClientsRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -1169,14 +1151,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/LodgingRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1192,10 +1166,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/view/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="87" column="53" lean-forward="false" selection-start-line="87" selection-start-column="53" selection-end-line="87" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="94" column="33" lean-forward="false" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pages/addData/addSickness.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pages/addData/addSport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="809">
+          <caret line="71" column="79" lean-forward="false" selection-start-line="71" selection-start-column="79" selection-end-line="71" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/addSicknessTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controller/SicknessController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
-          <caret line="93" column="37" lean-forward="false" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="37" />
+        <state relative-caret-position="85">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
           <folding>
             <element signature="e#6#80#0#PHP" expanded="true" />
           </folding>
@@ -1204,8 +1220,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/SickRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="3" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        <state relative-caret-position="119">
+          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
           <folding>
             <element signature="e#6#80#0#PHP" expanded="true" />
             <marker date="1515664413903" expanded="true" signature="392:416" ph="SELECT * FRO... t_sickness" />
@@ -1219,29 +1235,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/addSicknessTable.js">
+    <entry file="file://$PROJECT_DIR$/resources/js/addSportTable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
-          <caret line="77" column="62" lean-forward="false" selection-start-line="77" selection-start-column="62" selection-end-line="77" selection-end-column="62" />
+          <caret line="77" column="57" lean-forward="false" selection-start-line="77" selection-start-column="57" selection-end-line="77" selection-end-column="57" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/pages/addData/addSickness.php">
+    <entry file="file://$PROJECT_DIR$/controller/SportController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="472">
+          <caret line="111" column="33" lean-forward="true" selection-start-line="111" selection-start-column="33" selection-end-line="111" selection-end-column="33" />
+          <folding>
+            <element signature="e#6#80#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/header.php">
+    <entry file="file://$PROJECT_DIR$/classes/SportRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="91" column="14" lean-forward="true" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="146">
+          <caret line="139" column="21" lean-forward="true" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
+          <folding>
+            <element signature="e#6#80#0#PHP" expanded="true" />
+            <marker date="1515665416848" expanded="true" signature="393:414" ph="SELECT * FRO... t_sport" />
+            <marker date="1515665416848" expanded="true" signature="1781:1822" ph="SELECT * FRO... t_sport" />
+            <marker date="1515665416848" expanded="true" signature="2140:2187" ph="SELECT * FRO... t_sport" />
+            <marker date="1515665416848" expanded="true" signature="2498:2546" ph="UPDATE t_spo... " />
+            <marker date="1515665416848" expanded="true" signature="2949:3018" ph="INSERT INTO t_sport... " />
+            <marker date="1515665416848" expanded="true" signature="3360:3381" ph="SELECT * FRO... t_sport" />
+            <marker date="1515665416848" expanded="true" signature="3749:3823" ph="UPDATE t_spo... " />
+          </folding>
         </state>
       </provider>
     </entry>

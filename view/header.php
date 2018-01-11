@@ -85,6 +85,7 @@
               <li><a href="index.php?controller=sick&action=show"><i class="fa fa-circle-o"></i> Maladies</a></li>
               <li><a href="index.php?controller=medic&action=show"><i class="fa fa-circle-o"></i> Médicaments</a></li>
               <li><a href="index.php?controller=season&action=show"><i class="fa fa-circle-o"></i> Saisons</a></li>
+              <li><a href="index.php?controller=sport&action=show"><i class="fa fa-circle-o"></i> Sport</a></li>
             <li><a href="index.php?controller=theme&action=show"><i class="fa fa-circle-o"></i> Thèmes</a></li>
           </ul>
         </li>
