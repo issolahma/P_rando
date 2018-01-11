@@ -110,7 +110,6 @@
                             <!-- Médicament client -->
                             <?php include_once 'view/pages/addData/formMedicament.php'; ?>
                         </div>
-
                     </div>
                 </div>
                 <div class="modal-footer">

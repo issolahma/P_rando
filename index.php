@@ -23,6 +23,7 @@ include 'controller/GoToPageController.php';
 include 'controller/LodgingController.php';
 include 'controller/LoginController.php';
 include 'controller/MedicController.php';
+include 'controller/RouteController.php';
 include 'controller/SeasonController.php';
 include 'controller/SicknessController.php';
 include 'controller/SportController.php';
@@ -84,6 +85,9 @@ class MainController {
                 break;
             case 'medic':
                 $link = new MedicController();
+                break;
+            case 'route':
+                $link = new RouteController();
                 break;
             case 'season':
                 $link = new SeasonController();
