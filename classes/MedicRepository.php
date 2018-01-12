@@ -17,7 +17,7 @@ class MedicRepository {
      */
     public function findAll($post) {
         //From the search input
-        $searchValue = htmlentities($post["search"]["value"]);
+        $searchValue = htmlspecialchars($post["search"]["value"]);
 
         $query = 'SELECT * FROM t_medicament ';
 
@@ -28,7 +28,7 @@ class MedicRepository {
 
         //Order by the chosen column
         if(!empty($post['order'])){
-            $orderCol = htmlentities($post['order']['0']['column']); //Column number
+            $orderCol = htmlspecialchars($post['order']['0']['column']); //Column number
 
             //Convert column number to column name for the sql query
             switch($orderCol) {
@@ -41,7 +41,7 @@ class MedicRepository {
             }
 
             //Order direction Asc or Desc
-            $orderDir = htmlentities($post['order']['0']['dir']);
+            $orderDir = htmlspecialchars($post['order']['0']['dir']);
 
             $query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';
         }
@@ -50,8 +50,8 @@ class MedicRepository {
         }
 
         if($post["length"] != -1){
-            $start = htmlentities($post['start']);
-            $length = htmlentities($post['length']);
+            $start = htmlspecialchars($post['start']);
+            $length = htmlspecialchars($post['length']);
 
             $query .= 'LIMIT ' . $start . ', ' . $length;
         }
@@ -124,7 +124,7 @@ class MedicRepository {
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $name = htmlentities($values['name']);
+        $name = htmlspecialchars($values['name']);
 
         $query = 'INSERT INTO t_medicament (medName, medCreateBy) VALUES (:mName, :createBy)';
 
@@ -159,8 +159,8 @@ class MedicRepository {
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $name = htmlentities($values['name']);
-        $id = htmlentities($values['id']);
+        $name = htmlspecialchars($values['name']);
+        $id = htmlspecialchars($values['id']);
 
         $query = 'UPDATE t_medicament SET medName=:mName, medCreateBy=:createBy WHERE idMedicament=:id';
 

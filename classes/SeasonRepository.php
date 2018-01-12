@@ -16,7 +16,7 @@ class SeasonRepository {
      */
     public function findAll($post) {
         //From the search input
-        $searchValue = htmlentities($post["search"]["value"]);
+        $searchValue = htmlspecialchars($post["search"]["value"]);
 
         $query = 'SELECT * FROM t_season ';
 
@@ -28,7 +28,7 @@ class SeasonRepository {
 
         //Order by the chosen column
         if(!empty($post['order'])){
-            $orderCol = htmlentities($post['order']['0']['column']); //Column number
+            $orderCol = htmlspecialchars($post['order']['0']['column']); //Column number
 
             //Convert column number to column name for the sql query
             switch($orderCol) {
@@ -41,7 +41,7 @@ class SeasonRepository {
             }
 
             //Order direction Asc or Desc
-            $orderDir = htmlentities($post['order']['0']['dir']);
+            $orderDir = htmlspecialchars($post['order']['0']['dir']);
 
             $query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';
         }
@@ -50,8 +50,8 @@ class SeasonRepository {
         }
 
         if($post["length"] != -1){
-            $start = htmlentities($post['start']);
-            $length = htmlentities($post['length']);
+            $start = htmlspecialchars($post['start']);
+            $length = htmlspecialchars($post['length']);
 
             $query .= 'LIMIT ' . $start . ', ' . $length;
         }
@@ -107,8 +107,8 @@ class SeasonRepository {
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $name = htmlentities($values['name']);
-        $id = htmlentities($values['id']);
+        $name = htmlspecialchars($values['name']);
+        $id = htmlspecialchars($values['id']);
 
         $query = 'UPDATE t_season SET seaName=:sName WHERE idSeason=:id';
 
@@ -130,7 +130,7 @@ class SeasonRepository {
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $name = htmlentities($values['name']);
+        $name = htmlspecialchars($values['name']);
         
         $query = 'INSERT INTO t_season (seaName, seaCreateBy) VALUES (:sName, :createBy)';
 
@@ -157,5 +157,18 @@ class SeasonRepository {
 
         $request = new DataBaseQuery();
         return $request->update($query, $dataArray);
+    }
+
+    /**
+     * List all season
+     *
+     * @return array
+     */
+    public function listSeason(){
+        $request = new DataBaseQuery();
+
+        $query = 'SELECT * FROM t_season';
+
+        return $request->rawQuery($query, null);
     }
 }

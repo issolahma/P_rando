@@ -54,7 +54,7 @@ class AnimationController extends Controller
 
         if ($_POST['operation'] == 'Add') {
             //Check if animation exist
-            if ($animRepo->findAnimation(htmlentities($_POST['name'])) == null) {
+            if ($animRepo->findAnimation(htmlspecialchars($_POST['name'])) == null) {
                 //Add client
                 $animRepo->addAnimation($_POST);
             } else {

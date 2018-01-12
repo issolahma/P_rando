@@ -19,9 +19,11 @@
             <thead>
             <tr>
                 <th width="0%">Id</th> <!-- Hidden col -->
-                <th width="35%">Nom</th>
-                <th width="35%">Nombre de clients</th>
-                <th width="35%">Durée</th>
+                <th width="30%">Nom</th>
+                <th width="20%">Lieu</th>
+                <th width="15%">Nombre de clients</th>
+                <th width="35%">Sport</th>
+                <th width="35%">Difficulté</th>
                 <th width="10%">Editer</th>
                 <th width="10%">Supprimer</th>
             </tr>
@@ -97,6 +99,8 @@
                             </div>
                         </div>
                         <div class="row">
+                            <!-- hidden id -->
+                            <input type="hidden" name="id" id="id">
                             <div class="col-sm-12 form-group">
                                 <label>Danger</label>
                                 <textarea type="text" id="danger" name="danger" placeholder="danger" class="form-control"></textarea>

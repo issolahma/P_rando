@@ -84,7 +84,7 @@ class SicknessController extends Controller {
 
         if ($_POST['operation'] == 'Add') {
             //Check if accompanist exist
-            if ($sickRepo->findSickness(htmlentities($_POST['name'])) == null) {
+            if ($sickRepo->findSickness(htmlspecialchars($_POST['name'])) == null) {
                 //Add client
                 $sickRepo->addSickness($_POST);
             } else {

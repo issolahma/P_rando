@@ -12,8 +12,9 @@ echo "<label for='sickness'>Maladie</label><br>";
 //  <!-- http://www.mredkj.com/tutorials/tableaddrow.html -->
         $i=0;
         foreach ($sickList as $row) {
-
-            print "<input type='checkbox' id='sickness".$row['idSickness']."' name='sickness[]' value='".$row['sicName']."'>".$row['sicName'];
+            if($row['sicActive'] == 1) {
+                print "<input class='chBox' type='checkbox' id='sickness" . $row['idSickness'] . "' name='sickness[]' value='" . $row['sicName'] . "'>" . $row['sicName'];
+            }
             $i++;
         }
         print "<input type='checkbox' name='sicknessInput' value='otherSick' onclick='printNewInputSick(this)'>Autre";

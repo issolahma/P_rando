@@ -50,7 +50,7 @@ class ThemeController extends Controller
 
         if ($_POST['operation'] == 'Add') {
             //Check if theme exist
-            if ($themeRepo->findTheme(htmlentities($_POST['name'])) == null) {
+            if ($themeRepo->findTheme(htmlspecialchars($_POST['name'])) == null) {
                 //Add theme
                 $themeRepo->addTheme($_POST);
             } else {

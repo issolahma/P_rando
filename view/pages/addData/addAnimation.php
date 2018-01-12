@@ -19,9 +19,11 @@
             <thead>
             <tr>
                 <th width="0%">Id</th> <!-- Hidden col -->
-                <th width="35%">Nom</th>
-                <th width="35%">Responsable</th>
-                <th width="35%">Durée</th>
+                <th width="30%">Nom</th>
+                <th width="25%">Responsable</th>
+                <th width="10%">Durée</th>
+                <th width="35%">Thème</th>
+                <th width="35%">Saison</th>
                 <th width="10%">Editer</th>
                 <th width="10%">Supprimer</th>
             </tr>
@@ -67,10 +69,20 @@
                             </div>
                         </div>
                         <div class="row">
+                            <!-- hidden id -->
+                            <input type="hidden" name="id" id="id">
                             <div class="col-sm-12 form-group">
                                 <label>Liste du matériel</label>
                                 <textarea type="text" id="matList" name="matList" placeholder="Liste du matériel necessaire" class="form-control"></textarea>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <!-- Theme -->
+                            <?php include_once 'view/pages/addData/formTheme.php'; ?>
+                        </div>
+                        <div class="form-group">
+                            <!-- Season -->
+                            <?php include_once 'view/pages/addData/formSeason.php'; ?>
                         </div>
                     </div>
                 </div>

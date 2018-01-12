@@ -84,7 +84,7 @@ class DifficultyController extends Controller {
 
         if ($_POST['operation'] == 'Add') {
             //Check if accompanist exist
-            if ($diffRepo->findDifficulty(htmlentities($_POST['name'])) == null) {
+            if ($diffRepo->findDifficulty(htmlspecialchars($_POST['name'])) == null) {
                 //Add client
                 $diffRepo->addDifficulty($_POST);
             } else {

@@ -16,7 +16,7 @@ class AccompanistRepository {
      */
     public function findAll($post) {
         //From the search input
-        $searchValue = htmlentities($post["search"]["value"]);
+        $searchValue = htmlspecialchars($post["search"]["value"]);
 
         $query = 'SELECT * FROM t_accompanist ';
 
@@ -28,7 +28,7 @@ class AccompanistRepository {
 
         //Order by the chosen column
         if(!empty($post['order'])){
-            $orderCol = htmlentities($post['order']['0']['column']); //Column number
+            $orderCol = htmlspecialchars($post['order']['0']['column']); //Column number
 
             //Convert column number to column name for the sql query
             switch($orderCol) {
@@ -46,7 +46,7 @@ class AccompanistRepository {
             }
 
             //Order direction Asc or Desc
-            $orderDir = htmlentities($post['order']['0']['dir']);
+            $orderDir = htmlspecialchars($post['order']['0']['dir']);
 
             $query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';
         }
@@ -55,8 +55,8 @@ class AccompanistRepository {
         }
 
         if($post["length"] != -1){
-            $start = htmlentities($post['start']);
-            $length = htmlentities($post['length']);
+            $start = htmlspecialchars($post['start']);
+            $length = htmlspecialchars($post['length']);
 
             $query .= 'LIMIT ' . $start . ', ' . $length;
         }
@@ -113,12 +113,12 @@ class AccompanistRepository {
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $firstname = htmlentities($values['firstname']);
-        $lastname = htmlentities($values['lastname']);
-        $right = htmlentities($values['right']);
-        $login = htmlentities($values['login']);
-        $id = htmlentities($values['id']);
-        $pwd = htmlentities($values['password']);
+        $firstname = htmlspecialchars($values['firstname']);
+        $lastname = htmlspecialchars($values['lastname']);
+        $right = htmlspecialchars($values['right']);
+        $login = htmlspecialchars($values['login']);
+        $id = htmlspecialchars($values['id']);
+        $pwd = htmlspecialchars($values['password']);
 
         $query = 'UPDATE t_accompanist SET accPwd=:pwd, accFirstName=:firstname, accLastName=:lastname, accLogin=:login, accRight=:accRight, accCreateBy=:accCreateBy WHERE idAccompanist=:id';
 
@@ -145,11 +145,11 @@ class AccompanistRepository {
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $firstname = htmlentities($values['firstname']);
-        $lastname = htmlentities($values['lastname']);
-        $right = htmlentities($values['right']);
-        $login = htmlentities($values['login']);
-        $pwd = htmlentities($values['password']);
+        $firstname = htmlspecialchars($values['firstname']);
+        $lastname = htmlspecialchars($values['lastname']);
+        $right = htmlspecialchars($values['right']);
+        $login = htmlspecialchars($values['login']);
+        $pwd = htmlspecialchars($values['password']);
 
         $query = 'INSERT INTO t_accompanist (accPwd, accFirstName, accLastName, accLogin, accRight, accCreateBy) VALUES (:accPwd, :firstname, :lastname, :accLogin, :accRight, :acccreateBy)';
 
@@ -169,8 +169,8 @@ class AccompanistRepository {
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $pwd = htmlentities($values['password']);
-        $id = htmlentities($values['id']);
+        $pwd = htmlspecialchars($values['password']);
+        $id = htmlspecialchars($values['id']);
 
         $query = 'UPDATE t_accompanist SET accPwd=:pwd WHERE idAccompanist=:id';
 

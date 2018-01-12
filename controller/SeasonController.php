@@ -50,7 +50,7 @@ class SeasonController extends Controller
 
         if ($_POST['operation'] == 'Add') {
             //Check if season exist
-            if ($seasonRepo->findSeason(htmlentities($_POST['name'])) == null) {
+            if ($seasonRepo->findSeason(htmlspecialchars($_POST['name'])) == null) {
                 //Add season
                 $seasonRepo->addSeason($_POST);
             } else {

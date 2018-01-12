@@ -6,6 +6,9 @@
  */
 
 include_once 'classes/AnimationRepository.php';
+include_once 'classes/ThemeRepository.php';
+include_once 'classes/SeasonRepository.php';
+include_once 'classes/DataRepository.php';
 
 class AnimationController extends Controller
 {
@@ -30,6 +33,12 @@ class AnimationController extends Controller
     private function showAction()
     {
         $animRepo = new AnimationRepository();
+        $seasonRepo = new SeasonRepository();
+        $themeRepo = new ThemeRepository();
+
+        //List of theme and season
+        $themeList = $themeRepo->listTheme();
+        $seasonList = $seasonRepo->listSeason();
 
         $view = file_get_contents('view/pages/addData/addAnimation.php');
 
@@ -50,13 +59,14 @@ class AnimationController extends Controller
 
         if ($_POST['operation'] == 'Add') {
             //Check if animation exist
-            if ($animRepo->findAnimation(htmlentities($_POST['name'])) == null) {
+            if ($animRepo->findAnimation(htmlspecialchars($_POST['name'])) == null) {
                 //Add client
                 $animRepo->addAnimation($_POST);
             } else {
                 $output['error_msg'] = 'Une animation avec le même nom est déjà présente dans la base de donnée'; //TODO utf8
             }
         }elseif ($_POST['operation'] == 'Edit'){
+            error_log('CONTROLLER '.print_r($_POST, true));
             $animRepo->updateAnimation($_POST);
         }
 
@@ -89,6 +99,8 @@ class AnimationController extends Controller
                 $sub_array[] = $row["aniName"];
                 $sub_array[] = $row['aniOwner'];
                 $sub_array[] = $row['aniDuration'];
+                $sub_array[] = implode(',',$this->getAllTheme($row['idAnimation'])); //theme
+                $sub_array[] = implode(',',$this->getAllSeason($row['idAnimation'])); //season
                 $sub_array[] = '<button type="button" name="update" id="' . $row["idAnimation"] . '" class="btn btn-warning btn-xs update">Modifier</button>';
                 $sub_array[] = '<button type="button" name="delete" id="' . $row["idAnimation"] . '" class="btn btn-danger btn-xs delete">Supprimer</button>';
                 $data[] = $sub_array;
@@ -104,10 +116,43 @@ class AnimationController extends Controller
         echo json_encode($output);
     }
 
+    private function getAllTheme($idAnim) {
+        $themeRepo = new ThemeRepository();
+        $dataRepo = new DataRepository();
+
+        $themesIds = $dataRepo->themeAnim($idAnim);
+
+        $themeList = array();
+        foreach($themesIds as $ids){
+            $themeList[] = $themeRepo->findOne($ids['idTheme'])[0]['theName'].' ';
+        }
+
+        return $themeList;
+    }
+
+    private function getAllSeason($idAnim) {
+        $seasonRepo = new SeasonRepository();
+        $dataRepo = new DataRepository();
+
+        $seasonIds = $dataRepo->seasonanim($idAnim);
+
+        $seasonList = array();
+        foreach($seasonIds as $ids){
+            $seasonList[] = $seasonRepo->findOne($ids['idSeason'])[0]['seaName'].' ';
+        }
+
+        return $seasonList;
+    }
+
     private function updateAjaxAction(){
 
         $animRepo = new AnimationRepository();
         $animation = $animRepo->findOne($_POST['anim_id']);
+        $theme = $animRepo->findAnimationTheme($_POST['anim_id']);
+        $season = $animRepo->findSeasonTheme($_POST['anim_id']);
+error_log('ANIM-THEME '.print_r($theme,true));
+        $output['theme'] = $theme;
+        $output['season'] = $season;
 
         foreach ($animation as $row){
             $output["name"] = $row["aniName"];

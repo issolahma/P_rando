@@ -35,14 +35,6 @@ $(document).ready(function(){
 
     $(document).on('submit', '#user_form', function(event){
         event.preventDefault();
-        var firstName = $('#firstname').val();
-        var lastName = $('#lastname').val();
-        var accRight = $('#right').val();
-        var login = $('#login').val();
-        var pwd = $('#password').val();
-
-        if(firstName != '' && lastName != '' && accRight != '' && login != '')
-        {
             $.ajax({
                 url:"index.php?controller=season&action=formAjax&boolAjax=true",
                 method:'POST',
@@ -57,11 +49,6 @@ $(document).ready(function(){
                     dataTable.ajax.reload();
                 }
             });
-        }
-        else
-        {
-            alert("All Fields are Required");
-        }
     });
 
     $(document).on('click', '.update', function(){

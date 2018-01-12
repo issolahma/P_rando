@@ -13,8 +13,10 @@ echo '<div class="form-group">';
 
 	//  <!-- http://www.mredkj.com/tutorials/tableaddrow.html -->
 	foreach ($medicList as $row) {
-   	    print "<input type='checkbox' class='minimal' name='medicament[]' id='medicament".$row['idMedicament']."' value='".$row['medName']."'> ".$row['medName'];
-	}	
+        if($row['medActive'] == 1) {
+            print "<input class='chBox' type='checkbox' class='minimal' name='medicament[]' id='medicament" . $row['idMedicament'] . "' value='" . $row['medName'] . "'> " . $row['medName'];
+        }
+    }
 	print "<input type='checkbox' class='minimal' name='medicamentInput' value='otherMed' onclick='printNewInputMed(this)'>Autre";
 ?>
 </div>

@@ -16,7 +16,7 @@ class DifficultyRepository {
      */
     public function findAll($post) {
         //From the search input
-        $searchValue = htmlentities($post["search"]["value"]);
+        $searchValue = htmlspecialchars($post["search"]["value"]);
 
         $query = 'SELECT * FROM t_difficulty ';
 
@@ -27,7 +27,7 @@ class DifficultyRepository {
 
         //Order by the chosen column
         if(!empty($post['order'])){
-            $orderCol = htmlentities($post['order']['0']['column']); //Column number
+            $orderCol = htmlspecialchars($post['order']['0']['column']); //Column number
 
             //Convert column number to column name for the sql query
             switch($orderCol) {
@@ -39,7 +39,7 @@ class DifficultyRepository {
             }
 
             //Order direction Asc or Desc
-            $orderDir = htmlentities($post['order']['0']['dir']);
+            $orderDir = htmlspecialchars($post['order']['0']['dir']);
 
             $query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';
         }
@@ -48,8 +48,8 @@ class DifficultyRepository {
         }
 
         if($post["length"] != -1){
-            $start = htmlentities($post['start']);
-            $length = htmlentities($post['length']);
+            $start = htmlspecialchars($post['start']);
+            $length = htmlspecialchars($post['length']);
 
             $query .= 'LIMIT ' . $start . ', ' . $length;
         }
@@ -103,7 +103,7 @@ class DifficultyRepository {
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $name = htmlentities($values['name']);
+        $name = htmlspecialchars($values['name']);
 
 
         $query = 'INSERT INTO t_difficulty (difLevel, difCreateBy) VALUES (:dLevel, :createBy)';
@@ -120,8 +120,8 @@ class DifficultyRepository {
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $name = htmlentities($values['name']);
-        $id = htmlentities($values['id']);
+        $name = htmlspecialchars($values['name']);
+        $id = htmlspecialchars($values['id']);
 
         $query = 'UPDATE t_difficulty SET difLevel=:dLevel, difCreateBy=:createBy WHERE idDifficulty=:id';
 
@@ -149,5 +149,18 @@ class DifficultyRepository {
 
         $request = new DataBaseQuery();
         return $request->update($query, $dataArray);
+    }
+
+    /**
+     * List all difficulty
+     *
+     * @return array
+     */
+    public function listDifficulty(){
+        $request = new DataBaseQuery();
+
+        $query = 'SELECT * FROM t_difficulty';
+
+        return $request->rawQuery($query, null);
     }
 }

@@ -18,7 +18,7 @@ class ClientsRepository {
      */
     public function findAll($post) {
         //From the search input
-        $searchValue = htmlentities($post["search"]["value"]);
+        $searchValue = htmlspecialchars($post["search"]["value"]);
 
         $query = 'SELECT * FROM t_client ';
 
@@ -31,7 +31,7 @@ class ClientsRepository {
 
         //Order by the chosen column
         if(!empty($post['order'])){
-            $orderCol = htmlentities($post['order']['0']['column']); //Column number
+            $orderCol = htmlspecialchars($post['order']['0']['column']); //Column number
 
             //Convert column number to column name for the sql query
             switch($orderCol) {
@@ -50,7 +50,7 @@ class ClientsRepository {
             }
 
             //Order direction Asc or Desc
-            $orderDir = htmlentities($post['order']['0']['dir']);
+            $orderDir = htmlspecialchars($post['order']['0']['dir']);
 
             $query .= 'ORDER BY '.$orderCol.' '.$orderDir.' ';
         }
@@ -59,8 +59,8 @@ class ClientsRepository {
         }
 
         if($post["length"] != -1){
-            $start = htmlentities($post['start']);
-            $length = htmlentities($post['length']);
+            $start = htmlspecialchars($post['start']);
+            $length = htmlspecialchars($post['length']);
 
             $query .= 'LIMIT ' . $start . ', ' . $length;
         }
@@ -138,15 +138,15 @@ class ClientsRepository {
         $request = new DataBaseQuery();
 
         //Values from $_Post
-        $firstname = htmlentities($values['firstname']);
-        $lastname = htmlentities($values['lastname']);
-        $street = htmlentities($values['street']);
-        $streetNb = htmlentities($values['streetNb']);
-        $npa = htmlentities($values['npa']);
-        $city = htmlentities($values['city']);
-        $phone = htmlentities($values['cliPhone']);
-        $urgencyPh = htmlentities($values['urgencyPhone']);
-        $email = htmlentities($values['email']);
+        $firstname = htmlspecialchars($values['firstname']);
+        $lastname = htmlspecialchars($values['lastname']);
+        $street = htmlspecialchars($values['street']);
+        $streetNb = htmlspecialchars($values['streetNb']);
+        $npa = htmlspecialchars($values['npa']);
+        $city = htmlspecialchars($values['city']);
+        $phone = htmlspecialchars($values['cliPhone']);
+        $urgencyPh = htmlspecialchars($values['urgencyPhone']);
+        $email = htmlspecialchars($values['email']);
 
         $query = 'INSERT INTO t_client (cliFirstName, cliLastName, cliMobilePhone, cliUrgencyPhone, cliEmail, cliStreet, cliStreetNum, cliNPA, cliCity, cliCreateBy) VALUES (:firstname, :lastname, :mobile, :urgency, :mail, :street, :streetnum, :npa, :city, :clicreateBy)';
 
@@ -169,7 +169,7 @@ class ClientsRepository {
         if(isset($values['sickness'])){
             //Add each sickness checked
             foreach ($values['sickness'] as $item){
-                $sick = htmlentities($item);
+                $sick = htmlspecialchars($item);
 
                 $sickId = $sickRepo->findSickness($sick)[0]['idSickness'];
 
@@ -180,7 +180,7 @@ class ClientsRepository {
         //If 'other' sick is checked
         if(isset($values['sicknessInput'])){
             // New sick name
-            $sick = htmlentities($values['otherSick']);
+            $sick = htmlspecialchars($values['otherSick']);
 
             $sickId = $sickRepo->findSickness($sick)[0]['idSickness'];
             if ($sickRepo->findSickness($sick) == null) {
@@ -196,7 +196,7 @@ class ClientsRepository {
         if(isset($values['medicament'])){
 
             foreach ($values['medicament'] as $item){
-                $medic = htmlentities($item);
+                $medic = htmlspecialchars($item);
 
                 $medicId = $medicRepo->findMedic($medic)[0]['idMedicament'];
 
@@ -207,7 +207,7 @@ class ClientsRepository {
         //If other medic is checked
         if(isset($values['medicamentInput'])){
             // New medic name
-            $medic = htmlentities($values['otherMed']);
+            $medic = htmlspecialchars($values['otherMed']);
 
             $medicId = $medicRepo->findMedic($medic)[0]['idMedicament'];
 
@@ -304,16 +304,16 @@ class ClientsRepository {
         $sickRepo = new SickRepository();
 
         //Values from $_Post
-        $firstname = htmlentities($values['firstname']);
-        $lastname = htmlentities($values['lastname']);
-        $street = htmlentities($values['street']);
-        $streetNb = htmlentities($values['streetNb']);
-        $npa = htmlentities($values['npa']);
-        $city = htmlentities($values['city']);
-        $phone = htmlentities($values['cliPhone']);
-        $urgencyPh = htmlentities($values['urgencyPhone']);
-        $email = htmlentities($values['email']);
-        $idClient = htmlentities($values['client_id']);
+        $firstname = htmlspecialchars($values['firstname']);
+        $lastname = htmlspecialchars($values['lastname']);
+        $street = htmlspecialchars($values['street']);
+        $streetNb = htmlspecialchars($values['streetNb']);
+        $npa = htmlspecialchars($values['npa']);
+        $city = htmlspecialchars($values['city']);
+        $phone = htmlspecialchars($values['cliPhone']);
+        $urgencyPh = htmlspecialchars($values['urgencyPhone']);
+        $email = htmlspecialchars($values['email']);
+        $idClient = htmlspecialchars($values['client_id']);
 
         $query = 'UPDATE t_client SET cliFirstName=:firstname, cliLastName=:lastname, cliMobilePhone=:mobile, cliUrgencyPhone=:urgency, cliEmail=:email, cliStreet=:street, cliStreetNum=:streetnum, cliNPA=:npa, cliCity=:city WHERE idClient=:id';
 
@@ -340,7 +340,7 @@ class ClientsRepository {
         if(isset($values['sickness'])){
             //Add each sickness checked
             foreach ($values['sickness'] as $item){
-                $sick = htmlentities($item);
+                $sick = htmlspecialchars($item);
 
                 $sickId = $sickRepo->findSickness($sick)[0]['idSickness'];
 
@@ -351,7 +351,7 @@ class ClientsRepository {
         //If 'other' sick is checked
         if(isset($values['sicknessInput'])){
             // New sick name
-            $sick = htmlentities($values['otherSick']);
+            $sick = htmlspecialchars($values['otherSick']);
 
             $sickId = $sickRepo->findSickness($sick)[0]['idSickness'];
             if ($sickRepo->findSickness($sick) == null) {
@@ -367,7 +367,7 @@ class ClientsRepository {
         if(isset($values['medicament'])){
 
             foreach ($values['medicament'] as $item){
-                $medic = htmlentities($item);
+                $medic = htmlspecialchars($item);
 
                 $medicId = $medicRepo->findMedic($medic)[0]['idMedicament'];
                 $this->addTakeMedic($idClient, $medicId);
@@ -377,7 +377,7 @@ class ClientsRepository {
         //If other medic is checked
         if(isset($values['medicamentInput'])){
             // New medic name
-            $medic = htmlentities($values['otherMed']);
+            $medic = htmlspecialchars($values['otherMed']);
 
             $medicId = $medicRepo->findMedic($medic)[0]['idMedicament'];
 
@@ -392,15 +392,15 @@ class ClientsRepository {
     }
 
     /**
-    * Find client sickness
-    *
-    * @param $idClient
-    *
-    */
+     * Find client sickness
+     *
+     * @param $idClient
+     * @return array
+     */
     public function findClientSickness($idClient){
         $request = new DataBaseQuery();
 
-        $query = 'SELECT * FROM t_sickness NATURAL JOIN t_issick NATURAL JOIN t_client WHERE t_client.idClient=:id';
+        $query = 'SELECT * FROM t_sickness NATURAL JOIN t_issick WHERE t_issick.idClient=:id';
 
         $dataArray = array(
             'id' => $idClient
@@ -410,14 +410,15 @@ class ClientsRepository {
     }
 
     /**
-    * Find client medicament
-    *
-    * @param $idClient
-    */
+     * Find client medicament
+     *
+     * @param $idClient
+     * @return array
+     */
     public function findClientMedic($idClient){
         $request = new DataBaseQuery();
 
-        $query = 'SELECT * FROM t_medicament NATURAL JOIN t_takemeds NATURAL JOIN t_client WHERE t_client.idClient=:id';
+        $query = 'SELECT * FROM t_medicament NATURAL JOIN t_takemeds WHERE t_takemeds.idClient=:id';
 
         $dataArray = array(
             'id' => $idClient

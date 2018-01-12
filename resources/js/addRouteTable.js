@@ -27,7 +27,7 @@ $(document).ready(function(){
                 "searchable": false
             },
             {
-                "targets":[4, 5],
+                "targets":[4, 5, 6, 7],
                 "orderable":false,
             },
         ],
@@ -37,18 +37,6 @@ $(document).ready(function(){
     // Submit button
     $(document).on('submit', '#user_form', function(event){
         event.preventDefault();
-        var firstName = $('#firstname').val();
-        var lastName = $('#lastname').val();
-        var street = $('#street').val();
-        var streetNb = $('#streetNb').val();
-        var city = $('#city').val();
-        var npa = $('#npa').val();
-        var cliPhone = $('#cliPhone').val();
-        var urgencyPhone = $('#urgencyPhone').val();
-        var email = $('#email').val();
-
-        if(firstName != '' && lastName != '')
-        {
             $.ajax({
                 url:"index.php?controller=route&action=formAjax&boolAjax=true",
                 method:'POST',
@@ -63,11 +51,6 @@ $(document).ready(function(){
                     dataTable.ajax.reload();
                 }
             });
-        }
-        else
-        {
-            alert("All Fields are Required");
-        }
     });
 
     // Update button
@@ -81,36 +64,24 @@ $(document).ready(function(){
             success:function(data)
             {
                 $('#userModal').modal('show');
-                $('#firstname').val(data.firstname);
-                $('#lastname').val(data.lastname);
-                $('#city').val(data.city);
-                $('#email').val(data.email);
-                $('#cliPhone').val(data.cliPhone);
-                $('#npa').val(data.npa);
-                $('#street').val(data.street);
-                $('#streetNb').val(data.streetNb);
-                $('#urgencyPhone').val(data.urgencyPhone);
+                $('#name').val(data.name);
+                $('#place').val(data.place);
+                $('#describ').val(data.description);
+                $('#dropPos').val(data.dropPos);
+                $('#dropNeg').val(data.dropNeg);
+                $('#maxAlt').val(data.maxAlt);
+                $('#nbClient').val(data.nbClient);
+                $('#gps').val(data.gps);
+                $('#duration').val(data.duration);
+                $('#danger').val(data.danger);
+                $('#altern').val(data.altern);
+                $('#id').val(data.id);
 
-                // Sickness checkboxes
-                var idSickChecked = "#sickness";
-                var resultSick = "";
+                //Select sport and difficulty option
+                $('#ddSport').val(data.ddSport).prop('selected', true);
+                $('#ddDiff').val(data.ddDiff).prop('selected', true);
 
-                for (var i=0; i<data.sickness.length; i++) {
-                    resultSick = idSickChecked.concat(data.sickness[i]['idSickness']);
-                    $(resultSick).val(data.sickness[i]['sicName']).prop('checked', true);
-                }
-
-                // Medicament checkboxes
-                var idMedChecked = "#medicament";
-                var resultMed = "";
-
-                for (var i=0; i<data.medicament.length; i++) {
-                    resultMed = idMedChecked.concat(data.medicament[i]['idMedicament'])
-                    $(resultMed).val(data.medicament[i]['medName']).prop('checked', true);
-                    console.log("res: "+resultMed);
-                }
-
-                $('.modal-title').text("Modifier ce route");
+                $('.modal-title').text("Modifier cet itinéraire");
                 $('#route_id').val(route_id);
                 $('#action').val("Editer");
                 $('#operation').val("Edit");

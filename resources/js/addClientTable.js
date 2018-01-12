@@ -37,18 +37,6 @@ $(document).ready(function(){
     // Submit button
     $(document).on('submit', '#user_form', function(event){
         event.preventDefault();
-        var firstName = $('#firstname').val();
-        var lastName = $('#lastname').val();
-        var street = $('#street').val();
-        var streetNb = $('#streetNb').val();
-        var city = $('#city').val();
-        var npa = $('#npa').val();
-        var cliPhone = $('#cliPhone').val();
-        var urgencyPhone = $('#urgencyPhone').val();
-        var email = $('#email').val();
-
-        if(firstName != '' && lastName != '')
-        {
             $.ajax({
                 url:"index.php?controller=client&action=formAjax&boolAjax=true",
                 method:'POST',
@@ -63,11 +51,6 @@ $(document).ready(function(){
                     dataTable.ajax.reload();
                 }
             });
-        }
-        else
-        {
-            alert("All Fields are Required");
-        }
     });
 
     // Update button
@@ -90,6 +73,9 @@ $(document).ready(function(){
                 $('#street').val(data.street);
                 $('#streetNb').val(data.streetNb);
                 $('#urgencyPhone').val(data.urgencyPhone);
+
+                //To uncheck all checkboxes
+                $('.chBox').prop("checked",false);
 
                 // Sickness checkboxes
                 var idSickChecked = "#sickness";

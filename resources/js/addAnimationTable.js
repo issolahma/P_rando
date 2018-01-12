@@ -26,7 +26,7 @@ $(document).ready(function(){
                 "searchable": false
             },
             {
-                "targets":[4, 5],
+                "targets":[4, 5, 6, 7],
                 "orderable":false,
             },
         ],
@@ -77,6 +77,28 @@ $(document).ready(function(){
                 $('#owner').val(data.owner);
                 $('#duration').val(data.duration);
                 $('#matList').val(data.matList);
+                $('#id').val(data.id);
+
+                //To uncheck all checkboxes
+                $('.chBox').prop("checked",false);
+
+                // Theme checkboxes
+                var idThemeChecked = "#theme";
+                var resultTheme = "";
+
+                for (var i=0; i<data.theme.length; i++) {
+                    resultTheme = idThemeChecked.concat(data.theme[i]['idTheme']);
+                    $(resultTheme).val(data.theme[i]['theName']).prop('checked', true);
+                }
+
+                // Season checkboxes
+                var idSeasonChecked = "#season";
+                var resultSeason = "";
+
+                for (var i=0; i<data.season.length; i++) {
+                    resultSeason = idSeasonChecked.concat(data.season[i]['idSeason']);
+                    $(resultSeason).val(data.season[i]['seaName']).prop('checked', true);
+                }
 
                 $('.modal-title').text("Modifier cet animation");
                 $('#anim_id').val(anim_id);

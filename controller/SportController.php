@@ -84,7 +84,7 @@ class SportController extends Controller {
 
         if ($_POST['operation'] == 'Add') {
             //Check if accompanist exist
-            if ($sportRepo->findSport(htmlentities($_POST['name'])) == null) {
+            if ($sportRepo->findSport(htmlspecialchars($_POST['name'])) == null) {
                 //Add client
                 $sportRepo->addSport($_POST);
             } else {

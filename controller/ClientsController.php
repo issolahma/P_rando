@@ -60,7 +60,7 @@ class ClientsController extends Controller
         // Add a new client
         if ($_POST['operation'] == 'Add') {
             //Check if client exist
-            if ($clientRepo->findClient(htmlentities($_POST['firstname']), htmlentities($_POST['lastname'])) == null) {
+            if ($clientRepo->findClient(htmlspecialchars($_POST['firstname']), htmlspecialchars($_POST['lastname'])) == null) {
                 //Add client
                 $clientRepo->addClient($_POST);
             } else {

@@ -50,7 +50,7 @@ class AccompanistController extends Controller
 
         if ($_POST['operation'] == 'Add') {
             //Check if accompanist exist
-            if ($accRepo->findAccompanist(htmlentities($_POST['firstname']), htmlentities($_POST['lastname'])) == null) {
+            if ($accRepo->findAccompanist(htmlspecialchars($_POST['firstname']), htmlspecialchars($_POST['lastname'])) == null) {
                 //Add client
                 $accRepo->addAccompanist($_POST);
             } else {

@@ -85,7 +85,7 @@ class LodgingController extends Controller {
 
         if ($_POST['operation'] == 'Add') {
             //Check if accompanist exist
-            if ($lodgRepo->findLodging(htmlentities($_POST['name'])) == null) {
+            if ($lodgRepo->findLodging(htmlspecialchars($_POST['name'])) == null) {
                 //Add client
                 $lodgRepo->addLodging($_POST);
             } else {

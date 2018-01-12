@@ -84,7 +84,7 @@ class MedicController extends Controller {
 
         if ($_POST['operation'] == 'Add') {
             //Check if accompanist exist
-            if ($medicRepo->findMedic(htmlentities($_POST['name'])) == null) {
+            if ($medicRepo->findMedic(htmlspecialchars($_POST['name'])) == null) {
                 //Add client
                 $medicRepo->addMedicament($_POST);
             } else {
