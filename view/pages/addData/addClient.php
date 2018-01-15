@@ -103,11 +103,11 @@
                             <input type="text" id="email" name="email" placeholder="email" class="form-control">
                         </div>
                         <div class="form-group">
-                            <!-- Maladie client -->
+                            <!-- Client sickness -->
                             <?php include_once 'view/pages/addData/formSickness.php'; ?>
                         </div>
                         <div class="form-group">
-                            <!-- Médicament client -->
+                            <!-- Client medicament -->
                             <?php include_once 'view/pages/addData/formMedicament.php'; ?>
                         </div>
                     </div>

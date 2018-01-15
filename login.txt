@@ -1,2 +1,0 @@
-Admin: issolahma
-Pwd: 123

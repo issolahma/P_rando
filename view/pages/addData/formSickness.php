@@ -10,7 +10,6 @@ echo "<fieldset id=\"cliSick\">";
 echo "<label for='sickness'>Maladie</label><br>";
 echo "<ul class='checkbox-grid'>"; // http://jsfiddle.net/FmV9k/
 
-//  <!-- http://www.mredkj.com/tutorials/tableaddrow.html -->
         $i=0;
         foreach ($sickList as $row) {
             if($row['sicActive'] == 1) {
