@@ -7,12 +7,13 @@
 
 echo "<fieldset id=\"animSeason\">";
 echo "<label for='season'>Saison</label><br>";
+echo "<ul class='checkbox-grid'>"; // http://jsfiddle.net/FmV9k/
 
 //  <!-- http://www.mredkj.com/tutorials/tableaddrow.html -->
 $i=0;
 foreach ($seasonList as $row) {
 if($row['seaActive'] == 1) {
-        print "<input class='chBox' type='checkbox' id='season" . $row['idSeason'] . "' name='season[]' value='" . $row['seaName'] . "'>" . $row['seaName'] . ' ';
+        print "<li><input class='chBox' type='checkbox' id='season" . $row['idSeason'] . "' name='season[]' value='" . $row['seaName'] . "'>" . $row['seaName'] . '</li>';
     }
     $i++;
 }

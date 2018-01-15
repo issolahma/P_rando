@@ -5,3 +5,9 @@
 .modal-body {
 	overflow: hidden;
 }
+
+.checkbox-grid li {
+	display: block;
+	float: left;
+	width: 35%;
+}

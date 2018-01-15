@@ -7,12 +7,13 @@
 
 echo "<fieldset id=\"animTheme\">";
 echo "<label for='theme'>Thème</label><br>";
+echo "<ul class='checkbox-grid'>"; // http://jsfiddle.net/FmV9k/
 
 //  <!-- http://www.mredkj.com/tutorials/tableaddrow.html -->
 $i=0;
 foreach ($themeList as $row) {
     if($row['theActive'] == 1) {
-        print "<input class='chBox' type='checkbox' id='theme" . $row['idTheme'] . "' name='theme[]' value='" . $row['theName'] . "'>" . $row['theName'] . ' ';
+        print "<li><input class='chBox' type='checkbox' id='theme" . $row['idTheme'] . "' name='theme[]' value='" . $row['theName'] . "'>" . $row['theName'] . '</li>';
     }
     $i++;
 }

@@ -8,13 +8,14 @@
 
 echo "<fieldset id=\"cliMedicament\">";
 echo "<label for='medicament'>Médicament</label><br>";
+echo "<ul class='checkbox-grid'>"; // http://jsfiddle.net/FmV9k/
 
 echo '<div class="form-group">';
 
 	//  <!-- http://www.mredkj.com/tutorials/tableaddrow.html -->
 	foreach ($medicList as $row) {
         if($row['medActive'] == 1) {
-            print "<input class='chBox' type='checkbox' class='minimal' name='medicament[]' id='medicament" . $row['idMedicament'] . "' value='" . $row['medName'] . "'> " . $row['medName'];
+            print "<li><input class='chBox' type='checkbox' class='minimal' name='medicament[]' id='medicament" . $row['idMedicament'] . "' value='" . $row['medName'] . "'> " . $row['medName'].'</li>';
         }
     }
 	print "<input type='checkbox' class='minimal' name='medicamentInput' value='otherMed' onclick='printNewInputMed(this)'>Autre";
